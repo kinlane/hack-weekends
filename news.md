@@ -5,6 +5,5 @@ description: Join the hackathon movement.
 ---
 {% include JB/setup %}
 
-<h1>Hack Weekends</h1>
-
-
+<h1>Hack Weekends News</h1>
+<p>What we doing here?</p>

@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Working Site
-description: This is a sample website built with Jekyll + Mustache, hosted on Github.
+title: Hack Weekends Blog
+description: Join the hackathon movement.
 ---
 {% include JB/setup %}
 
-<h1>Blog</h1>
+<h1>Hack Weekends Blog</h1>
 <br />
 <ul class="entries">
 {% for post in site.posts %}

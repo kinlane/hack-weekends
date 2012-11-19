@@ -19,41 +19,12 @@
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="{{ ASSET_PATH }}/js/mustache.js" type="text/javascript"></script>
     <script src="{{ ASSET_PATH }}/js/base64.js" type="text/javascript"></script>
-     <script src="{{ ASSET_PATH }}/js/underscore-min.js" type="text/javascript"></script>
-      <script src="{{ ASSET_PATH }}/js/github.js" type="text/javascript"></script>
+    <script src="{{ ASSET_PATH }}/js/underscore-min.js" type="text/javascript"></script>
+    <script src="{{ ASSET_PATH }}/js/github.js" type="text/javascript"></script>
     <script src="{{ ASSET_PATH }}/js/utilities.js" type="text/javascript"></script>
-
-   <script type="text/javascript">
-   
-        function getUrlVar(key){
-            var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search); 
-            return result && unescape(result[1]) || ""; 
-        }   
-
-        function listDirectory()
-            {
-            $.getJSON('data/directory.json', function(data) {
-                var template = $('#directoryListingTemplate').html();
-                var html = Mustache.to_html(template, data);
-                $('#employeeList').html(html);
-                });
-            }    
-             
-             
-        function getDirectory(id)
-            {
-            $.getJSON('data/directory.json', function(data) {
-                $.each(data['directory'], function(key, val) {
-                    if(id==val['id']){
-                        var template = $('#directoryDetailTemplate').html();
-                        var html = Mustache.to_html(template, val);
-                        $('#DirectoryDetail').html(html);                            
-                    }
-                  });                            
-                });
-            }                        
-             
-   </script>
+    
+    <!--Systems--->
+    <script src="{{ ASSET_PATH }}/js/hackathons.js" type="text/javascript"></script>    
  
     <style type="text/css">
     #logo .site-title, #logo .site-description { display:block; }
@@ -161,11 +132,11 @@
     <div id="navigation" class="col-full">
 
         <ul id="main-nav" class="nav fl">
-            <li class="page_item current_page_item"><a href="/" title="Home">Home</a></li>
-            <li class="page_item page-item-2"><a href="/index.php" title="Home">Hackathons</a></li>
-            <li class="page_item page-item-2"><a href="/cities.php" title="News">Cities</a></li>
-            <li class="page_item page-item-2"><a href="/blog/" title="Blog">Blog</a></li>
-            <li class="page_item page-item-2"><a href="/news/" title="News">News</a></li>
+            <li class="page_item current_page_item"><a href="/index" title="Home">Home</a></li>
+            <li class="page_item page-item-2"><a href="/index" title="Home">Hackathons</a></li>
+            <li class="page_item page-item-2"><a href="/cities" title="News">Cities</a></li>
+            <li class="page_item page-item-2"><a href="/blog" title="Blog">Blog</a></li>
+            <li class="page_item page-item-2"><a href="/news" title="News">News</a></li>
         </ul>
         
         <ul class="rss fr">
@@ -213,6 +184,17 @@
             </div><!-- /#main -->
 
             <div id="sidebar">
+                
+                <div class="widget widget_recent_entries">  
+                    
+                    <center>
+                        <a href="http://www.singly.com/" target="_blank" title="Singly">
+                            <img src="http://kinlane-productions.s3.amazonaws.com/singly/singly-logo-horizontal.png" width="150" />
+                        </a>
+                        <br /><br />
+                    </center>  
+                    
+                </div>                
                               
                 <div class="widget widget_recent_entries">
                     <center>    
@@ -233,13 +215,7 @@
                 <div class="widget widget_recent_entries">  
                 
                     <h3>Partner Sites</h3>  
-                    
-                    <center>
-                        <a href="http://www.singly.com/" target="_blank" title="Singly">
-                            <img src="http://kinlane-productions.s3.amazonaws.com/singly/singly-logo-horizontal.png" width="150" />
-                        </a>
-                        <br /><br />
-                    </center>           
+        
                     <center>
                         <a href="http://www.programmableweb.com/" target="_blank" title="ProgrammableWeb">
                             <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/programmableweb-logo.png" width="150" />
