@@ -56,7 +56,6 @@
    </script>
  
     <style type="text/css">
-    
     #logo .site-title, #logo .site-description { display:block; }
     body {background-repeat:no-repeat;background-position:top center;border-top:4px solid #000000;}
     #header {background-repeat:repeat;background-position:top center;margin-top:0px;margin-bottom:0px;padding-top:20px;padding-bottom:15px;border:0px solid ;}
@@ -146,7 +145,7 @@
 
 </head>
 
-<body>
+<body class="home blog two-col-left width-940 two-col-left-940">
       
 <div id="wrapper">
     
@@ -171,7 +170,8 @@
         
         <ul class="rss fr">
             
-            <li class="sub-rss">                    
+            <li class="sub-rss">         
+            
                 <a href="http://feeds.feedburner.com/ApiEvangelist" target="_blank">
                     <img src="http://kinlane-productions.s3.amazonaws.com/icon-set-roundedcorners/rss.png" />
                 </a>
@@ -198,25 +198,73 @@
     <!-- #content Starts -->
     <div id="content" class="col-full">
 
-        <!-- #main Starts -->
-        <div id="main" styl="border:1px solid #000;">      
-                            
-            <!-- Post Starts -->
-            <div class="post-1 post type-post hentry">      
+        <div id="main-sidebar-container">
 
-              {{ content }}
+            <!-- #main Starts -->
+            <div id="main">      
+                                
+                <!-- Post Starts -->
+                <div class="post-1 post type-post hentry category-api-marketplace category-uncategorized">      
 
-            </div><!-- /.post -->
+                  {{ content }}
 
-        </div><!-- /#main -->
+                </div><!-- /.post -->
 
-        <div id="sidebar" styl="border:1px solid #000;">
+            </div><!-- /#main -->
+
+            <div id="sidebar">
                               
-                              
-                 Hello!  
+                <div class="widget widget_recent_entries">
+                    <center>    
+                        <a href="http://www.apievangelist.com/interested_in_evangelism.php" target="_blank">
+                            <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/Interested-In-Evangelism.png" width="300" />
+                        </a>    
+                    </center>
+                </div>  
             
- 
-        </div>  
+                <div class="widget widget_recent_entries">
+                    <center>
+                        <a href="http://www.apistrategyconference.com/" target="_blank" title="API Strategy & Practice Conference">
+                            <img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-practice-event-2.png" align="center" width="250" style="" title="API Strategy & Practice Conference" />
+                        </a>
+                    </center>
+                </div>    
+            
+                <div class="widget widget_recent_entries">  
+                
+                    <h3>Partner Sites</h3>  
+                    
+                    <center>
+                        <a href="http://www.singly.com/" target="_blank" title="Singly">
+                            <img src="http://kinlane-productions.s3.amazonaws.com/singly/singly-logo-horizontal.png" width="150" />
+                        </a>
+                        <br /><br />
+                    </center>           
+                    <center>
+                        <a href="http://www.programmableweb.com/" target="_blank" title="ProgrammableWeb">
+                            <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/programmableweb-logo.png" width="150" />
+                        </a>
+                        <br /><br />
+                    </center>           
+                    <center>
+                        <a href="http://www.3scale.net" target="_blank" title="3Scale">
+                            <img src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/3scale-logo.jpg" width="200" />
+                        </a>            
+                        <br /><br />
+                    </center>
+                    <center>
+                        <a href="http://wso2.com/products/api-manager/" target="_blank" title="WSO2">
+                            <img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/wso2/wso2-logo-white-800X360.jpg" width="150" />
+                        </a>            
+                        <br /><br />
+                    </center>           
+                
+            
+                </div>
+            
+            </div>
+
+        </div><!-- /#main-sidebar-container -->         
 
     </div><!-- /#content -->
 
