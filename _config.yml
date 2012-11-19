@@ -2,11 +2,13 @@
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink: /:categories/:year/:month/:day/:title 
 
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
+markdown: rdiscount
 pygments: true
-
-paginate: 10 //the number of post per page
+lsi: true
+exclude: ['README.markdown', 'README_FOR_COLLABORATORS.markdown', 'Gemfile.lock', 'Gemfile']
+production: false
+//add this line to add pagination
+paginate: 3 //the number of post per page
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
