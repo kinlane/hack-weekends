@@ -10,7 +10,7 @@ description: Join the hackathon movement.
 <ul class="entries">
 {% for post in site.posts %}
 	<li>
-		<a href="/WorkingPages/{{ post.url }}">
+		<a href="/hack-weekends/{{ post.url }}">
 			{{ post.title }}
 		</a>
 	</li>
