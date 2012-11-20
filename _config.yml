@@ -9,8 +9,8 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Jekyll + Mustache Working Site
-tagline: Machine Readable by Default
+title : Hack Weekends
+tagline: 
 author :
   name : Kin Lane
   email : info@apievangelist.com
@@ -26,7 +26,7 @@ author :
 # Else if you are pushing to username.github.com, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://kinlane.github.com
+production_url : http://kinlane.github.com/hack-weekends
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -55,7 +55,7 @@ JB :
   #   - Only the following values are falsy: ["", null, false]
   #   - When setting BASE_PATH it must be a valid url.
   #     This means always setting the protocol (http|https) or prefixing with "/"
-  BASE_PATH : http://kinlane.github.com/WorkingPages
+  BASE_PATH : http://kinlane.github.com/hack-weekends
 
   # By default, the asset_path is automatically defined relative to BASE_PATH plus the enabled theme.
   # ex: [BASE_PATH]/assets/themes/[THEME-NAME]
@@ -81,7 +81,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : jekyll+mustache
+      short_name : hack-weekends
     livefyre :
       site_id : 123
     intensedebate :
