@@ -3,7 +3,7 @@ layout: post
 title: 29 Hackathons in the United States for September 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">08-31-2012</span>\n</i><p></p>\n<p>These are the hackathons I'm tracking on in the US for September.  You can access a full list of hackathons worldwide as well as new one's that get added throughout the month on the home page of the website.</p>
+{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">08-31-2012</span></i></p><p>These are the hackathons I'm tracking on in the US for September.  You can access a full list of hackathons worldwide as well as new one's that get added throughout the month on the home page of the website.</p>
 <p>If you know of a hackathon that I've missed, please email <a href="mailto:info@apievangelist.com">info@apievangelist.com</a>.</p>
 <table border="0" cellspacing="5" cellpadding="5" width="100%">
 <tbody>
@@ -158,4 +158,4 @@ url: http://apievangelist.com
 <td><a href="/events/fall_2012_hackny_student_hackathon_final_demos.php">New York</a></td>
 </tr>
 </tbody>
-</table>\n<h3>Tags:</h3><center><table cellpadding="5" cellspacing="5" width="90%" border="0"><tr><td>2012, Hackathons, September, United States</td></tr></table><br />\n
+</table><h3>Tags:</h3><p>2012, Hackathons, September, United States</p>

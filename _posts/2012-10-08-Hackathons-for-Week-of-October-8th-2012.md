@@ -3,7 +3,7 @@ layout: post
 title: Hackathons for Week of October 8th, 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">10-08-2012</span>\n</i><p></p>\n<p>These are the hackathons I'm tracking on at&nbsp;<a href="/" target="_blank">Hack Weekends</a>. It looks like about 91 upcoming events in the United States.</p>
+{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">10-08-2012</span></i></p><p>These are the hackathons I'm tracking on at&nbsp;<a href="/" target="_blank">Hack Weekends</a>. It looks like about 91 upcoming events in the United States.</p>
 <table class="table table-hover" width="90%">
 <tbody>
 <tr>
@@ -588,4 +588,4 @@ url: http://apievangelist.com
 </tr>
 </tbody>
 </table>
-<p>If I missed one please let me know, and for a full calendar of hackathon events visit the&nbsp;<a title="Hackathon Calendar" href="http://landscapemonitoring.laneworks.net/">main hackathon calendar</a><span>.</span></p>\n<h3>Tags:</h3><center><table cellpadding="5" cellspacing="5" width="90%" border="0"><tr><td>2012, Hackathons, October, Schedule</td></tr></table><br />\n
+<p>If I missed one please let me know, and for a full calendar of hackathon events visit the&nbsp;<a title="Hackathon Calendar" href="http://landscapemonitoring.laneworks.net/">main hackathon calendar</a><span>.</span></p><h3>Tags:</h3><p>2012, Hackathons, October, Schedule</p>

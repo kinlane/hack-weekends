@@ -3,7 +3,7 @@ layout: post
 title: Hackathons for Week of October 1st, 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">10-01-2012</span>\n</i><p></p>\n<p>These are the hackathons I'm tracking on at <a href="/" target="_blank">Hack Weekends</a>.  It looks like about 55 different events in the United States.</p>
+{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">10-01-2012</span></i></p><p>These are the hackathons I'm tracking on at <a href="/" target="_blank">Hack Weekends</a>.  It looks like about 55 different events in the United States.</p>
 <table width="90%">
 <tbody>
 <tr>
@@ -403,4 +403,4 @@ url: http://apievangelist.com
 </tr>
 </tbody>
 </table>
-<p>If I missed one please let me know, and for a full calendar of hackathon events visit the&nbsp;<a title="Hackathon Calendar" href="/">main hackathon calendar</a><span>.</span></p>\n
+<p>If I missed one please let me know, and for a full calendar of hackathon events visit the&nbsp;<a title="Hackathon Calendar" href="/">main hackathon calendar</a><span>.</span></p>

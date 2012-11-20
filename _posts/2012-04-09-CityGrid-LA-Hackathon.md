@@ -3,7 +3,7 @@ layout: post
 title: CityGrid LA Hackathon
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">04-09-2012</span>\n</i><p></p>\n<p><a href="http://citygridhackathonla.eventbrite.com/"><img class="aligncenter size-medium wp-image-1047" title="citygrid-los-angeles" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/04/citygrid-los-angeles-300x91.png" alt="" width="300" height="91" align="right" /></a>The future of the World Wide Web is local. As we spend more of our lives on our mobile phones, local data and apps become critical in helping us find the restaurant for a lunch meeting, the bar where our best friends are Friday night, the local retail store to make our next purchase, and to interact with our city government to make the cities we live in a better place.</p>
+{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">04-09-2012</span></i></p><p><a href="http://citygridhackathonla.eventbrite.com/"><img class="aligncenter size-medium wp-image-1047" title="citygrid-los-angeles" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/04/citygrid-los-angeles-300x91.png" alt="" width="300" height="91" align="right" /></a>The future of the World Wide Web is local. As we spend more of our lives on our mobile phones, local data and apps become critical in helping us find the restaurant for a lunch meeting, the bar where our best friends are Friday night, the local retail store to make our next purchase, and to interact with our city government to make the cities we live in a better place.</p>
 <p>You can help shape the future of local, with the&nbsp;<a title="CityGrid" href="http://www.citygrid.com/">CityGrid</a>&nbsp;LA Hackathon, a creative, local innovation event bringing together developers, local marketers, local advertisers and even local merchants to help build applications, data visualizations and other creative technology that helps define the future of local.</p>
 <ul class="mainlist">
 <li><span><strong>Event Title</strong> -</span>&nbsp;CityGrid LA Hackathon</li>
@@ -28,4 +28,4 @@ url: http://apievangelist.com
 <li><span><strong>Twitter</strong> -</span>&nbsp;<a title="@CityGridAPITeam" href="https://twitter.com/#!/CityGridAPITeam">@citygridapiteam</a></li>
 <li><span><strong>Hashtag</strong> -</span>&nbsp;<a title="#citygridhackathonla" href="https://twitter.com/#!/search/realtime/%23citygridhackathonLA">#citygridhackathonLA</a></li>
 <li><span><strong>Registration</strong> -</span>&nbsp;<a title="Register Now" href="http://citygridhackathonla.eventbrite.com/">Register Now</a>!</li>
-</ul>\n
+</ul>
