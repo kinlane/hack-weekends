@@ -3,7 +3,7 @@ layout: post
 title: Hackathons for Week of October 1st, 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="Hackathons for Week of October 1st, 2012">Hackathons for Week of October 1st, 2012</a></h1>\n<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">10-01-2012</span>\n</i><p></p>\n<p>These are the hackathons I'm tracking on at <a href="/" target="_blank">Hack Weekends</a>.  It looks like about 55 different events in the United States.</p>
+{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">10-01-2012</span>\n</i><p></p>\n<p>These are the hackathons I'm tracking on at <a href="/" target="_blank">Hack Weekends</a>.  It looks like about 55 different events in the United States.</p>
 <table width="90%">
 <tbody>
 <tr>

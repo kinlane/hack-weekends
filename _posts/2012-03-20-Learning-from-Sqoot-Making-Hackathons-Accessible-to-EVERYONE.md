@@ -3,7 +3,7 @@ layout: post
 title: Learning from Sqoot: Making Hackathons Accessible to EVERYONE!
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="Learning from Sqoot: Making Hackathons Accessible to EVERYONE!">Learning from Sqoot: Making Hackathons Accessible to EVERYONE!</a></h1>\n<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">03-20-2012</span>\n</i><p></p>\n<p>Boston API Jam organizer Sqoot just got themselves into a lot of hot water with some very sexist comments on their hackathon home page (now removed):</p>
+{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">03-20-2012</span>\n</i><p></p>\n<p>Boston API Jam organizer Sqoot just got themselves into a lot of hot water with some very sexist comments on their hackathon home page (now removed):</p>
 <p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/sqoot/boston-api-jam.png" alt="" width="500" /></p>
 <p>From what I can tell, Sqoot was called out by <a href="https://twitter.com/#!/BoazSender">@BoazSender</a>:</p>
 <p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/sqoot/Sqoot-Boaz-Sender-.png" alt="" width="450" /></p>

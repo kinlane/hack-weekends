@@ -3,7 +3,7 @@ layout: post
 title: Tools of the CityGrid Los Angeles Hackathon
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="Tools of the CityGrid Los Angeles Hackathon">Tools of the CityGrid Los Angeles Hackathon</a></h1>\n<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">04-25-2012</span>\n</i><p></p>\n<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/events/citygrid-la-hackathon/citygrid-los-angeles.png" alt="" width="200" align="right" /></p>
+{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">04-25-2012</span>\n</i><p></p>\n<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/events/citygrid-la-hackathon/citygrid-los-angeles.png" alt="" width="200" align="right" /></p>
 <p>We have a pretty awesome line-up of tools, platforms and APIs for people to use when building their local web and mobile apps this weekend at the&nbsp;<a title="CityGrid Los Angeles Hackathon" href="http://citygridhackathonla.eventbrite.com/">CityGrid Los Angeles Hackathon</a>:</p>
 <table border="0" cellspacing="5" cellpadding="5" width="95%" align="center">
 <tbody>

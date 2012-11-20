@@ -3,7 +3,7 @@ layout: post
 title: How to Run a Successful Hackathon for Your APIs
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="How to Run a Successful Hackathon for Your APIs">How to Run a Successful Hackathon for Your APIs</a></h1>\n<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">07-18-2012</span>\n</i><p></p>\n<p>Here is a webinar I did in partnership with Layer7 technologies a couple weeks ago. &nbsp;Hackathons are something I'm getting more and more requests for information on from the enterprise, and I think it's something that the enterprise can employ internally to increase employee innovation and stimular company research and development.</p>
+{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">07-18-2012</span>\n</i><p></p>\n<p>Here is a webinar I did in partnership with Layer7 technologies a couple weeks ago. &nbsp;Hackathons are something I'm getting more and more requests for information on from the enterprise, and I think it's something that the enterprise can employ internally to increase employee innovation and stimular company research and development.</p>
 <p>
 <hr />
 </p>

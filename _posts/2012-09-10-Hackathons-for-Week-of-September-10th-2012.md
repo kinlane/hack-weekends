@@ -3,7 +3,7 @@ layout: post
 title: Hackathons for Week of September 10th, 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="Hackathons for Week of September 10th, 2012">Hackathons for Week of September 10th, 2012</a></h1>\n<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">09-10-2012</span>\n</i><p></p>\n<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Hackathon-Tag-Cloud-2.png" alt="" width="250" align="right" /></p>
+{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">09-10-2012</span>\n</i><p></p>\n<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Hackathon-Tag-Cloud-2.png" alt="" width="250" align="right" /></p>
 <p>These are the hackathons I'm tracking on for the next week here at Hack Weekends.</p>
 <ul class="mainlist">
 <li><a href="http://splunkhackathon-srch.eventbrite.com/">The App Builder Contest .conf2012</a>&nbsp;- 09/12/2012 - Las Vegas NV, United States</li>

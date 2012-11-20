@@ -3,7 +3,7 @@ layout: post
 title: Hackathons for Week of September 17th, 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="Hackathons for Week of September 17th, 2012">Hackathons for Week of September 17th, 2012</a></h1>\n<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">09-17-2012</span>\n</i><p></p>\n<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Hackathon-Tag-Cloud-2.png" alt="" width="250" align="right" />These are the hackathons I'm tracking on for the next week here at Hack Weekends. &nbsp;It looks like about 22 different hackathons this week around the globe.</p>
+{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">09-17-2012</span>\n</i><p></p>\n<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Hackathon-Tag-Cloud-2.png" alt="" width="250" align="right" />These are the hackathons I'm tracking on for the next week here at Hack Weekends. &nbsp;It looks like about 22 different hackathons this week around the globe.</p>
 <ul class="mainlist">
 <li><a href="http://svc-scion-hackathon-srch.eventbrite.com/">Driving innovations with hackathons</a>&nbsp;- 09/18/2012 - Lyngby Capital Region of Denmark, Denmark</li>
 <li><a href="http://mobileappitcanwait2-srch.eventbrite.com/">AT&amp;T Mobile App Hackathon - It Can Wait Finals! w/30k+ in prizes</a>&nbsp;- 09/18/2012 - Santa Monica CA, United States</li>

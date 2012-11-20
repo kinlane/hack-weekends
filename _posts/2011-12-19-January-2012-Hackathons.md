@@ -3,7 +3,7 @@ layout: post
 title: January 2012 Hackathons
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="January 2012 Hackathons">January 2012 Hackathons</a></h1>\n<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">12-19-2011</span>\n</i><p></p>\n<p>These are the hackathons I'm tracking on for January.  You can view these on the events page and I have a <a title="Hackathons Google Calendar" href="/events_hackathon_calendar.php">Google Calendar</a>&nbsp;you can subscribe to.</p>
+{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">12-19-2011</span>\n</i><p></p>\n<p>These are the hackathons I'm tracking on for January.  You can view these on the events page and I have a <a title="Hackathons Google Calendar" href="/events_hackathon_calendar.php">Google Calendar</a>&nbsp;you can subscribe to.</p>
 <table style="margin-left: auto; margin-right: auto;" border="1" cellspacing="5" cellpadding="5" width="90%" align="center">
 <tbody>
 <tr>

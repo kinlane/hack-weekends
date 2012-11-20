@@ -3,7 +3,7 @@ layout: post
 title: Tech Raising in Santa Cruz
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="Tech Raising in Santa Cruz">Tech Raising in Santa Cruz</a></h1>\n<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">09-25-2012</span>\n</i><p></p>\n<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/hackweekends/techraising/techraising.png" alt="" width="200" align="right" /></p>
+{% include JB/setup %}<i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a>\n<span class="small">on</span> <span class="post-date">09-25-2012</span>\n</i><p></p>\n<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/hackweekends/techraising/techraising.png" alt="" width="200" align="right" /></p>
 <p>While assembling the <a title="Hack Weekends Calendar" href="http://hackweekends.com">Hack Weekends calendar</a>&nbsp;each week, I see a wide variety of Hackathons, in different shapes and sizes.</p>
 <p>The most common perception of what a hackathon is, comes from the precedent set by <a title="Startup Weekend" href="http://startupweekend.com">Startup Weekend</a>.  While a great model, there are plenty of other incarnations out there that deserve attention.</p>
 <p>One interesting example I came across today is out of Santa Cruz, called <a title="TechRaising" href="http://techraising.com/">TechRaising</a>.</p>
