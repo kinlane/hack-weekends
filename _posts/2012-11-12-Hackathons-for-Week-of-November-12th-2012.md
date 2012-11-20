@@ -1,4 +1,4 @@
----layout: posttitle: Blog---<h1 class="title"><a href="#" rel="bookmark" title="Hackathons for Week of November 12th, 2012">Hackathons for Week of November 12th, 2012</a></h1><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">11-12-2012</span></i><p></p><table cellspacing="5" cellpadding="5" width="100%">
+---layout: posttitle: Hackathonsurl: http://apievangelist.com---{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="Hackathons for Week of November 12th, 2012">Hackathons for Week of November 12th, 2012</a></h1><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">11-12-2012</span></i><p></p><table cellspacing="5" cellpadding="5" width="100%">
 <tbody>
 <tr>
 <td>These are the hackathons we are tracking on at&nbsp;<a title="Singly" href="http://www.singly.com/">Singly</a>. It looks like about 40 different events coming up in the United States. 
