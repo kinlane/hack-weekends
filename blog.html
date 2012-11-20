@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Blog
-
+title: Hack Weekends Blog
 ---
 
 {% for post in site.posts limit:25 %}
@@ -11,7 +10,7 @@ title: Blog
       <a href="/hack-weekends/{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a>
     </h1>
 
-     <i><span class="small">on</span> <span class="post-date">{{ post.date | date:"%Y-%m-%d" }}</span></i>
+     <i><span class="small">Posted on {{ post.date | date:"%Y-%m-%d" }}</span></i><br />
 
     {{ post.content | strip_html | truncatewords: 100 }}
 
@@ -19,8 +18,3 @@ title: Blog
     
 </div>
 {% endfor %}
-
-<div class="navigation">
-    <div class="alignleft"><a href="/archive.html" >Archive</a></div>
-    <div class="alignright"></div>
-</div>
