@@ -3,7 +3,7 @@ layout: post
 title: February Hackathon Schedule
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">02-07-2012</span></i></p><p>Here are the hackathons I'm tracking on for February.  I'm adding new ones as I find them, make sure and checkout the <a title="Hackathon events calendar" href="/events/">hackathon events calendar</a> for more information.</p>
+{% include JB/setup %}<div><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">02-07-2012</span></i><p>Here are the hackathons I'm tracking on for February.  I'm adding new ones as I find them, make sure and checkout the <a title="Hackathon events calendar" href="/events/">hackathon events calendar</a> for more information.</p>
 <table border="1" cellspacing="5" cellpadding="5" width="100%">
 <tbody>
 <tr>

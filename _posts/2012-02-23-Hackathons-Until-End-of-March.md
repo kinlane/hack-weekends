@@ -3,7 +3,7 @@ layout: post
 title: Hackathons Until End of March
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">02-23-2012</span></i></p><p>This is a list of hackathons coming up in the near future.  I've only done the data entry for events until the end of March.  So far there are 156 hackathons accounted for.  Some pretty staggering numbers in the growth around hackathons.  If you have a hackathon coming up that is not listed, make sure and let me know.</p>
+{% include JB/setup %}<div><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">02-23-2012</span></i><p>This is a list of hackathons coming up in the near future.  I've only done the data entry for events until the end of March.  So far there are 156 hackathons accounted for.  Some pretty staggering numbers in the growth around hackathons.  If you have a hackathon coming up that is not listed, make sure and let me know.</p>
 <table border="1" cellspacing="5" cellpadding="5" width="100%">
 <tbody>
 <tr>

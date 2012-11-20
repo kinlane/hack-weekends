@@ -3,7 +3,7 @@ layout: post
 title: Hackathons for Week of November 5th, 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">11-05-2012</span></i></p><table cellspacing="5" cellpadding="5" width="100%">
+{% include JB/setup %}<div><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">11-05-2012</span></i><table cellspacing="5" cellpadding="5" width="100%">
 <tbody>
 <tr>
 <td width="75%" valign="top">
@@ -443,4 +443,4 @@ url: http://apievangelist.com
 </td>
 </tr>
 </tbody>
-</table><h3>Tags:</h3><p>Calendar, Hackathon, Weekly</p>
+</table><h3>Tags:</h3>Calendar, Hackathon, Weekly</div>

@@ -3,7 +3,7 @@ layout: post
 title: Hackathons for Week of September 24th, 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">09-25-2012</span></i></p><p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Hackathon-Tag-Cloud-2.png" alt="" width="250" align="right" /></p>
+{% include JB/setup %}<div><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">09-25-2012</span></i><p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Hackathon-Tag-Cloud-2.png" alt="" width="250" align="right" /></p>
 <p><span>These are the hackathons I'm tracking on for the next week here at Hack Weekends. &nbsp;It looks like about 26 different hackathons this next week around the globe:</span></p>
 <ul class="mainlist">
 <li><a href="http://wiki.apache.org/jackrabbit/Oak%20Hackathon%20September%202012">Oak Hackathon September 2012</a>&nbsp;- 09/25/2012 - Berlin, Germany</li>
@@ -34,4 +34,4 @@ url: http://apievangelist.com
 <li><a href="http://illumos2012hackathon-srch.eventbrite.com/">OSS illumos hackathon</a>&nbsp;- 10/03/2012 - San Francisco CA, United States</li>
 </ul>
 <p><span>If I missed one please let me know, and for a full calendar of hackathon events visit the&nbsp;</span><a title="Hackathon Calendar" href="/">main hackathon calendar</a><span>.</span></p>
-<p><span>&nbsp;</span></p><h3>Tags:</h3><p>Roundup, Weekly</p>
+<p><span>&nbsp;</span></p><h3>Tags:</h3>Roundup, Weekly</div>

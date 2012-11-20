@@ -3,7 +3,7 @@ layout: post
 title: Conferences, Hackathons and Meetups in 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">12-18-2011</span></i></p><p><a href="http://thinkspace.com/5-reasons-to-attend-a-hackathon/" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/tag-cloud-hackathon.png" alt="" width="300" align="right" /></a></p>
+{% include JB/setup %}<div><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">12-18-2011</span></i><p><a href="http://thinkspace.com/5-reasons-to-attend-a-hackathon/" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/tag-cloud-hackathon.png" alt="" width="300" align="right" /></a></p>
 <p>In 2012 I&rsquo;m going to be stepping up my travel schedule.  I&rdquo;m planning on attending as many conferences, hackathons and meetups as I possibly can.</p>
 <p>My emphasis will be on hackathons and meetups, but there are still some very worthy larger conferences that I will make sure and be at.</p>
 <p>I believe that in 2012 there will be some serious innovation occurring around Hackathons in cities around the globe, and I want to be there for as much of it as I can.</p>

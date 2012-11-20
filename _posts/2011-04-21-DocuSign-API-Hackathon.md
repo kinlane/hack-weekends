@@ -3,7 +3,7 @@ layout: post
 title: DocuSign API Hackathon
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">04-21-2011</span></i></p><a title="DocuSign" href="http://www.docusign.com/">DocuSign</a> is holding a <a title="Hackathon" href="http://www.docusign.com/hackathon/">Hackathon</a> to build the most innovative app in either the business, consumer, enterprise and mobile space using the <a title="DocuSign API" href="http://www.docusign.com/developers-center/developers-center-overview">DocuSign API</a>.<p></p>
+{% include JB/setup %}<div><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">04-21-2011</span></i><a title="DocuSign" href="http://www.docusign.com/">DocuSign</a> is holding a <a title="Hackathon" href="http://www.docusign.com/hackathon/">Hackathon</a> to build the most innovative app in either the business, consumer, enterprise and mobile space using the <a title="DocuSign API" href="http://www.docusign.com/developers-center/developers-center-overview">DocuSign API</a>.<p></p>
 <strong>Dates</strong><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/DocuSign-Logo.jpg" alt="" width="325" align="right" />
 <ul class="mainlist">
 	<li>May 14-15, 2011</li>

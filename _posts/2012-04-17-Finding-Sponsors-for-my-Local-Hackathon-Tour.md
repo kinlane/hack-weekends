@@ -3,7 +3,7 @@ layout: post
 title: Finding Sponsors for my Local Hackathon Tour
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">04-17-2012</span></i></p><p><a href="http://citygridhackathonla.eventbrite.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/events/citygrid-la-hackathon/citygrid-los-angeles.png" alt="" width="250" align="right" /></a></p>
+{% include JB/setup %}<div><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">04-17-2012</span></i><p><a href="http://citygridhackathonla.eventbrite.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/events/citygrid-la-hackathon/citygrid-los-angeles.png" alt="" width="250" align="right" /></a></p>
 <p>I&rsquo;m currently planning a 9 city hackathon tour, starting with the <a href="http://citygridhackathonla.eventbrite.com/">CityGrid Los Angeles Hackathon</a>, and following up with Seattle, San Francisco, Chicago, Boston, NYC, Baltimore, New Orleans, and Austin.</p>
 <p>The CityGrid Hackathon tour is meant to bring together commercial and civic hackers to build the next generation of apps we use in our everyday "local" lives.</p>
 <p>I&rsquo;m trying to find a blend of developers, business, marketing and advertising folks that will come together and develop commercially viable ideas that can also make our cities better places to live.</p>

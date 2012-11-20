@@ -3,7 +3,7 @@ layout: post
 title: 68 Hackathons Happening in March 2012
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">02-23-2012</span></i></p><p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/hackathons/Hackathon-Tag-Cloud-2.png" alt="" width="300" align="right" /></p>
+{% include JB/setup %}<div><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">02-23-2012</span></i><p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/hackathons/Hackathon-Tag-Cloud-2.png" alt="" width="300" align="right" /></p>
 <p>I finished my roundup of <a title="hackathons for the API Evangelist calendar" href="/events/index.php">hackathons for the API Evangelist calendar</a> this morning.  It took me a large portion of yesterday to gather and do the data entry for all the hackathons.  Something I should probably have someone else do, but I like being in tune with the different events.</p>
 <p>I tracked on hackathons last year, but this year I&rsquo;m spending time each week organizing into a calendar to share with my readers, publish a roundup on <a title="ProgrammableWeb" href="http://www.programmableweb.com/">ProgrammableWeb</a>&nbsp;each week, and plan which events I will be attending or sponsoring.</p>
 <p>I&rsquo;m impressed with the growth in the number of hackathons worldwide in 2012:</p>

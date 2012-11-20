@@ -3,7 +3,7 @@ layout: post
 title: January 2012 Hackathons - December 26th, 2011
 url: http://apievangelist.com
 ---
-{% include JB/setup %}<p><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">12-26-2011</span></i></p><p><span>Here is the latest update of the hackathons I'm tracking on for January. You can view these on the events page and I have a&nbsp;</span><a title="Hackathons Google Calendar" href="http://blog.apievangelist.com/events_hackathon_calendar.php">Google Calendar</a><span>&nbsp;you can subscribe to.</span></p>
+{% include JB/setup %}<div><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">12-26-2011</span></i><p><span>Here is the latest update of the hackathons I'm tracking on for January. You can view these on the events page and I have a&nbsp;</span><a title="Hackathons Google Calendar" href="http://blog.apievangelist.com/events_hackathon_calendar.php">Google Calendar</a><span>&nbsp;you can subscribe to.</span></p>
 <p>I added 13 new hackathons, doubling the number of <a title="hackathons" href="http://blog.apievangelist.com/events/index.php">hackathons</a> in January to 26!</p>
 <table style="margin-left: auto; margin-right: auto;" border="1" cellspacing="5" cellpadding="5" width="90%" align="center">
 <tbody>
