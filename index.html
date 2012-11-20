@@ -25,7 +25,7 @@ title: Blog
 {% if paginator.previous_page == 1 %}
 <li class="disabled"><a href="#">&laquo;</a></li>
 {% else %}
-<li><a href="/page{{paginator.previous_page}}">&laquo;</a></li>
+<li><a href="{{paginator.previous_page}}">&laquo;</a></li>
 {% endif %}
 {% endif %}
 
@@ -40,7 +40,7 @@ title: Blog
 {% if count == paginator.page %}
 <li class="active"><a href="#">{{count}}</a></li>
 {% else %}
-<li><a href="/page{{count}}">{{count}}</a></li>
+<li><a href="{{count}}">{{count}}</a></li>
 {% endif %}
 {% endfor %}
 
