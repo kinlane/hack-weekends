@@ -10,8 +10,10 @@ title: Blog
     
     <i><span class="small">on</span> <span class="post-date">{{ post.date | date:"%Y-%m-%d" }}</span></i>
 
-    {{ post.excerpt | textilize}}
+    {{ post.description | textilize}}
   
+    <p>Hello!</p>
+    
     <hr />
   
 {% endfor %}
