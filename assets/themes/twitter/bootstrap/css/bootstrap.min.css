@@ -15,10 +15,10 @@ button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:poin
 input[type="search"]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;}
 input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none;}
 textarea{overflow:auto;vertical-align:top;}
-.clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
+.clearfix{*zoom:1;}.clearfix:before,.clearfix:after{}
 .clearfix:after{clear:both;}
 
-.row{margin-left:-20px;*zoom:1;}.row:before,.row:after{display:table;content:"";}
+.row{margin-left:-20px;*zoom:1;}.row:before,.row:after{}
 .row:after{clear:both;}
 [class*="span"]{float:left;margin-left:20px;}
 .span1{width:60px;}
@@ -44,7 +44,7 @@ textarea{overflow:auto;vertical-align:top;}
 .offset9{margin-left:740px;}
 .offset10{margin-left:820px;}
 .offset11{margin-left:900px;}
-.row-fluid{*zoom:1;}.row-fluid:before,.row-fluid:after{display:table;content:"";}
+.row-fluid{*zoom:1;}.row-fluid:before,.row-fluid:after{}
 .row-fluid:after{clear:both;}
 .row-fluid>[class*="span"]{float:left;margin-left:2.127659574%;}
 .row-fluid>[class*="span"]:first-child{margin-left:0;}
@@ -60,15 +60,15 @@ textarea{overflow:auto;vertical-align:top;}
 .row-fluid>.span10{width:82.97872339599999%;}
 .row-fluid>.span11{width:91.489361693%;}
 .row-fluid>.span12{width:99.99999998999999%;}
-.container{width:940px;margin-left:auto;margin-right:auto;*zoom:1;}.container:before,.container:after{display:table;content:"";}
+.container{width:940px;margin-left:auto;margin-right:auto;*zoom:1;}.container:before,.container:after{}
 .container:after{clear:both;}
-.container-fluid{padding-left:20px;padding-right:20px;*zoom:1;}.container-fluid:before,.container-fluid:after{display:table;content:"";}
+.container-fluid{padding-left:20px;padding-right:20px;*zoom:1;}.container-fluid:before,.container-fluid:after{}
 .container-fluid:after{clear:both;}
 
 
 abbr{font-size:90%;text-transform:uppercase;border-bottom:1px dotted #ddd;cursor:help;}
 blockquote{padding:0 0 0 15px;margin:0 0 18px;border-left:5px solid #eeeeee;}blockquote p{margin-bottom:0;font-size:16px;font-weight:300;line-height:22.5px;}
-blockquote small{display:block;line-height:18px;color:#999999;}blockquote small:before{content:'\2014 \00A0';}
+blockquote small{display:block;line-height:18px;color:#999999;}blockquote small:before{}
 blockquote.pull-right{float:right;padding-left:0;padding-right:15px;border-left:0;border-right:5px solid #eeeeee;}blockquote.pull-right p,blockquote.pull-right small{text-align:right;}
 q:before,q:after,blockquote:before,blockquote:after{content:"";}
 address{display:block;margin-bottom:18px;line-height:18px;font-style:normal;}
