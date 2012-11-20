@@ -11,7 +11,7 @@ title: Blog
     
     <i><span class="small">on</span> <span class="post-date">{{ post.date | date:"%Y-%m-%d" }}</span></i>
 
-    {{ post.content | truncatewords: 75 }}
+    {{ post.excerpt | truncatewords: 75 }}
 
     
     <hr />
