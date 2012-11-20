@@ -1,9 +1,12 @@
 # This is the default format. 
 # For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink: /:categories/:year/:month/:day/:title 
-
+safe: ture
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
+lsi: false
+source: hack-weekends
+destination: hack-weekends
 pygments: true
 
 paginate: 10
