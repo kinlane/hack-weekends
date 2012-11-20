@@ -438,4 +438,4 @@
 </td>
 </tr>
 </tbody>
-</table><h3>Tags:</h3><table cellpadding="5" cellspacing="5" width="90%" border="0"><tr><td>Calendar, Hackathon, Weekly</td></tr></table><br />
+</table><br /><h3>Tags:</h3><p>Calendar, Hackathon, Weekly</p>
