@@ -1,34 +1,9 @@
 ---
-layout: post
+layout: page
 title: Blog
 
 ---
 
-{% for post in paginator.posts %}
-  
-    <h1 class="title"><a href="{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h1>
-    
-    <i><span class="small">on</span> <span class="post-date">{{ post.date | date:"%Y-%m-%d" }}</span></i>
-
-    {{ post.excerpt}}
-  
-    <p>Hello Again!</p>
-    
-    <hr />
-  
+{% for post in site.posts %}
+{% include JB/post_content %}
 {% endfor %}
-
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="/page{{paginator.previous_page}}" class="previous">Previous</a>
-  {% else %}
-    <span class="previous">Previous</span>
-  {% endif %}
-  <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
-  {% if paginator.next_page %}
-    <a href="/page{{paginator.next_page}}" class="next ">Next</a>
-  {% else %}
-    <span class="next ">Next</span>
-  {% endif %}
-</div>
