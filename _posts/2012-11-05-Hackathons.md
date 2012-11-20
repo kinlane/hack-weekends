@@ -1,4 +1,4 @@
----layout: posttitle: Title---<h1 class="title"><a href="#" rel="bookmark" title="Hackathons for Week of November 5th, 2012">Hackathons for Week of November 5th, 2012</a></h1><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">11-05-2012</span></i><p></p><table cellspacing="5" cellpadding="5" width="100%">
+---layout: posttitle: Title---<h1 class="title"><a href="#" rel="bookmark" title="Hackathons for Week of November 5th, 2012">Hackathons for Week of November 5th, 2012</a></h1><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">11-05-2012</span></i><p></p><table cellspacing="5" cellpadding="5" width="100%">
 <tbody>
 <tr>
 <td width="75%" valign="top">
@@ -438,4 +438,4 @@
 </td>
 </tr>
 </tbody>
-</table><h3>Tags:</h3><center><table cellpadding="5" cellspacing="5" width="90%" border="0"><tr><td>Calendar, Hackathon, Weekly</td></tr></table><br />
+</table><h3>Tags:</h3><table cellpadding="5" cellspacing="5" width="90%" border="0"><tr><td>Calendar, Hackathon, Weekly</td></tr></table><br />
