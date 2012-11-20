@@ -28,8 +28,6 @@ author :
 #
 production_url : http://kinlane.github.com
 
-#add this line to add pagination
-paginate : 10
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
