@@ -6,14 +6,14 @@ title: Blog
 
 {% for post in paginator.posts %}
   
-    <h1 class="title"><a href="#" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h1>
+    <h1 class="title"><a href="{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a></h1>
     
     <i><span class="small">on</span> <span class="post-date">{{ post.date | date:"%Y-%m-%d" }}</span></i>
     
-    <p>{{ post.description }}</p>
+    <p>{{ page.description }}</p>
  
     <h3>Tags:</h3>
-    <p>{{ post.tags }}</p>
+    <p>{{ page.tags }}</p>
     <br />
   
 {% endfor %}
