@@ -1,4 +1,4 @@
----layout: posttitle: Hackathons for Week of October 1st, 2012---{% include JB/setup %}<h1 class="title"><a href="#" rel="bookmark" title="Hackathons for Week of October 1st, 2012">Hackathons for Week of October 1st, 2012</a></h1><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">10-01-2012</span></i><p></p><p>These are the hackathons I'm tracking on at <a href="/" target="_blank">Hack Weekends</a>.  It looks like about 55 different events in the United States.</p>
+---layout: posttitle: Hackathons for Week of October 1st, 2012---<h1 class="title"><a href="#" rel="bookmark" title="Hackathons for Week of October 1st, 2012">Hackathons for Week of October 1st, 2012</a></h1><i><span class="small">by</span> <a href="https://plus.google.com/106460238807821851374" rel="author">Kin Lane</a><span class="small">on</span> <span class="post-date">10-01-2012</span></i><p></p><p>These are the hackathons I'm tracking on at <a href="/" target="_blank">Hack Weekends</a>.  It looks like about 55 different events in the United States.</p>
 <table width="90%">
 <tbody>
 <tr>
@@ -202,7 +202,7 @@
 <td width="5%">&nbsp;</td>
 <td>
 <ul>
-<li>10/20/2012 - <a style="color: #000;" href="http://lvl1makefoodnotwar2012-SRCH.eventbrite.com">Make Food N̶o̶t̶ War</a></li>
+<li>10/20/2012 - <a style="color: #000;" href="http://lvl1makefoodnotwar2012-SRCH.eventbrite.com">Make Food NÌ¶oÌ¶tÌ¶ War</a></li>
 </ul>
 </td>
 </tr>
