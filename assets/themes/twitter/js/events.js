@@ -1,7 +1,6 @@
-function listEvents()
+function showEvents()
     {
     alert("firing!");	
-
     }    
      
      
