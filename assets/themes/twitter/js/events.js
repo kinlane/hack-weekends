@@ -1,17 +1,17 @@
-function listHackathons()
+function listEvents()
     {
-    $.getJSON('data/directory.json', function(data) {
-        var template = $('#directoryListingTemplate').html();
+    $.getJSON('data/events/san-francisco.json', function(data) {
+        var template = $('#eventListingTemplate').html();
         var html = Mustache.to_html(template, data);
-        $('#employeeList').html(html);
+        $('#eventList').html(html);
         });
     }    
      
      
-function getHackathon(id)
+function getEvent(id)
     {
-    $.getJSON('data/directory.json', function(data) {
-        $.each(data['directory'], function(key, val) {
+    $.getJSON('data/events/san-francisco.json', function(data) {
+        $.each(data['events'], function(key, val) {
             if(id==val['id']){
                 var template = $('#directoryDetailTemplate').html();
                 var html = Mustache.to_html(template, val);
