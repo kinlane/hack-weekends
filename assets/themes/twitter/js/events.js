@@ -3,6 +3,7 @@ function listEvents()
     $.getJSON('data/events/san-francisco.json', function(data) {
         var template = $('#eventListingTemplate').html();
         var html = Mustache.to_html(template, data);
+        alert(html);
         $('#eventList').html(html);
         });
     }    
