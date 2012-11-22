@@ -7,7 +7,8 @@ function showEvents()
         	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
         	
         	startDate = val['start_date'];
-			startDate = new Date(startDate+' 00:00:00');  			  
+        	var startDate = Date.parseDate(startDate, "m-d-Y");
+			//startDate = new Date(startDate);  			  
 			//startDate = dateOBJ.getDate();  
         	
         	today = new Date();
