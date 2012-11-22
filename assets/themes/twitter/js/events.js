@@ -7,9 +7,9 @@ function showEvents()
         	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
         	
         	startDate = val['start_date'];
-        	startDateArray = startDate.split();
+        	startDateArray = startDate.split('-');
         	alert(startDateArray[1]);
-			i
+			
           }); 
         });
     }    
