@@ -1,7 +1,10 @@
 function showEvents()
     {
     alert("firing!");	
-   
+    $.getJSON('data/events/san-francisco.json', function(data) {
+	alert('in');
+       
+        });
     }    
      
      
