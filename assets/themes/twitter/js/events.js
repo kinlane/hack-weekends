@@ -16,7 +16,7 @@ function showEvents()
         });
     }   
     
-function showCities()
+function showEventsByCity()
     {
    // alert("firing!");	
     $.getJSON('data/events/cities.json', function(data) {
