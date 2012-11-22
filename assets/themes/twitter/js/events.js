@@ -23,8 +23,14 @@ function showCities()
 	//alert('in');
         $.each(data['cities'], function(key, val) {
         	city = val['city'];     	
-        	//eventcount = val['eventcount'];
-        	alert(val['eventcount']);
+        	if(val['eventcount']>0)
+	        	{
+	        	alert(city);
+	        	filename = city.replace(" ","");	
+	        	filename = filename.toLowerCase();
+	        	filename = filename + ".json";
+	        	alert(filename);
+	        	}
           }); 
         });
     }       
