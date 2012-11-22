@@ -10,7 +10,7 @@ function showEvents()
         	alert(startDate);
         	if(startDate > endDate)
         		{
-        		alert("in!);	
+        		alert("in!");	
         		}
           }); 
         });
