@@ -4,7 +4,9 @@ function showEvents()
     $.getJSON('data/events/san-francisco.json', function(data) {
 	//alert('in');
         $.each(data['events'], function(key, val) {
-        	startDate = new Date(val['start_date'] + " 00:00:00 AM");
+        	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
+        	
+        	var startDate = Date.parse(val['start_date']);
         	today = new Date();
         	alert(startDate + ' < ' + today);
 			if ( new Date(val['start_date']) < new Date() )
