@@ -60,7 +60,9 @@ function showEventsByCity()
 	        	}
           }); 
           
-           alert(allEvents);
+  		//var jsonSerialized = array2dToJson(addEvent, 'array');
+      	//alert(jsonSerialized);          
+          
           
         });
         
