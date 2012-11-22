@@ -32,9 +32,18 @@ function showCities()
 	        	alert(filename);
 	        	
 			   // alert("firing!");	
-			    $.getJSON(filename, function(data) {
-				alert('in');
-			       
+			    $.getJSON(filename, function(eventdata) {
+				//alert('in');
+			        $.each(eventdata['events'], function(key2, val2) {
+			        	startDate = val2['start_date'];     
+			        	startDate = new Date(startDate);
+			        	endDate = new Date();
+			        	alert(startDate);
+			        	if(startDate > endDate)
+			        		{
+			        		alert(val2['name']);	
+			        		}
+			          }); 
 			        });	        	
 	        	
 	        	}
