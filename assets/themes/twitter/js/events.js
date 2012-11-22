@@ -13,7 +13,7 @@ function showEvents()
         	eYear = startDateArray[2]; 
         	
         	startDate = new Date(eYear,eMonth,eDay);
-        	alert(startDate + ' < ' + today);
+        	alert(startDate);
 			i
           }); 
         });
