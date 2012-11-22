@@ -4,12 +4,14 @@ function showEvents()
     $.getJSON('data/events/san-francisco.json', function(data) {
 	//alert('in');
         $.each(data['events'], function(key, val) {
-
-        	startDate = new Date(val['start_date']);  			  
+        	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
+        	
+        	dateSTR = val['start_date'];
+			startDate = new Date(Date.parse(dateSTR.replace(/-/g, " "))) 
         	
         	today = new Date();
         	alert(startDate + ' < ' + today);
-			
+			i
           }); 
         });
     }    
