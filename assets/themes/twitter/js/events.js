@@ -38,10 +38,15 @@ function showCities()
 			        	startDate = val2['start_date'];     
 			        	startDate = new Date(startDate);
 			        	endDate = new Date();
-			        	alert(startDate);
+			        	//alert(startDate);
 			        	if(startDate > endDate)
 			        		{
-			        		alert(val2['name']);	
+			        		//alert(val2['name']);
+					    	//alert(dodump(data,5));
+					        var template = $('#eventListingTemplate').html();
+					        var html = Mustache.to_html(template, data);
+					        //alert(html);
+					        $('#eventList').append(html);			        			
 			        		}
 			          }); 
 			        });	        	
