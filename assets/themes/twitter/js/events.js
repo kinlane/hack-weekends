@@ -29,7 +29,7 @@ function showCities()
 	        	filename = city.replace(" ","");	
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
-	        	alert(filename);
+	        	//alert(filename);
 	        	
 			   //alert("firing!");	
 			    $.getJSON(filename, function(eventdata) {
