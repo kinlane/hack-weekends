@@ -52,7 +52,7 @@ function showEventsByCity()
 					        thisEvent['city'] = val2['city'];
 					        thisEvent['country'] = val2['country'];	
 					        
-					        allEvents['events'].push(thisEvent);        			
+					        allEvents.push(thisEvent);        			
 			        		}
 			          }); 
 			        });	        	
@@ -60,7 +60,7 @@ function showEventsByCity()
 	        	}
           }); 
           
-           alert(dodump(allEvents['events']));
+           alert(dodump(allEvents));
           
         });
         
