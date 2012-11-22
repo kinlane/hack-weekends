@@ -6,10 +6,9 @@ function showEvents()
         $.each(data['events'], function(key, val) {
         	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
         	
-        	dateSTR = val['start_date'];
-			startDate = new Date(Date.parse(dateSTR.replace(/-/g, " "))) 
-        	
-        	today = new Date();
+        	startDate = val['start_date'];
+        	startDateArray = startDate.split();
+        	startDate = new Date(startDateArray[3],startDateArray[2],startDateArray[1]);
         	alert(startDate + ' < ' + today);
 			i
           }); 
