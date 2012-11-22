@@ -25,27 +25,22 @@ function showEventsByCity()
         	city = val['city'];     	
         	if(val['eventcount']>0)
 	        	{
-	        	//alert(city);
+	        		
 	        	filename = city.replace(" ","-");	
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
-	        	//alert(filename);
-	        	
-			   //alert("firing!");	
+
 			    $.getJSON(filename, function(eventdata) {
-				//alert('in');
 			        $.each(eventdata['events'], function(key2, val2) {
+			        	
 			        	startDate = val2['start_date'];     
 			        	startDate = new Date(startDate);
 			        	endDate = new Date();
-			        	//alert(startDate);
+
 			        	if(startDate > endDate)
 			        		{
-			        		//alert(val2['name']);
-					    	//alert(dodump(data,5));
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
-					        //alert(html);
 					        $('#eventList').append(html);			        			
 			        		}
 			          }); 
