@@ -24,10 +24,7 @@ function showCities()
         $.each(data['cities'], function(key, val) {
         	city = val['city'];     	
         	eventcount = val['eventcount'];
-        	if(eventcount>0)
-        		{
-        		alert(city);
-        		}	
+        	alert(city+':'+eventcount);
           }); 
         });
     }       
