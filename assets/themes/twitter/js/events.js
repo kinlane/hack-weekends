@@ -6,21 +6,13 @@ function showEvents()
         $.each(data['events'], function(key, val) {
         	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
         	
-        	dateSTR = val['start_date'];
-			dateOBJ = new Date(dateSTR);  			  
-			startDate = dateOBJ.getDate();  
+        	dateSTR = val['start_date'] " 00:00:00";
+			startDate = new Date(dateSTR);  			  
+			//startDate = dateOBJ.getDate();  
         	
         	today = new Date();
         	alert(startDate + ' < ' + today);
-			if ( startDate < new Date() )
-			{
-			alert('in');		
-	        var template = $('#eventListingTemplate').html();
-	        var html = Mustache.to_html(template, data);
-	        //alert(html);
-	        $('#eventList').html(html);
-	                          
-            }
+			
           }); 
         });
     }    
