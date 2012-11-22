@@ -21,7 +21,7 @@ function showEventsByCity()
    // alert("firing!");	
     $.getJSON('data/events/cities.json', function(data) {
 	//alert('in');
-		var allEvents['events'] = new Array();
+		var allEvents = new Array();
         $.each(data['cities'], function(key, val) {
         	city = val['city'];     	
         	if(val['eventcount']>0)
