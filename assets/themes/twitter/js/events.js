@@ -25,13 +25,13 @@ function showCities()
         	city = val['city'];     	
         	if(val['eventcount']>0)
 	        	{
-	        	alert(city);
+	        	//alert(city);
 	        	filename = city.replace(" ","");	
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
-	        	//alert(filename);
+	        	alert(filename);
 	        	
-			   // alert("firing!");	
+			   //alert("firing!");	
 			    $.getJSON(filename, function(eventdata) {
 				//alert('in');
 			        $.each(eventdata['events'], function(key2, val2) {
@@ -45,7 +45,7 @@ function showCities()
 					    	//alert(dodump(data,5));
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
-					        alert(html);
+					        //alert(html);
 					        $('#eventList').append(html);			        			
 			        		}
 			          }); 
