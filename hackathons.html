@@ -29,6 +29,27 @@ description: Join the hackathon movement.
 </script>
 {% endliteral %}
 
+{% literal %}
+<script id="eventListingItemTemplate" type="text/template">
+    <tr>
+        <td align="center">
+            <strong>{{start_date}}</strong>
+        </td>              
+        <td>
+            <a href="/events/" style="color:#000;">
+                {{name}}
+            </a>
+        </td>    
+        <td>
+            <a href="/events/" style="color:#000;">
+               {{city}}  {{country}}
+            </a>
+        </td>   
+    </tr>                                                                                                  
+</script>
+{% endliteral %}
+
+
 <h1>Hackathons</h1>
 
 <div id="eventList"></div>  

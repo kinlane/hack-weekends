@@ -29,7 +29,7 @@ function showCities()
 	        	filename = city.replace(" ","");	
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
-	        	alert(filename);
+	        	//alert(filename);
 	        	
 			   // alert("firing!");	
 			    $.getJSON(filename, function(eventdata) {
@@ -43,9 +43,9 @@ function showCities()
 			        		{
 			        		//alert(val2['name']);
 					    	//alert(dodump(data,5));
-					        var template = $('#eventListingTemplate').html();
+					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, data);
-					        //alert(html);
+					        alert(html);
 					        $('#eventList').append(html);			        			
 			        		}
 			          }); 
