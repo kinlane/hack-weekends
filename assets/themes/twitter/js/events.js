@@ -9,9 +9,10 @@ function showEvents()
         	startDate = val['start_date'];     	
         	startDate = new Date(startDate);
         	endDate = new Date();
-        	alert(startDate);
-        	alert(endDate);
-        	
+        	if(startDate > endDate)
+        		{
+        		alert("in");	
+        		}
 			i
           }); 
         });
