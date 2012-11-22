@@ -11,9 +11,8 @@ function showEvents()
         	endDate = new Date();
         	if(startDate > endDate)
         		{
-        		alert("in");	
+        		alert("in"+startDate);	
         		}
-			i
           }); 
         });
     }    
