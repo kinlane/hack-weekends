@@ -6,10 +6,10 @@ function showEvents()
         $.each(data['events'], function(key, val) {
         	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
         	
-        	var startDate = val['start_date'];
+        	startDate = val['start_date'];
         	today = new Date();
         	alert(startDate + ' < ' + today);
-			if ( new Date(val['start_date']) < new Date() )
+			if ( startDate < new Date() )
 			{
 			alert('in');		
 	        var template = $('#eventListingTemplate').html();
