@@ -8,9 +8,13 @@ function showEvents()
         	
         	startDate = val['start_date'];
         	startDateArray = startDate.split('-',3);
-        	alert(startDateArray[2]);
-
-			
+        	eMonth = startDateArray[0];
+        	eDay = startDateArray[1];
+        	eYear = startDateArray[2]; 
+        	
+        	startDate = new Date(eYear,eMonth,eDay);
+        	alert(startDate + ' < ' + today);
+			i
           }); 
         });
     }    
