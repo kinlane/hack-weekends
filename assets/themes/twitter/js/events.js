@@ -6,8 +6,8 @@ function showEvents()
         $.each(data['events'], function(key, val) {
         	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
         	
-        	dateSTR = val['start_date'];
-			startDate = new Date(dateSTR);  			  
+        	startDate = val['start_date'];
+			// = new Date(startDate);  			  
 			//startDate = dateOBJ.getDate();  
         	
         	today = new Date();
