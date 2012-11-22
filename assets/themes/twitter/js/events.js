@@ -4,14 +4,13 @@ function showEvents()
     $.getJSON('data/events/san-francisco.json', function(data) {
 	//alert('in');
         $.each(data['events'], function(key, val) {
-        	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
-        	
         	startDate = val['start_date'];     	
         	startDate = new Date(startDate);
         	endDate = new Date();
+        	alert(startDate);
         	if(startDate > endDate)
         		{
-        		alert("in"+startDate);	
+        		alert("in!);	
         		}
           }); 
         });
