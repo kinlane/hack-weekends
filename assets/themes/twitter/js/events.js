@@ -5,7 +5,7 @@ function showEvents()
 	//alert('in');
         $.each(data['events'], function(key, val) {
         	alert(val['start_date']);
-			if ( new Date(val['start_date']) > new Date() )
+			if ( new Date(val['start_date']) < new Date() )
 			{
 			alert('in');		
 	        var template = $('#eventListingTemplate').html();
