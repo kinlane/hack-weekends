@@ -8,8 +8,7 @@ function showEvents()
         	
         	startDate = val['start_date'];
         	startDateArray = startDate.split();
-        	startDate = new Date(startDateArray[3],startDateArray[2],startDateArray[1]);
-        	alert(startDate + ' < ' + today);
+        	alert(startDateArray[1]);
 			i
           }); 
         });
