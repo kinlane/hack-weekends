@@ -6,14 +6,11 @@ function showEvents()
         $.each(data['events'], function(key, val) {
         	//startDate = new Date(val['start_date'] + " 00:00:00 AM");
         	
-        	startDate = val['start_date'];
-        	startDateArray = startDate.split('-',3);
-        	eMonth = startDateArray[0];
-        	eDay = startDateArray[1];
-        	eYear = startDateArray[2]; 
+        	startDate = val['start_date'];     	
+        	startDate = new Date(startDate);
+        	endDate = new Date();
+        	alert(startDate + ' > ' + endDate);
         	
-        	startDate = new Date(eYear,eMonth,eDay);
-        	alert(startDate);
 			i
           }); 
         });
