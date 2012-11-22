@@ -33,8 +33,10 @@ function showCities()
 	        	
 			   // alert("firing!");	
 			    $.getJSON(filename, function(data) {
-					alert('in');
+				alert('in');
 			       
+			        });	        	
+	        	
 	        	}
           }); 
         });
