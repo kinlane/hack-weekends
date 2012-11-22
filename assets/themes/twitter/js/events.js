@@ -21,7 +21,7 @@ function showEventsByCity()
    // alert("firing!");	
     $.getJSON('data/events/cities.json', function(data) {
 	//alert('in');
-		var allEvents = new Array();
+		var allEvents['events'] = new Array();
         $.each(data['cities'], function(key, val) {
         	city = val['city'];     	
         	if(val['eventcount']>0)
@@ -52,7 +52,7 @@ function showEventsByCity()
 					        thisEvent['city'] = val2['city'];
 					        thisEvent['country'] = val2['country'];	
 					        
-					        allEvents.push(thisEvent);        			
+					        allEvents['events'].push(thisEvent);        			
 			        		}
 			          }); 
 			        });	        	
@@ -60,7 +60,7 @@ function showEventsByCity()
 	        	}
           }); 
           
-          alert(dodump(allEvents()));
+           alert(dodump(allEvents['events']));
           
         });
         
