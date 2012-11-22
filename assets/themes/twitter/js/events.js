@@ -8,7 +8,7 @@ function showEvents()
         	
         	startDate = val['start_date'];
         	startDateArray = startDate.split('-',3);
-        	alert(startDateArray[1]);
+        	alert(startDateArray[0]);
 			
           }); 
         });
