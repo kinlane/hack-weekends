@@ -44,7 +44,7 @@ function showCities()
 			        		//alert(val2['name']);
 					    	//alert(dodump(data,5));
 					        var template = $('#eventListingItemTemplate').html();
-					        var html = Mustache.to_html(template, data);
+					        var html = Mustache.to_html(template, val2);
 					        alert(html);
 					        $('#eventList').append(html);			        			
 			        		}
