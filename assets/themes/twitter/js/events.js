@@ -26,7 +26,7 @@ function showCities()
         	if(val['eventcount']>0)
 	        	{
 	        	//alert(city);
-	        	filename = city.replace(" ","");	
+	        	filename = city.replace(" ","-");	
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	//alert(filename);
