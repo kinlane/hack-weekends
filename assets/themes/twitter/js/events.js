@@ -30,6 +30,22 @@ function showCities()
 	        	filename = filename.toLowerCase();
 	        	filename = filename + ".json";
 	        	alert(filename);
+	        	
+			   // alert("firing!");	
+			    $.getJSON('data/events/'+filename, function(data) {
+				//alert('in');
+			        $.each(data['events'], function(key, val) {
+			        	startDate = val['start_date'];     	
+			        	startDate = new Date(startDate);
+			        	endDate = new Date();
+			        	alert(startDate);
+			        	if(startDate > endDate)
+			        		{
+			        		alert(val['name']);	
+			        		}
+			          }); 
+			        });	        	
+	        	
 	        	}
           }); 
         });
