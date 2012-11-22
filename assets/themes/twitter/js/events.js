@@ -1,6 +1,6 @@
 function showEvents()
     {
-    alert("firing!");	
+    //alert("firing!");	
     $.getJSON('data/events/san-francisco.json', function(data) {
     	//alert(dodump(data,5));
         var template = $('#eventListingTemplate').html();
