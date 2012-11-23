@@ -56,7 +56,7 @@ function showEventsByCity()
 					        //alert(dodump(thisEvent));   
 					        //allEvents.push(thisEvent);
 					        
-					        allEvents[eventcount] = thisEvent;
+					        allEvents.Unshift(thisEvent);
 					        
 					        eventcount++;		
 			        		}
