@@ -61,7 +61,8 @@ function showEventsByCity()
 	        	}
           }); 
           
-        $.each(allEvents, function(key3, val3) {
+        var displayEvents = array2dToJson(allEvents, 'object');  
+        $.each(displayEvents, function(key3, val3) {
         	
         	alert(val3['name']);
         	
