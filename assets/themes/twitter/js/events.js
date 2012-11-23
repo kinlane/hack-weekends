@@ -58,7 +58,7 @@ function showEventsByCity()
 					        	"city":val2['city'],
 					        	"country":val2['country']
 					        	});	
-					        	
+					        alert(dodump($allEvents));    	
 			        		}
 			          }); 
 			          
@@ -67,7 +67,6 @@ function showEventsByCity()
 	        	}
           });     
         }); 
-   alert(dodump($allEvents));    
     }       
      
      
