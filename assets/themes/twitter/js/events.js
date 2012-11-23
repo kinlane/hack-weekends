@@ -39,9 +39,8 @@ function showEventsByCity()
 			    $.getJSON(filename, function(eventdata) {
 			    	
 			        $.each(eventdata['events'], function(key2, val2) {
-			        	
-			        	startDate = val2['start_date'];     
-			        	startDate = new Date(startDate);
+			        	  
+			        	startDate = new Date(val2['start_date']);
 			        	endDate = new Date();
 
 			        	if(startDate > endDate)
@@ -56,6 +55,7 @@ function showEventsByCity()
 							//alert(dodump(thisEvent));
 					        allEvents.push({ "name":val2['name'], "start_date": val2['start_date'], "display_start_date": val2['display_start_date'], "city": val2['city'], "country": val2['country']});	
 					        eventcount++;  	
+					        alert(dodump(allEvents));
 			        		}
 			          }); 
 			          
@@ -64,7 +64,7 @@ function showEventsByCity()
 	        	}
           });     
         }); 
-     alert(dodump(allEvents[0]));  
+     //alert(dodump(allEvents[0]));  
     }       
      
      
