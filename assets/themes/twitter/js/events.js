@@ -65,10 +65,7 @@ function showEventsByCity()
           
           citycount++; 
           
-          if(totalcities==citycount){
-          	//alert(dodump(allEvents,5));
-          	alert(citycount);
-          }  
+  
         }); 
  
     }       
