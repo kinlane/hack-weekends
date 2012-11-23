@@ -28,20 +28,20 @@ function getUrlVar(key){
     return result && unescape(result[1]) || ""; 
 }   
               
-   function array2dToJson(a, p, nl) {
+function array2dToJson(a, p, nl) {
       var i, j, s = '[{"' + p + '":{';
-      nl = nl || '';
-      for (i = 0; i < a.length; ++i) {
-        s += nl + array1dToJson(a[i]);
-        if (i < a.length - 1) {
-          s += ',';
-        }
-      }
-      s += nl + '}}]';
-      return s;
+  nl = nl || '';
+  for (i = 0; i < a.length; ++i) {
+    s += nl + array1dToJson(a[i]);
+    if (i < a.length - 1) {
+      s += ',';
     }
+  }
+  s += nl + '}}]';
+  return s;
+}
 
-    function array1dToJson(a, p) {
+function array1dToJson(a, p) {
       var i, s = '';
       for (i = 0; i < a.length; ++i) {
         if (typeof a[i] == 'string') {
