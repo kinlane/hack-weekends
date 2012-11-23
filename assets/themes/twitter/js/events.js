@@ -52,7 +52,7 @@ function showEventsByCity()
 					        //var html = Mustache.to_html(template, val2);
 					        //$('#eventList').append(html);
 					        
-					        var doit = allEvents.push({ "name":val2['name'], "start_date": val2['start_date'], "display_start_date": val2['display_start_date'], "city": val2['city'], "country": val2['country']});	
+					        var doit = allEvents['events'].push({ "name":val2['name'], "start_date": val2['start_date'], "display_start_date": val2['display_start_date'], "city": val2['city'], "country": val2['country']});	
 					        eventcount++;  	
 					        //alert(dodump(doit));
 			        		}
@@ -69,8 +69,8 @@ function showEventsByCity()
 	          		//alert(dodump(allEvents,5));
 	          		//alert(allEvents);
 	          		
-	          		$.each(allEvents, function(key, val) {
-	          			alert(val);
+	          		$.each(allEvents['events'], function(key, val) {
+	          			alert(dodump(val,4));
 	          		});		          		
 	          		
 	          	}   	        	
