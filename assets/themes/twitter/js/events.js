@@ -58,7 +58,7 @@ function showEventsByCity()
 					        thisEvent.city = val2['city'];
 					        thisEvent.country = val2['country'];
 
-					        allEvents.push(thisEvent);	  	
+					        //allEvents.push(thisEvent);	  	
 			        		}
 			          }); 
 			          
