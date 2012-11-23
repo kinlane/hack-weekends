@@ -60,3 +60,11 @@ function array1dToJson(a, p) {
   }
   return s;
 }
+
+Array.prototype.sortBy = function( column ) {
+    // this refers to the instance of the array class
+    this.sort( function( item1 , item2 ) {
+        if( item1[column] == item2[column] ) return 0;
+        return item1[column] > item2[column];
+    } );
+}
