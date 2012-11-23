@@ -25,8 +25,8 @@ function showEventsByCity()
     allEvents = new Array();
 	
     $.getJSON('data/events/cities.json', function(data) {
-    	totalcities = data['cities'].length;
-    	alert(totalcities);
+    	totalcities = data['cities'];
+    	alert(totalcities.length);
         $.each(data['cities'], function(key, val) {
         	
         	city = val['city'];
