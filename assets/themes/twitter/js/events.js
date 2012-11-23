@@ -25,8 +25,7 @@ function showEventsByCity()
     allEvents = new Array();
 	
     $.getJSON('data/events/cities.json', function(data) {
-    	allcities = data['cities'];
-    	alert(allcities.length);
+    	totalcities = data['cities'].length;
         $.each(data['cities'], function(key, val) {
         	
         	city = val['city'];
@@ -63,7 +62,11 @@ function showEventsByCity()
 	        	}
           });  
           
-          citycount++;   
+          citycount++; 
+          
+          if(totalcities==citycount){
+          	alert(dodump(allEvents,5));
+          }  
         }); 
  
     }       
