@@ -64,7 +64,8 @@ function showEventsByCity()
         $.each(allEvents, function(key3, val3) {
         	
         	alert(val3['name']);
-        	}  
+        	
+        	}); 
           
         //var displayEvents = array2dToJson(allEvents, 'object');
       	//alert(displayEvents);          
