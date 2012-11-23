@@ -67,7 +67,12 @@ function showEventsByCity()
 	          	if(totalcities==citycount){
 	          		alert(totalcities + ":" + citycount);
 	          		//alert(dodump(allEvents,5));
-	          		alert(allEvents);
+	          		//alert(allEvents);
+	          		
+	          		$.each(allEvents, function(key, val) {
+	          			alert(val);
+	          		});		          		
+	          		
 	          	}   	        	
 	        	
 	        	
