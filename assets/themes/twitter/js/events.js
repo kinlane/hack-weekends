@@ -20,6 +20,7 @@ function showEvents()
     
 function showEventsByCity()
     {
+    eventcount = 0;	
     allEvents = new Array();
 	
     $.getJSON('data/events/cities.json', function(data) {
@@ -35,7 +36,6 @@ function showEventsByCity()
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
-				eventcount = 0;
 			    $.getJSON(filename, function(eventdata) {
 			    	
 			        $.each(eventdata['events'], function(key2, val2) {
@@ -54,7 +54,8 @@ function showEventsByCity()
 					        var thisEvent = { "name":val2['name'], "start_date": val2['start_date'], "display_start_date": val2['display_start_date'], "city": val2['city'], "country": val2['country']};
 					        
 							//alert(dodump(thisEvent));
-					        allEvents.push(thisEvent);	  	
+					        allEvents[eventcount] = thisEvent;	
+					        eventcount++;  	
 			        		}
 			          }); 
 			          
