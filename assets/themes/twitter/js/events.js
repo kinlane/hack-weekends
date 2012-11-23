@@ -65,8 +65,7 @@ function showEventsByCity()
 			               		        	
 	        	}
           });     
-        });
-      alert(allEvents); 
+        }); 
         
     }       
      
