@@ -53,7 +53,7 @@ function showEventsByCity()
 					        thisEvent['city'] = val2['city'];
 					        thisEvent['country'] = val2['country'];	
 					        
-					           			
+					         alert(dodump(thisEvent));   			
 			        		}
 			          }); 
 			        });	        	
@@ -61,8 +61,7 @@ function showEventsByCity()
 	        	}
           }); 
           
-        
-          alert(dodump(thisEvent)); 
+         
         //var displayEvents = array2dToJson(allEvents, 'object');
       	//alert(displayEvents);          
           
