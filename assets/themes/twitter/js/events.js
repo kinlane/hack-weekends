@@ -46,7 +46,7 @@ function showEventsByCity()
 
 			        	if(startDate > endDate)
 			        		{
-			        		$thisEvent = {};	
+			        		thisEvent = {};	
 			        			
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
@@ -57,7 +57,7 @@ function showEventsByCity()
 					        thisEvent.display_start_date = val2['display_start_date'];
 					        thisEvent.city = val2['city'];
 					        thisEvent.country = val2['country'];
-
+							alert(dodump(thisEvent));
 					        //allEvents.push(thisEvent);	  	
 			        		}
 			          }); 
