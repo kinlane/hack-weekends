@@ -20,11 +20,13 @@ function showEvents()
     
 function showEventsByCity()
     {
+    citycount = 0;
     eventcount = 0;	
-    allEvents = new Array({"name":"name", "start_date": "", "display_start_date": "", "city": "", "country": ""});
+    allEvents = new Array();
 	
     $.getJSON('data/events/cities.json', function(data) {
-    	
+    	totalcities = data['cities'].lenth;
+    	alert(totalcities);
         $.each(data['cities'], function(key, val) {
         	
         	city = val['city'];
@@ -59,9 +61,11 @@ function showEventsByCity()
 			        });	  
 			               		        	
 	        	}
-          });     
+          });  
+          
+          citycount++;   
         }); 
-     alert(dodump(allEvents[0]));  
+ 
     }       
      
      
