@@ -51,14 +51,12 @@ function showEventsByCity()
 					        var html = Mustache.to_html(template, val2);
 					        $('#eventList').append(html);
 					        
-					        $allEvents.push({
-					        	"name":val2['name'],
-					        	"start_date":val2['start_date'],
-					        	"display_start_date":val2['display_start_date'],
-					        	"city":val2['city'],
-					        	"country":val2['country']
-					        	});	
-					        alert(dodump($allEvents));    	
+						        $allEvents['name'].push(val2['name']);
+						        $allEvents['start_date'].push(val2['start_date']);
+						        $allEvents['display_start_date'].push(val2['display_start_date']);
+						        $allEvents['city'].push(val2['city']);
+						        $allEvents['country'].push(val2['country']);      
+	 	
 			        		}
 			          }); 
 			          
