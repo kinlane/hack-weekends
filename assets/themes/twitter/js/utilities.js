@@ -29,7 +29,7 @@ function getUrlVar(key){
 }   
               
 function array2dToJson(a, p, nl) {
-      var i, j, s = '[{"' + p + '":{';
+  var i, j, s = '{"' + p + '":[';
   nl = nl || '';
   for (i = 0; i < a.length; ++i) {
     s += nl + array1dToJson(a[i]);
@@ -37,25 +37,26 @@ function array2dToJson(a, p, nl) {
       s += ',';
     }
   }
-  s += nl + '}}]';
+  s += nl + ']}';
   return s;
 }
 
 function array1dToJson(a, p) {
-      var i, s = '';
-      for (i = 0; i < a.length; ++i) {
-        if (typeof a[i] == 'string') {
-          s += '"' + a[i] + '"';
-        }
-        else { // assume number type
-          s += a[i];
-        }
-        if (i < a.length - 1) {
-          s += ':';
-        }
-      }
-      s += '';
-      if (p) {
-        return '{"' + p + '":' + s + '}';
-      }
-      r
+  var i, s = '[';
+  for (i = 0; i < a.length; ++i) {
+    if (typeof a[i] == 'string') {
+      s += '"' + a[i] + '"';
+    }
+    else { // assume number type
+      s += a[i];
+    }
+    if (i < a.length - 1) {
+      s += ',';
+    }
+  }
+  s += ']';
+  if (p) {
+    return '{"' + p + '":' + s + '}';
+  }
+  return s;
+}
