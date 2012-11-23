@@ -70,7 +70,7 @@ function showEventsByCity()
 	          		//alert(allEvents);
 	          		
 	          		$.each(allEvents, function(key, val) {
-	          			alert(dodump(val,4));
+	          			alert(val);
 	          		});		
 	          		
 	          					          		          		
