@@ -64,10 +64,10 @@ function showEventsByCity()
           });  
           
           citycount++; 
-          
+          alert(totalcities + ":" + citycount);
           if(totalcities==citycount){
           	//alert(dodump(allEvents,5));
-          	alert(totalcities + ":" + citycount);
+          	alert('done');
           }            
             
         }); 
