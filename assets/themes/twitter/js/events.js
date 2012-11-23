@@ -20,7 +20,7 @@ function showEvents()
     
 function showEventsByCity()
     {
-    allEvents = Array();	
+    allEvents = new Array();
 	
     $.getJSON('data/events/cities.json', function(data) {
     	
@@ -46,7 +46,7 @@ function showEventsByCity()
 
 			        	if(startDate > endDate)
 			        		{
-			        		thisEvent = Array();
+			        		thisEvent = new Array();
 			        			
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
