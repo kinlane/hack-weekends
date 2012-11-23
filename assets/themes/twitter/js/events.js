@@ -18,6 +18,8 @@ function showEvents()
     
 function showEventsByCity()
     {
+    	
+    allEvents = Array();
 	
     $.getJSON('data/events/cities.json', function(data) {
     	
@@ -49,7 +51,7 @@ function showEventsByCity()
 					        var html = Mustache.to_html(template, val2);
 					        $('#eventList').append(html);
 					        
-					        allEvents['events'].push({
+					        allEvents.push({
 					        	"name":val2['name'],
 					        	"start_date":val2['start_date'],
 					        	"display_start_date":val2['display_start_date'],
@@ -57,8 +59,8 @@ function showEventsByCity()
 					        	"country":val2['country']
 					        	});
 					        	
-					       	alert(allEvents[eventcount]['events'].value);	
-					        eventcount++;		
+					       	alert(allEvents);	
+		
 			        		}
 			        		
 			        	
