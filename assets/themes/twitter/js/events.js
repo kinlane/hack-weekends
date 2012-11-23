@@ -18,7 +18,7 @@ function showEvents()
     
 function showEventsByCity()
     {
-	var allEvents = new Array();
+	
     $.getJSON('data/events/cities.json', function(data) {
     	
         $.each(data['cities'], function(key, val) {
@@ -55,10 +55,13 @@ function showEventsByCity()
 					        	"display_start_date":val2['display_start_date'],
 					        	"city":val2['city'],
 					        	"country":val2['country']
-					        	});	
+					        	});
+					        	
+					        alert(allEvents['events']);	
+					        		
 			        		}
 			        		
-			        	alert(allEvents['events']);
+			        	
 			          }); 
 			          
 			        });	        	
