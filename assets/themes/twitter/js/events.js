@@ -53,8 +53,8 @@ function showEventsByCity()
 					        
 					        var thisEvent = { "name":val2['name'], "start_date": val2['start_date'], "display_start_date": val2['display_start_date'], "city": val2['city'], "country": val2['country']};
 					        
-							alert(dodump(thisEvent));
-					        //allEvents.push(thisEvent);	  	
+							//alert(dodump(thisEvent));
+					        allEvents.push(thisEvent);	  	
 			        		}
 			          }); 
 			          
