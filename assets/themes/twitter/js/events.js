@@ -59,7 +59,7 @@ function showEventsByCity()
 					        	"country":val2['country']
 					        	});
 					        	
-					        alert(dodump(allEvent['events']')); 	
+					        alert(dodump(allEvent['events'])); 	
 					        	
 			        		}
 			          }); 
