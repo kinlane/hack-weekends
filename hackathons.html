@@ -30,31 +30,33 @@ description: Join the hackathon movement.
 {% endliteral %}
 
 {% literal %}
-<script type="text/template">
-    <table class="sortable" id="eventListingItemTemplate">
-        <tr>
-            <td align="center">
-                <strong>{{display_start_date}}</strong>
-            </td>              
-            <td>
-                <a href="/events/" style="color:#000;">
-                    {{name}}
-                </a>
-            </td>    
-            <td>
-                <a href="/events/" style="color:#000;">
-                   {{city}}  {{country}}
-                </a>
-            </td>   
-        </tr>    
-    </table>                                                                                              
+<script id="eventListingItemTemplate" type="text/template">
+    <tr>
+        <td align="center">
+            <strong>{{display_start_date}}</strong>
+        </td>              
+        <td>
+            <a href="/events/" style="color:#000;">
+                {{name}}
+            </a>
+        </td>    
+        <td>
+            <a href="/events/" style="color:#000;">
+               {{city}}  {{country}}
+            </a>
+        </td>   
+    </tr>                                                                                                   
 </script>
 {% endliteral %}
 
 
 <h1>Hackathons</h1>
 
-<div id="eventList"></div>  
+<div>
+    <table class="sortable" id="eventList">
+        
+    </table>
+</div>  
 
 <script type="text/javascript">
 showEventsByCity();
