@@ -30,7 +30,7 @@ function showEventsByCity()
 	        	filename = city.replace(" ","-");	
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
-				eventcount = 0;
+				$eventcount = 0;
 			    $.getJSON(filename, function(eventdata) {
 			    	
 			        $.each(eventdata['events'], function(key2, val2) {
@@ -47,13 +47,13 @@ function showEventsByCity()
 					        var html = Mustache.to_html(template, val2);
 					        $('#eventList').append(html);
 					        
-					        thisEvent[eventcount]['name'] = val2['start_date'];
-					        thisEvent[eventcount]['start_date'] = val2['start_date'];
-					        thisEvent[eventcount]['display_start_date'] = val2['display_start_date'];  	
-					        thisEvent[eventcount]['city'] = val2['city'];
-					        thisEvent[eventcount]['country'] = val2['country'];	
+					        thisEvent[$eventcount]['name'] = val2['start_date'];
+					        thisEvent[$eventcount]['start_date'] = val2['start_date'];
+					        thisEvent[$eventcount]['display_start_date'] = val2['display_start_date'];  	
+					        thisEvent[$eventcount]['city'] = val2['city'];
+					        thisEvent[$eventcount]['country'] = val2['country'];	
 					       
-					        eventcount++;       			
+					        $eventcount++;       			
 			        		}
 			          }); 
 			        });	        	
