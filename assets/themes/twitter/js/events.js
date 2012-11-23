@@ -62,12 +62,11 @@ function showEventsByCity()
 			          }); 
 			          
 			        });	  
-			        
 			               		        	
 	        	}
           });     
         });
-       
+      alert(allEvents); 
         
     }       
      
