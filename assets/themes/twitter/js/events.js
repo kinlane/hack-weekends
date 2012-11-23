@@ -73,11 +73,7 @@ function showEventsByCity()
 	          			alert(dodump(val,4));
 	          		});		
 	          		
-	          		allEvents['name'].sort();
-	          		
-	          		$.each(allEvents, function(key, val) {
-	          			alert(dodump(val,4));
-	          		});			          		          		
+	          					          		          		
 	          		
 	          	}   	        	
 	        	
