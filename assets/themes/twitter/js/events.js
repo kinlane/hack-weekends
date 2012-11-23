@@ -51,6 +51,7 @@ function showEventsByCity()
 					        thisEvent['display_start_date'] = val2['display_start_date'];  	
 					        thisEvent['city'] = val2['city'];
 					        thisEvent['country'] = val2['country'];	
+					        
 					        //alert(dodump(thisEvent));
 					        addEvent = allEvents.push(thisEvent);        			
 			        		}
@@ -62,7 +63,6 @@ function showEventsByCity()
           
   		//var jsonSerialized = array2dToJson(addEvent, 'array');
       	//alert(jsonSerialized);          
-          
           
         });
         
