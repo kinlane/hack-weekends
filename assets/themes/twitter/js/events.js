@@ -62,7 +62,7 @@ function showEventsByCity()
           }); 
           
         var displayEvents = array2dToJson(allEvents, 'object');
-      	alert(displayEvents);          
+      	//alert(displayEvents);          
           
         });
         
