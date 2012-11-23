@@ -20,7 +20,7 @@ function showEvents()
     
 function showEventsByCity()
     {
-    $allEvents = {};	
+    allEvents = {};	
 	
     $.getJSON('data/events/cities.json', function(data) {
     	
@@ -50,15 +50,15 @@ function showEventsByCity()
 			        			
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
-					        $('#eventList').append(html);
+					        ('#eventList').append(html);
 					        
-					        $thisEvent.name = val2['name'];
-					        $thisEvent.start_date = val2['start_date'];
-					        $thisEvent.display_start_date = val2['display_start_date'];
-					        $thisEvent.city = val2['city'];
-					        $thisEvent.country = val2['country'];
+					        thisEvent.name = val2['name'];
+					        thisEvent.start_date = val2['start_date'];
+					        thisEvent.display_start_date = val2['display_start_date'];
+					        thisEvent.city = val2['city'];
+					        thisEvent.country = val2['country'];
 
-					        $allEvents.push($thisEvent);	  	
+					        allEvents.push(thisEvent);	  	
 			        		}
 			          }); 
 			          
