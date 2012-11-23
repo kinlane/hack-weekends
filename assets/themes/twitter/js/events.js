@@ -69,7 +69,7 @@ function showEventsByCity()
          
         });
         
-       alert(allEvents);
+       alert(allEvents[0]);
         
     }       
      
