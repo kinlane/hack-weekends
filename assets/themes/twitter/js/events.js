@@ -58,6 +58,7 @@ function showEventsByCity()
 					        	});	
 			        		}
 			          }); 
+			          
 			        });	        	
 	        	
 	        	}
@@ -66,7 +67,7 @@ function showEventsByCity()
          
         });
         
-       alert(dodump(allEvents));
+       alert(allEvents);
         
     }       
      
