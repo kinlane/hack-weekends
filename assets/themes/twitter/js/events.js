@@ -65,12 +65,17 @@ function showEventsByCity()
           		citycount++; 
          	 	//alert(totalcities + ":" + citycount);
 	          	if(totalcities==citycount){
-	          		alert(totalcities + ":" + citycount);
+	          		//alert(totalcities + ":" + citycount);
 	          		//alert(dodump(allEvents,5));
 	          		//alert(allEvents);
 	          		
 	          		$.each(allEvents, function(key, val) {
-	          			alert(val['name']);
+	          			//alert(val['name']);
+	          			
+				        var template = $('#eventListingItemTemplate').html();
+				        var html = Mustache.to_html(template, val);
+				        $('#eventList').append(html);	          			
+	          			
 	          		});		
 	          		
 	          					          		          		
