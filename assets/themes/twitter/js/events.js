@@ -57,8 +57,8 @@ function showEventsByCity()
 					        thisEvent.display_start_date = val2['display_start_date'];
 					        thisEvent.city = val2['city'];
 					        thisEvent.country = val2['country'];
-alert(thisEvent);
-					        //allEvents.push(thisEvent);	  	
+							//alert(thisEvent);
+					        allEvents.push(thisEvent);	  	
 			        		}
 			          }); 
 			          
