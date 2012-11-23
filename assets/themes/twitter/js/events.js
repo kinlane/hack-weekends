@@ -20,7 +20,7 @@ function showEvents()
     
 function showEventsByCity()
     {
-    allEvents = {};	
+    allEvents = new Array;	
 	
     $.getJSON('data/events/cities.json', function(data) {
     	
