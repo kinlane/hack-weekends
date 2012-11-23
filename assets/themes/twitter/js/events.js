@@ -45,7 +45,7 @@ function showEventsByCity()
 			        			
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
-					        $('#eventListing').append(html);
+					        $('#eventTable').append(html);
 					        
 					        thisEvent['name'] = val2['start_date'];
 					        thisEvent['start_date'] = val2['start_date'];
