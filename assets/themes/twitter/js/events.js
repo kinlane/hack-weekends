@@ -19,7 +19,8 @@ function showEvents()
 function showEventsByCity()
     {
     	
-    $('#eventList').append('<table width="100%" id="sortable">');	
+    //$('#eventList').append('<table width="100%" id="sortable">');	
+    
    // alert("firing!");	
     $.getJSON('data/events/cities.json', function(data) {
 	//alert('in');
@@ -64,7 +65,7 @@ function showEventsByCity()
           }); 
         });
         
-        $('#eventList').append('</table>');
+       // $('#eventList').append('</table>');
         
     }       
      
