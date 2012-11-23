@@ -58,23 +58,15 @@ function showEventsByCity()
 					        	"city":val2['city'],
 					        	"country":val2['country']
 					        	});
-					        	
-					       	alert(allEvents);	
-		
 			        		}
-			        		
-			        	
 			          }); 
 			          
-			        });	        	
-	        	
+			        });	        		        	
 	        	}
-          }); 
-          
-         
+          });     
         });
         
-       
+     alert(dodump(allEvents));  
         
     }       
      
