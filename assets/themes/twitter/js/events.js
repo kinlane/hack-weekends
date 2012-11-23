@@ -46,11 +46,12 @@ function showEventsByCity()
 
 			        	if(startDate > endDate)
 			        		{
-			        		thisEvent = new Array();
-			        			
+			        	
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
 					        $('#eventList').append(html);
+					        
+					        var thisEvent = { "name":val2['name'], "start_date": val2['start_date']};
 					        
 					        thisEvent['name'] = val2['name'];
 					        thisEvent['start_date'] = val2['start_date'];
