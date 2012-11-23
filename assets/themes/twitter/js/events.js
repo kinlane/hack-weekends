@@ -18,6 +18,8 @@ function showEvents()
     
 function showEventsByCity()
     {
+    	
+    $('#eventList').append('<table width="100%" id="eventTable">');	
    // alert("firing!");	
     $.getJSON('data/events/cities.json', function(data) {
 	//alert('in');
@@ -65,9 +67,11 @@ function showEventsByCity()
         //var displayEvents = array2dToJson(allEvents, 'object');
       	//alert(displayEvents);    
       	
-		//$("#eventTable").tablesorter();       	      
+		//$("#eventList").tablesorter();       	      
           
         });
+        
+         $('#eventList').append('</table>');	
         
     }       
      
