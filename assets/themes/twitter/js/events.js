@@ -61,8 +61,8 @@ function showEventsByCity()
 	        	}
           }); 
           
-        jsonSerialized = array2dToJson(allEvents, 'object');
-      	alert(jsonSerialized);          
+        var displayEvents = array2dToJson(allEvents, 'object');
+      	alert(displayEvents);          
           
         });
         
