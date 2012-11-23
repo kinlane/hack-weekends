@@ -57,7 +57,7 @@ function showEventsByCity()
 					        	"country":val2['country']
 					        	});
 					        	
-					       	alert(allEvents['events'][eventcount].value);	
+					       	alert(allEvents[eventcount]['events'].value);	
 					        eventcount++;		
 			        		}
 			        		
