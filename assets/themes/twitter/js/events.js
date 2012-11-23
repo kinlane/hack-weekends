@@ -54,7 +54,11 @@ function showEventsByCity()
 					        thisEvent['country'] = val2['country'];	
 					        
 					        //alert(dodump(thisEvent));   
-					        allEvents.push(thisEvent);			
+					        //allEvents.push(thisEvent);
+					        
+					        allEvents[eventcount] = thisEvent;
+					        
+					        eventcount++;		
 			        		}
 			          }); 
 			        });	        	
