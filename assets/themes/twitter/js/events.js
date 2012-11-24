@@ -104,7 +104,7 @@ function showEventsByCity()
 				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
 				    }			    
 			              	
-			      alert("2:"+dodump(aOutput[0]));    	
+			      //alert("2:"+dodump(aOutput[0]));    	
           		for (i=0;i<allEvents.length;i++)
           			{
           			//alert("2:"+dodump(results[i]));
@@ -112,7 +112,7 @@ function showEventsByCity()
 			        var template = $('#eventListingItemTemplate').html();
 			        var html = Mustache.to_html(template, allEvents[i]);
 			        //alert(html);
-			        //$('#eventList').append(html);          			
+			        $('#eventList').append(html);          			
           			
           			}
 	          	}   	        	       	
