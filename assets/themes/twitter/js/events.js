@@ -72,7 +72,7 @@ function showEventsByCity()
 			        aTemp[aTemp.length] = sKey; 
 			    }
 			    aTemp.sort(function(a,b){
-			    	alert(a[0]);
+			    	//alert(a[0]);
 			    	//alert(b);
 				    if(a.start_date<b.start_date) return -1;
 				    if(a.start_date>b.start_date) return 1;
@@ -89,7 +89,7 @@ function showEventsByCity()
 			        var template = $('#eventListingItemTemplate').html();
 			        var html = Mustache.to_html(template, val3);
 			        alert(html);
-			        $('#eventList').append(html);         			
+			        //$('#eventList').append(html);         			
           			}); 
 	          	}   	        	       	
           });           
