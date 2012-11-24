@@ -95,6 +95,6 @@ function loadTableSort()
 	{
 	alert("turnign on sort!");
 	$("#eventList").tablesorter(); 
-	alert("turned on!")l
+	alert("turned on!");
 	}
     
