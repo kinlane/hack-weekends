@@ -93,6 +93,6 @@ function showCountries()
     
 function loadTableSort()
 	{
-	$("#eventList").tablesorter( {sortList: [[0,0]]} ); 	
+	$("#eventList").tablesorter(); 
 	}
     
