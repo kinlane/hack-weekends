@@ -18,10 +18,6 @@ function showEvents()
     }   
     
     
-function showEventsByCities()
-	{
-	alert($('#myTable').html());
-	}    
 function showEventsByCity()
     {
     citycount = 0;
