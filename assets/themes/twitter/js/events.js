@@ -19,7 +19,7 @@ function showEvents()
     }  
     
 function eventcallback(data){
-	
+	alert("in");
 	}     
     
 function showEventsByCity()
@@ -41,7 +41,7 @@ function showEventsByCity()
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
-			    $.getJSON(filename, function(data2) {},eventcallback(data2));
+			    $.getJSON(filename, function(eventdata) {},eventcallback());
 			               		        	
 	        	}  	        	       	
           });           
