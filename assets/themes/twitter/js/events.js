@@ -80,19 +80,20 @@ function showEventsByCity()
 	        	
           		citycount++; 
 	          	if(totalcities==citycount){
-	          	
-	          	//associativeSort(allEvents,'name');
-	          	var results = [];
-			 	var temp = [];
-			    for(var key in allEvents) {
-			        temp.push(allEvents[key].name);
-			    }
-			    //temp = temp.sort();
-			            	
+	          	       	
 	          	
           		alert(totalcities + ":" + citycount);
-          		//alert(temp.length);
-          		
+          		//alert(allEvents.length);
+          		for (i=0;i<results.length;i++)
+          			{
+          			//alert("2:"+dodump(results[i]));
+          			
+			        var template = $('#eventListingItemTemplate').html();
+			        var html = Mustache.to_html(template, results[i]);
+			        alert(html);
+			        //$('#eventList').append(html);          			
+          			
+          			}
 	          	}   	        	       	
           });           
             
