@@ -18,8 +18,8 @@ function showEvents()
         });
     }  
     
-function callback(data){
-	alert(data);
+function eventcallback(data){
+	alert(data['cities'][1]['city']);
 
 	}     
     
@@ -42,7 +42,7 @@ function showEventsByCity()
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
-			    $.getJSON(filename, function(data) {},callback(data));
+			    $.getJSON(filename, function(data) {},eventcallback(data));
 			               		        	
 	        	}  	        	       	
           });           
