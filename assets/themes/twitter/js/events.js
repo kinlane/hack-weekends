@@ -68,7 +68,7 @@ function showEventsByCity()
 	          		$.each(allEvents, function(key, val) {
 	          			alert(val['name']);
 	          			
-	          			//jEvent = JSON.stringify(val);
+	          			jEvent = JSON.stringify(val);
 	          			//alert(jEvent);
 	          			
 				        //var template = $('#eventListingItemTemplate').html();
