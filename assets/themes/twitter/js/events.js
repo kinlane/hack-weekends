@@ -98,7 +98,7 @@ function showEventsByCity()
 			        aTemp[aTemp.length] = sKey; 
 			    }
 			    //aTemp.sort();          	
-			          	
+			      alert("2:"+dodump(aTemp));    	
           		for (i=0;i<allEvents.length;i++)
           			{
           			//alert("2:"+dodump(results[i]));
