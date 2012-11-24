@@ -1,4 +1,3 @@
-var allEvents = new Array();
 
 function showEvents()
     {
@@ -20,6 +19,8 @@ function showEvents()
     
 function showEventsByCity()
     {
+    var allEvents = new Array();
+    	
     citycount = 0;
     eventcount = 0;	
 	
