@@ -105,12 +105,12 @@ function showEventsByCity()
 				    }			    
 			              	
 			      alert("2:"+dodump(aOutput[0]));    	
-          		for (i=0;i<allEvents.length;i++)
+          		for (i=0;i<aOutput.length;i++)
           			{
           			//alert("2:"+dodump(results[i]));
           			
 			        var template = $('#eventListingItemTemplate').html();
-			        var html = Mustache.to_html(template, allEvents[i]);
+			        var html = Mustache.to_html(template, aOutput[i]);
 			        alert(html);
 			        //$('#eventList').append(html);          			
           			
