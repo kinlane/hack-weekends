@@ -20,9 +20,7 @@ function showEvents()
     
 function callback(json){
     $.each(json, function(key, val) {
-    	  
- 
-		alert(dodump(val));
+    	  alert(key);
       }); 
 	}     
     
