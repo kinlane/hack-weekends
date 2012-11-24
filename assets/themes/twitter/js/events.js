@@ -16,7 +16,11 @@ function showEvents()
         		}
           }); 
         });
-    }   
+    }  
+    
+function callback(json){
+	alert(json);
+	}     
     
 function showEventsByCity()
     {
@@ -37,65 +41,9 @@ function showEventsByCity()
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
-			    $.getJSON(filename, function(eventdata) {
-			    	
-			        $.each(eventdata['events'], function(key2, val2) {
-			        	  
-			        	startDate = new Date(val2['start_date']);
-			        	endDate = new Date();
-
-			        	if(startDate > endDate)
-			        		{
-					        aEvent = { "name":val2['name'], "start_date": val2['start_date'], "display_start_date": val2['display_start_date'], "city": val2['city'], "country": val2['country']};
-					        var doit = allEvents.push(aEvent);	
-			        		}
-			          }); 
-			          
-			        });
+			    $.getJSON(filename, function(eventdata) {},callback);
 			               		        	
-	        	}
-	        	
-          		citycount++; 
-	          	if(totalcities==citycount){
-	          	       	
-          		alert(totalcities + ":" + citycount);
-			          	
-				var aTemp = [];
-			    for (var sKey in allEvents){
-			        aTemp[aTemp.length] = sKey; 
-			    }
-			    
-			    aTemp.sort(function(a,b){
-			    	
-			    	//alert(allEvents[aTemp[a]].start_date);
-			    	//alert(allEvents[aTemp[b]].start_date);
-			    	
-				    if(allEvents[aTemp[a]].start_date < allEvents[aTemp[b]].start_date) return -1;
-				    if(allEvents[aTemp[a]].start_date > allEvents[aTemp[b]].start_date) return 1;
-				    
-				    //if(allEvents[aTemp[a]].name < allEvents[aTemp[b]].name) return -1;
-				    //if(allEvents[aTemp[a]].name > allEvents[aTemp[b]].name) return 1;				    
-				    
-				    return 0;
-				});
-							    
-				 var aOutput = {};
-				    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
-				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
-				    }			    
-			              	
-  	
-          		$.each(aOutput, function(key3, val3) {
-			        var template = $('#eventListingItemTemplate').html();
-			        var html = Mustache.to_html(template, val3);
-			        //alert(html);
-			        $('#eventList').append(html);  
-			               			
-          			}); 
-          			
-          		//alert('done!');	
-          			
-	          	}   	        	       	
+	        	}  	        	       	
           });           
             
         }); 
