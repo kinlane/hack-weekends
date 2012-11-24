@@ -91,8 +91,5 @@ function showCountries()
         });
     }   
     
-function loadTable()
-	{
-	$("#eventList").tablesorter( {sortList: [[0,0]]} ); 	
-	}
+
     
