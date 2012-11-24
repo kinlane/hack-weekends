@@ -92,7 +92,7 @@ function showCountries()
     }   
     
 function loadTable()
-{
-$("#myTable").tablesorter(); 	
-}
+	{
+	$("#myTable").tablesorter(); 	
+	}
     
