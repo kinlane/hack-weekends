@@ -22,7 +22,13 @@ function callback(json){
 	alert("IN");
     $.each(json, function(key, val) {
     	  
-    	alert(val);
+    	startDate = new Date(val['start_date']);
+    	endDate = new Date();
+
+    	if(startDate > endDate)
+    		{
+	        alert("DOIN!");
+    		}
       }); 
 	}     
     
