@@ -72,8 +72,8 @@ function showEventsByCity()
 			        aTemp[aTemp.length] = sKey; 
 			    }
 			    aTemp.sort(function(a,b){
-			    	alert(a[2]);
-			    	alert(b[2]);
+			    	alert(dodump(a,3));
+			    	//alert(b[2]);
 				    if(a.start_date<b.start_date) return -1;
 				    if(a.start_date>b.start_date) return 1;
 				    return 0;
