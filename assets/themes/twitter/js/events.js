@@ -34,7 +34,6 @@ function showEventsByCity()
 	        	{
 	        		
 	        	filename = city.replace(" ","-");
-	        	filename = filename.replace("%20","-");	
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
