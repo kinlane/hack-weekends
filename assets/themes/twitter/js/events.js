@@ -101,7 +101,7 @@ function showEventsByCity()
 			    
 				 var aOutput = {};
 				    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
-				        aOutput[aTemp[nIndex]] = aInput[aTemp[nIndex]];
+				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
 				    }			    
 			              	
 			      alert("2:"+dodump(aOutput[0]));    	
