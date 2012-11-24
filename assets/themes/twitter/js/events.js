@@ -51,11 +51,10 @@ function showEventsByCity()
 
 			        	if(startDate > endDate)
 			        		{
-					        //var template = $('#eventListingItemTemplate').html();
-					       // var html = Mustache.to_html(template, val2);
+					        var template = $('#eventListingItemTemplate').html();
+					        var html = Mustache.to_html(template, val2);
 					        //alert(html);
-					       // $('#eventList').append(html);  
-					       alert("IN");
+					        $('#eventList').append(html);  
 			        		}
 			          }); 
 			          
