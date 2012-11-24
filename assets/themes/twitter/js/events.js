@@ -69,7 +69,8 @@ function showEventsByCity()
 	          		
 	          		for (i=0;i<allEvents.length;i++)
 	          			{
-	          			alert(allEvents[i]);
+	          			//alert(allEvents[i]);
+	          			alert("in");
 	          				
 	          			}
 	          		
