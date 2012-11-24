@@ -17,10 +17,6 @@ function showEvents()
         });
     }   
   
-function showEventsByCities()
-    {
-    alet($('#eventList').html());
-    }
     
 function showEventsByCity()
     {
