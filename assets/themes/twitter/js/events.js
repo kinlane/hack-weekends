@@ -67,8 +67,14 @@ function showEventsByCity()
 	          		
 	          		alert(totalcities + ":" + citycount);
 	          		
-	          		$.each(allEvents, function(key, val) {
-	          			alert(dodump(val));
+	          		for (i=0;i<allEvents.length;i++)
+	          			{
+	          			alert(allEvents[i]);
+	          				
+	          			}
+	          		
+	          		//$.each(allEvents, function(key, val) {
+	          			//alert(dodump(val));
 	          			//alert("2:"+dodump(val));
 	          			
 	          			//jEvent = JSON.stringify(val);
@@ -78,7 +84,7 @@ function showEventsByCity()
 				        //var html = Mustache.to_html(template, val);
 				        //$('#eventList').append(html);	          			
 	          			
-	          		});		
+	          		//});		
 
 	          	}   	        	
 	        	
