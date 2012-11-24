@@ -91,7 +91,7 @@ function showEventsByCity()
 			            	
 	          	
           		alert(totalcities + ":" + citycount);
-          		alert(temp.length);
+          		//alert(temp.length);
           		
 	          	}   	        	       	
           });           
