@@ -1,4 +1,3 @@
-allEvents = new Array();
 
 function showEvents()
     {
@@ -22,6 +21,7 @@ function showEventsByCity()
     {
     citycount = 0;
     eventcount = 0;	
+    allEvents = new Array();
 	
     $.getJSON('data/events/cities.json', function(data) {
     	allcities = data['cities'];
