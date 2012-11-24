@@ -16,7 +16,11 @@ function showEvents()
           }); 
         });
     }   
-    
+  
+function showEventsByCities()
+    {
+    alet($('#eventList').html());
+    }
     
 function showEventsByCity()
     {
@@ -60,8 +64,6 @@ function showEventsByCity()
           });           
             
         }); 
-        
-       // $("#eventList").tablesorter( {sortList: [[0,0], [1,0]]} ); 
  
     }       
      
@@ -78,18 +80,3 @@ function getEvent(id)
           });                            
         });
     }  
-
-    
-function showCountries()
-    {
-    alert("firing!");	
-    $.getJSON('data/events/san-francisco.json', function(data) {
-    	//alert(dodump(data,5));
-        var template = $('#eventListingTemplate').html();
-        var html = Mustache.to_html(template, data);
-        //alert(html);
-        $('#eventList').html(html);
-        });
-    }   
-    
-    
