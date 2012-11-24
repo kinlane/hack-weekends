@@ -66,7 +66,32 @@ function showEventsByCity()
 	          	       	
           		alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
-		
+			          	
+				var aTemp = [];
+			    for (var sKey in allEvents){
+			        aTemp[aTemp.length] = sKey; 
+			    }
+			    aTemp.sort(function(a,b){
+			    	//itema = a[0];
+			    	//alert(aTemp[itema]);
+			    	//alert(b);
+				    if(a.start_date<b.start_date) return -1;
+				    if(a.start_date>b.start_date) return 1;
+				    return 0;
+				});
+							    
+				 var aOutput = {};
+				    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
+				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
+				    }			    
+			              	
+  	
+          		$.each(aOutput, function(key3, val3) {
+			        var template = $('#eventListingItemTemplate').html();
+			        var html = Mustache.to_html(template, val3);
+			        alert(html);
+			        //$('#eventList').append(html);         			
+          			}); 
 	          	}   	        	       	
           });           
             
