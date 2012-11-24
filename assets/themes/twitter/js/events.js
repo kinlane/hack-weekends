@@ -1,6 +1,5 @@
 var allEvents = new Array();
 
-
 function addDisplayEvent(eventdata){
     $.each(eventdata['events'], function(key2, val2) { 	 
     	startDate = new Date(val2['start_date']);
