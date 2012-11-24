@@ -19,11 +19,7 @@ function showEvents()
     }  
     
 function eventcallback(data){
-	$.each(data, function(key, val) {
-	$.each(val, function(key2, val2) {
-		alert(val2);
-		});
-		});
+	
 	}     
     
 function showEventsByCity()
@@ -45,7 +41,7 @@ function showEventsByCity()
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
-			    $.getJSON(filename, function(data) {},eventcallback(data));
+			    $.getJSON(filename, function(data2) {},eventcallback(data2));
 			               		        	
 	        	}  	        	       	
           });           
