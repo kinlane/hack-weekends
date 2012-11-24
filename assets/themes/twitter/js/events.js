@@ -65,11 +65,11 @@ function showEventsByCity()
           		citycount++; 
 	          	if(totalcities==citycount){
 	          		
-	          		alert(totalcities + ":" + citycount);
+	          		//alert(totalcities + ":" + citycount);
 	          		alert(allEvents.length);
 	          		for (i=0;i<allEvents.length;i++)
 	          			{
-	          			alert(dodump(allEvents[i]));
+	          			alert(allEvents[i]['name']);
 	          			}
 	          		
 	          		//$.each(allEvents, function(key, val) {
