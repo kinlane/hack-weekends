@@ -19,7 +19,8 @@ function doDisplayEvent(currCount,totalCount)
 {
 	if(currCount==totalCount){
 	alert(currCount+':'+totalCount);
-	$.each(allEvents, function(key3, val3) { alert(val3); });
+	//alert(allEvents);
+	//$.each(allEvents, function(key3, val3) { alert(val3); });
 	}
 		
 } 
