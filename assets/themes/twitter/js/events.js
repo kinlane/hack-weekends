@@ -89,3 +89,8 @@ function showCountries()
         });
     }   
     
+$(document).ready(function() 
+    { 
+        $("#myTable").tablesorter(); 
+    } 
+); 
