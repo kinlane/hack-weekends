@@ -73,7 +73,7 @@ function showEventsByCity()
 			    }
 			    aTemp.sort(function(a,b){
 			    	itema = a[0];
-			    	alert(aTemp[itema]);
+			    	alert(allEvents[itema]);
 			    	//alert(b);
 				    if(a.start_date<b.start_date) return -1;
 				    if(a.start_date>b.start_date) return 1;
