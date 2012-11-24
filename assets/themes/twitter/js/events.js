@@ -21,9 +21,8 @@ function showEvents()
 function callback(json){
     $.each(json, function(key, val) {
     	  
-    	startDate = new Date(val['start_date']);
-    	endDate = new Date();
-		alert(startDate);
+ 
+		alert(dodump(val));
       }); 
 	}     
     
