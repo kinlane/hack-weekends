@@ -18,7 +18,7 @@ function showEvents()
         });
     }  
     
-function eventcallback(eventdata){
+function addDisplayEvent(eventdata){
     $.each(eventdata['events'], function(key2, val2) { 	 
     	startDate = new Date(val2['start_date']);
     	endDate = new Date();
@@ -29,9 +29,14 @@ function eventcallback(eventdata){
 	        var doit = allEvents.push(aEvent);	
     		}
     	 });
-	}     
+	}    
+	
+function doDisplayEvent(currCount,totalCount)
+{
+alert(citycount+':'+totalcities);	
+} 
     
-function showEventsByCity()
+function pullEventsByCity()
     {
     citycount = 0;
     eventcount = 0;	
@@ -56,7 +61,9 @@ function showEventsByCity()
 			    	
 			    	});
 			               		        	
-	        	}  	        	       	
+	        	}  
+	        citycount++;
+	        oDisplayEvent(citycount,totalcities);        	       	
           });           
             
         }); 
