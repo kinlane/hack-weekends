@@ -58,7 +58,7 @@ function showEventsByCity()
 	        	
           		citycount++; 
 	          	if(totalcities==citycount){
-          			return allEvents;
+          			return allEvents[1];
 	          	}   	        	       	
           });           
             
