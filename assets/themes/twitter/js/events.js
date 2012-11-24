@@ -31,10 +31,10 @@ function showEventsByCity()
     citycount = 0;
     eventcount = 0;	
 	
-    $.getJSON('data/events/cities.json', function(data) {
-    	allcities = data['cities'];
+    $.getJSON('data/events/cities.json', function(citydata) {
+    	allcities = citydata['cities'];
     	totalcities = allcities.length;
-        $.each(data['cities'], function(key, val) {
+        $.each(citydata['cities'], function(key, val) {
         	
         	city = val['city'];
         	     	
@@ -45,7 +45,7 @@ function showEventsByCity()
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
-			    $.getJSON(filename, function(eventdata) {},callback());
+			    $.getJSON(filename, function(data) {},callback(data));
 			               		        	
 	        	}  	        	       	
           });           
