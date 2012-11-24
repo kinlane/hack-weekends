@@ -67,7 +67,7 @@ function showEventsByCity()
 	          	
 	          	//sortedArray = allEvents.sort();
           		//alert(totalcities + ":" + citycount);
-          		alert(allEvents.length);
+          		//alert(allEvents.length);
           		for (i=0;i<allEvents.length;i++)
           			{
           			//alert("2:"+dodump(allEvents[i]));
