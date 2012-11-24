@@ -33,7 +33,10 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-alert(citycount+':'+totalcities);	
+if(citycount==totalcities)
+{
+alert(citycount+':'+totalcities);
+}	
 } 
     
 function pullEventsByCity()
