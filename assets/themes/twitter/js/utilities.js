@@ -28,17 +28,3 @@ function getUrlVar(key){
     return result && unescape(result[1]) || ""; 
 }   
               
-function associativeSort(givenArray, keyToSort) {
-    var results = [];
-
-    var temp = [];
-    for(var key in givenArray) {
-        temp.push(givenArray[key].name);
-    }
-    temp = temp.sort();
-    for(var x = 0; x < temp.length; x++) {
-        results[x] = givenArray[temp[x]];
-    }
-
-    return results;
-}
