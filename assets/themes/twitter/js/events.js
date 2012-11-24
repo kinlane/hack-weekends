@@ -91,6 +91,6 @@ function showCountries()
     
 $(document).ready(function() 
     { 
-        $("#myTable").tablesorter(); 
+        $("#eventList").tablesorter(); 
     } 
 ); 
