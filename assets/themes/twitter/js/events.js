@@ -1,5 +1,21 @@
 
 
+function associativeSort(givenArray, keyToSort) {
+    var results = [];
+
+    var temp = [];
+    for(var key in givenArray) {
+        temp.push(givenArray[key].name);
+    }
+    temp = temp.sort();
+    for(var x = 0; x < temp.length; x++) {
+        results[x] = givenArray[temp[x]];
+    }
+
+    return results;
+}
+
+
 function showEvents()
     {
    // alert("firing!");	
@@ -65,7 +81,7 @@ function showEventsByCity()
           		citycount++; 
 	          	if(totalcities==citycount){
 	          	
-	          	//sortedArray = allEvents.sort();
+	          	associativeSort(allEvents,'name');
           		//alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
           		for (i=0;i<allEvents.length;i++)
