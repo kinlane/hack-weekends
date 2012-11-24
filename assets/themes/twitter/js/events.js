@@ -99,16 +99,24 @@ function showEventsByCity()
 			    }
 			    aTemp.sort();
 			    
-				 var sortedEvents = {};
+				 var aOutput = {};
 				    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
-				        sortedEvents[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
+				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
 				    }			    
 			              	
-			    alert("2:"+dodump(sortedEvents[1]));
-			    alert("3:"+dodump(sortedEvents[2]));
-			    alert("4:"+dodump(sortedEvents[3]));
-			   alert(sortedEvents.length)    	
-          		
+			    alert("2:"+dodump(aOutput[1]));
+			    alert("3:"+dodump(aOutput[2]));
+			    alert("4:"+dodump(aOutput[3]));
+			   // alert("length: "+aOutput.length)    	
+          		$.each(aOutput, function(key2, val2) {
+          			//alert("2:"+dodump(aOutput[i]));
+          			alert(val2);
+			        //var template = $('#eventListingItemTemplate').html();
+			        //var html = Mustache.to_html(template, allEvents[i]);
+			       // alert(html);
+			        //$('#eventList').append(html);          			
+          			
+          			}); 
 	          	}   	        	       	
           });           
             
