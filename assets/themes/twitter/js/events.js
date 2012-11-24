@@ -19,7 +19,11 @@ function showEvents()
     }  
     
 function eventcallback(eventdata){
-	alert("in!");
+    $.each(eventdata['events'], function(key2, val2) { 	 
+    	alert(val2['name']); 
+    	startDate = new Date(val2['start_date']);
+    	endDate = new Date();
+    	 });
 	}     
     
 function showEventsByCity()
