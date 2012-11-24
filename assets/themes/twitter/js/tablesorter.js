@@ -1,477 +1,1031 @@
+/*
+ * 
+ * TableSorter 2.0 - Client-side table sorting with ease!
+ * Version 2.0.5b
+ * @requires jQuery v1.2.3
+ * 
+ * Copyright (c) 2007 Christian Bach
+ * Examples and docs at: http://tablesorter.com
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ * 
+ */
+/**
+ * 
+ * @description Create a sortable table with multi-column sorting capabilitys
+ * 
+ * @example $('table').tablesorter();
+ * @desc Create a simple tablesorter interface.
+ * 
+ * @example $('table').tablesorter({ sortList:[[0,0],[1,0]] });
+ * @desc Create a tablesorter interface and sort on the first and secound column column headers.
+ * 
+ * @example $('table').tablesorter({ headers: { 0: { sorter: false}, 1: {sorter: false} } });
+ *          
+ * @desc Create a tablesorter interface and disableing the first and second  column headers.
+ *      
+ * 
+ * @example $('table').tablesorter({ headers: { 0: {sorter:"integer"}, 1: {sorter:"currency"} } });
+ * 
+ * @desc Create a tablesorter interface and set a column parser for the first
+ *       and second column.
+ * 
+ * 
+ * @param Object
+ *            settings An object literal containing key/value pairs to provide
+ *            optional settings.
+ * 
+ * 
+ * @option String cssHeader (optional) A string of the class name to be appended
+ *         to sortable tr elements in the thead of the table. Default value:
+ *         "header"
+ * 
+ * @option String cssAsc (optional) A string of the class name to be appended to
+ *         sortable tr elements in the thead on a ascending sort. Default value:
+ *         "headerSortUp"
+ * 
+ * @option String cssDesc (optional) A string of the class name to be appended
+ *         to sortable tr elements in the thead on a descending sort. Default
+ *         value: "headerSortDown"
+ * 
+ * @option String sortInitialOrder (optional) A string of the inital sorting
+ *         order can be asc or desc. Default value: "asc"
+ * 
+ * @option String sortMultisortKey (optional) A string of the multi-column sort
+ *         key. Default value: "shiftKey"
+ * 
+ * @option String textExtraction (optional) A string of the text-extraction
+ *         method to use. For complex html structures inside td cell set this
+ *         option to "complex", on large tables the complex option can be slow.
+ *         Default value: "simple"
+ * 
+ * @option Object headers (optional) An array containing the forces sorting
+ *         rules. This option let's you specify a default sorting rule. Default
+ *         value: null
+ * 
+ * @option Array sortList (optional) An array containing the forces sorting
+ *         rules. This option let's you specify a default sorting rule. Default
+ *         value: null
+ * 
+ * @option Array sortForce (optional) An array containing forced sorting rules.
+ *         This option let's you specify a default sorting rule, which is
+ *         prepended to user-selected rules. Default value: null
+ * 
+ * @option Boolean sortLocaleCompare (optional) Boolean flag indicating whatever
+ *         to use String.localeCampare method or not. Default set to true.
+ * 
+ * 
+ * @option Array sortAppend (optional) An array containing forced sorting rules.
+ *         This option let's you specify a default sorting rule, which is
+ *         appended to user-selected rules. Default value: null
+ * 
+ * @option Boolean widthFixed (optional) Boolean flag indicating if tablesorter
+ *         should apply fixed widths to the table columns. This is usefull when
+ *         using the pager companion plugin. This options requires the dimension
+ *         jquery plugin. Default value: false
+ * 
+ * @option Boolean cancelSelection (optional) Boolean flag indicating if
+ *         tablesorter should cancel selection of the table headers text.
+ *         Default value: true
+ * 
+ * @option Boolean debug (optional) Boolean flag indicating if tablesorter
+ *         should display debuging information usefull for development.
+ * 
+ * @type jQuery
+ * 
+ * @name tablesorter
+ * 
+ * @cat Plugins/Tablesorter
+ * 
+ * @author Christian Bach/christian.bach@polyester.se
+ */
 
-var stIsIE = /*@cc_on!@*/false;
+(function ($) {
+    $.extend({
+        tablesorter: new
+        function () {
 
-sorttable = {
-  init: function() {
-    // quit if this function has already been called
-    if (arguments.callee.done) return;
-    // flag this function so we don't do the same thing twice
-    arguments.callee.done = true;
-    // kill the timer
-    if (_timer) clearInterval(_timer);
+            var parsers = [],
+                widgets = [];
 
-    if (!document.createElement || !document.getElementsByTagName) return;
+            this.defaults = {
+                cssHeader: "header",
+                cssAsc: "headerSortUp",
+                cssDesc: "headerSortDown",
+                cssChildRow: "expand-child",
+                sortInitialOrder: "asc",
+                sortMultiSortKey: "shiftKey",
+                sortForce: null,
+                sortAppend: null,
+                sortLocaleCompare: true,
+                textExtraction: "simple",
+                parsers: {}, widgets: [],
+                widgetZebra: {
+                    css: ["even", "odd"]
+                }, headers: {}, widthFixed: false,
+                cancelSelection: true,
+                sortList: [],
+                headerList: [],
+                dateFormat: "us",
+                decimal: '/\.|\,/g',
+                onRenderHeader: null,
+                selectorHeaders: 'thead th',
+                debug: false
+            };
 
-    sorttable.DATE_RE = /^(\d\d?)[\/\.-](\d\d?)[\/\.-]((\d\d)?\d\d)$/;
+            /* debuging utils */
 
-    forEach(document.getElementsByTagName('table'), function(table) {
-      if (table.className.search(/\bsortable\b/) != -1) {
-        sorttable.makeSortable(table);
-      }
+            function benchmark(s, d) {
+                log(s + "," + (new Date().getTime() - d.getTime()) + "ms");
+            }
+
+            this.benchmark = benchmark;
+
+            function log(s) {
+                if (typeof console != "undefined" && typeof console.debug != "undefined") {
+                    console.log(s);
+                } else {
+                    alert(s);
+                }
+            }
+
+            /* parsers utils */
+
+            function buildParserCache(table, $headers) {
+
+                if (table.config.debug) {
+                    var parsersDebug = "";
+                }
+
+                if (table.tBodies.length == 0) return; // In the case of empty tables
+                var rows = table.tBodies[0].rows;
+
+                if (rows[0]) {
+
+                    var list = [],
+                        cells = rows[0].cells,
+                        l = cells.length;
+
+                    for (var i = 0; i < l; i++) {
+
+                        var p = false;
+
+                        if ($.metadata && ($($headers[i]).metadata() && $($headers[i]).metadata().sorter)) {
+
+                            p = getParserById($($headers[i]).metadata().sorter);
+
+                        } else if ((table.config.headers[i] && table.config.headers[i].sorter)) {
+
+                            p = getParserById(table.config.headers[i].sorter);
+                        }
+                        if (!p) {
+
+                            p = detectParserForColumn(table, rows, -1, i);
+                        }
+
+                        if (table.config.debug) {
+                            parsersDebug += "column:" + i + " parser:" + p.id + "\n";
+                        }
+
+                        list.push(p);
+                    }
+                }
+
+                if (table.config.debug) {
+                    log(parsersDebug);
+                }
+
+                return list;
+            };
+
+            function detectParserForColumn(table, rows, rowIndex, cellIndex) {
+                var l = parsers.length,
+                    node = false,
+                    nodeValue = false,
+                    keepLooking = true;
+                while (nodeValue == '' && keepLooking) {
+                    rowIndex++;
+                    if (rows[rowIndex]) {
+                        node = getNodeFromRowAndCellIndex(rows, rowIndex, cellIndex);
+                        nodeValue = trimAndGetNodeText(table.config, node);
+                        if (table.config.debug) {
+                            log('Checking if value was empty on row:' + rowIndex);
+                        }
+                    } else {
+                        keepLooking = false;
+                    }
+                }
+                for (var i = 1; i < l; i++) {
+                    if (parsers[i].is(nodeValue, table, node)) {
+                        return parsers[i];
+                    }
+                }
+                // 0 is always the generic parser (text)
+                return parsers[0];
+            }
+
+            function getNodeFromRowAndCellIndex(rows, rowIndex, cellIndex) {
+                return rows[rowIndex].cells[cellIndex];
+            }
+
+            function trimAndGetNodeText(config, node) {
+                return $.trim(getElementText(config, node));
+            }
+
+            function getParserById(name) {
+                var l = parsers.length;
+                for (var i = 0; i < l; i++) {
+                    if (parsers[i].id.toLowerCase() == name.toLowerCase()) {
+                        return parsers[i];
+                    }
+                }
+                return false;
+            }
+
+            /* utils */
+
+            function buildCache(table) {
+
+                if (table.config.debug) {
+                    var cacheTime = new Date();
+                }
+
+                var totalRows = (table.tBodies[0] && table.tBodies[0].rows.length) || 0,
+                    totalCells = (table.tBodies[0].rows[0] && table.tBodies[0].rows[0].cells.length) || 0,
+                    parsers = table.config.parsers,
+                    cache = {
+                        row: [],
+                        normalized: []
+                    };
+
+                for (var i = 0; i < totalRows; ++i) {
+
+                    /** Add the table data to main data array */
+                    var c = $(table.tBodies[0].rows[i]),
+                        cols = [];
+
+                    // if this is a child row, add it to the last row's children and
+                    // continue to the next row
+                    if (c.hasClass(table.config.cssChildRow)) {
+                        cache.row[cache.row.length - 1] = cache.row[cache.row.length - 1].add(c);
+                        // go to the next for loop
+                        continue;
+                    }
+
+                    cache.row.push(c);
+
+                    for (var j = 0; j < totalCells; ++j) {
+                        cols.push(parsers[j].format(getElementText(table.config, c[0].cells[j]), table, c[0].cells[j]));
+                    }
+
+                    cols.push(cache.normalized.length); // add position for rowCache
+                    cache.normalized.push(cols);
+                    cols = null;
+                };
+
+                if (table.config.debug) {
+                    benchmark("Building cache for " + totalRows + " rows:", cacheTime);
+                }
+
+                return cache;
+            };
+
+            function getElementText(config, node) {
+
+                var text = "";
+
+                if (!node) return "";
+
+                if (!config.supportsTextContent) config.supportsTextContent = node.textContent || false;
+
+                if (config.textExtraction == "simple") {
+                    if (config.supportsTextContent) {
+                        text = node.textContent;
+                    } else {
+                        if (node.childNodes[0] && node.childNodes[0].hasChildNodes()) {
+                            text = node.childNodes[0].innerHTML;
+                        } else {
+                            text = node.innerHTML;
+                        }
+                    }
+                } else {
+                    if (typeof(config.textExtraction) == "function") {
+                        text = config.textExtraction(node);
+                    } else {
+                        text = $(node).text();
+                    }
+                }
+                return text;
+            }
+
+            function appendToTable(table, cache) {
+
+                if (table.config.debug) {
+                    var appendTime = new Date()
+                }
+
+                var c = cache,
+                    r = c.row,
+                    n = c.normalized,
+                    totalRows = n.length,
+                    checkCell = (n[0].length - 1),
+                    tableBody = $(table.tBodies[0]),
+                    rows = [];
+
+
+                for (var i = 0; i < totalRows; i++) {
+                    var pos = n[i][checkCell];
+
+                    rows.push(r[pos]);
+
+                    if (!table.config.appender) {
+
+                        //var o = ;
+                        var l = r[pos].length;
+                        for (var j = 0; j < l; j++) {
+                            tableBody[0].appendChild(r[pos][j]);
+                        }
+
+                        // 
+                    }
+                }
+
+
+
+                if (table.config.appender) {
+
+                    table.config.appender(table, rows);
+                }
+
+                rows = null;
+
+                if (table.config.debug) {
+                    benchmark("Rebuilt table:", appendTime);
+                }
+
+                // apply table widgets
+                applyWidget(table);
+
+                // trigger sortend
+                setTimeout(function () {
+                    $(table).trigger("sortEnd");
+                }, 0);
+
+            };
+
+            function buildHeaders(table) {
+
+                if (table.config.debug) {
+                    var time = new Date();
+                }
+
+                var meta = ($.metadata) ? true : false;
+                
+                var header_index = computeTableHeaderCellIndexes(table);
+
+                $tableHeaders = $(table.config.selectorHeaders, table).each(function (index) {
+
+                    this.column = header_index[this.parentNode.rowIndex + "-" + this.cellIndex];
+                    // this.column = index;
+                    this.order = formatSortingOrder(table.config.sortInitialOrder);
+                    
+					
+					this.count = this.order;
+
+                    if (checkHeaderMetadata(this) || checkHeaderOptions(table, index)) this.sortDisabled = true;
+					if (checkHeaderOptionsSortingLocked(table, index)) this.order = this.lockedOrder = checkHeaderOptionsSortingLocked(table, index);
+
+                    if (!this.sortDisabled) {
+                        var $th = $(this).addClass(table.config.cssHeader);
+                        if (table.config.onRenderHeader) table.config.onRenderHeader.apply($th);
+                    }
+
+                    // add cell to headerList
+                    table.config.headerList[index] = this;
+                });
+
+                if (table.config.debug) {
+                    benchmark("Built headers:", time);
+                    log($tableHeaders);
+                }
+
+                return $tableHeaders;
+
+            };
+
+            // from:
+            // http://www.javascripttoolbox.com/lib/table/examples.php
+            // http://www.javascripttoolbox.com/temp/table_cellindex.html
+
+
+            function computeTableHeaderCellIndexes(t) {
+                var matrix = [];
+                var lookup = {};
+                var thead = t.getElementsByTagName('THEAD')[0];
+                var trs = thead.getElementsByTagName('TR');
+
+                for (var i = 0; i < trs.length; i++) {
+                    var cells = trs[i].cells;
+                    for (var j = 0; j < cells.length; j++) {
+                        var c = cells[j];
+
+                        var rowIndex = c.parentNode.rowIndex;
+                        var cellId = rowIndex + "-" + c.cellIndex;
+                        var rowSpan = c.rowSpan || 1;
+                        var colSpan = c.colSpan || 1
+                        var firstAvailCol;
+                        if (typeof(matrix[rowIndex]) == "undefined") {
+                            matrix[rowIndex] = [];
+                        }
+                        // Find first available column in the first row
+                        for (var k = 0; k < matrix[rowIndex].length + 1; k++) {
+                            if (typeof(matrix[rowIndex][k]) == "undefined") {
+                                firstAvailCol = k;
+                                break;
+                            }
+                        }
+                        lookup[cellId] = firstAvailCol;
+                        for (var k = rowIndex; k < rowIndex + rowSpan; k++) {
+                            if (typeof(matrix[k]) == "undefined") {
+                                matrix[k] = [];
+                            }
+                            var matrixrow = matrix[k];
+                            for (var l = firstAvailCol; l < firstAvailCol + colSpan; l++) {
+                                matrixrow[l] = "x";
+                            }
+                        }
+                    }
+                }
+                return lookup;
+            }
+
+            function checkCellColSpan(table, rows, row) {
+                var arr = [],
+                    r = table.tHead.rows,
+                    c = r[row].cells;
+
+                for (var i = 0; i < c.length; i++) {
+                    var cell = c[i];
+
+                    if (cell.colSpan > 1) {
+                        arr = arr.concat(checkCellColSpan(table, headerArr, row++));
+                    } else {
+                        if (table.tHead.length == 1 || (cell.rowSpan > 1 || !r[row + 1])) {
+                            arr.push(cell);
+                        }
+                        // headerArr[row] = (i+row);
+                    }
+                }
+                return arr;
+            };
+
+            function checkHeaderMetadata(cell) {
+                if (($.metadata) && ($(cell).metadata().sorter === false)) {
+                    return true;
+                };
+                return false;
+            }
+
+            function checkHeaderOptions(table, i) {
+                if ((table.config.headers[i]) && (table.config.headers[i].sorter === false)) {
+                    return true;
+                };
+                return false;
+            }
+			
+			 function checkHeaderOptionsSortingLocked(table, i) {
+                if ((table.config.headers[i]) && (table.config.headers[i].lockedOrder)) return table.config.headers[i].lockedOrder;
+                return false;
+            }
+			
+            function applyWidget(table) {
+                var c = table.config.widgets;
+                var l = c.length;
+                for (var i = 0; i < l; i++) {
+
+                    getWidgetById(c[i]).format(table);
+                }
+
+            }
+
+            function getWidgetById(name) {
+                var l = widgets.length;
+                for (var i = 0; i < l; i++) {
+                    if (widgets[i].id.toLowerCase() == name.toLowerCase()) {
+                        return widgets[i];
+                    }
+                }
+            };
+
+            function formatSortingOrder(v) {
+                if (typeof(v) != "Number") {
+                    return (v.toLowerCase() == "desc") ? 1 : 0;
+                } else {
+                    return (v == 1) ? 1 : 0;
+                }
+            }
+
+            function isValueInArray(v, a) {
+                var l = a.length;
+                for (var i = 0; i < l; i++) {
+                    if (a[i][0] == v) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function setHeadersCss(table, $headers, list, css) {
+                // remove all header information
+                $headers.removeClass(css[0]).removeClass(css[1]);
+
+                var h = [];
+                $headers.each(function (offset) {
+                    if (!this.sortDisabled) {
+                        h[this.column] = $(this);
+                    }
+                });
+
+                var l = list.length;
+                for (var i = 0; i < l; i++) {
+                    h[list[i][0]].addClass(css[list[i][1]]);
+                }
+            }
+
+            function fixColumnWidth(table, $headers) {
+                var c = table.config;
+                if (c.widthFixed) {
+                    var colgroup = $('<colgroup>');
+                    $("tr:first td", table.tBodies[0]).each(function () {
+                        colgroup.append($('<col>').css('width', $(this).width()));
+                    });
+                    $(table).prepend(colgroup);
+                };
+            }
+
+            function updateHeaderSortCount(table, sortList) {
+                var c = table.config,
+                    l = sortList.length;
+                for (var i = 0; i < l; i++) {
+                    var s = sortList[i],
+                        o = c.headerList[s[0]];
+                    o.count = s[1];
+                    o.count++;
+                }
+            }
+
+            /* sorting methods */
+
+            function multisort(table, sortList, cache) {
+
+                if (table.config.debug) {
+                    var sortTime = new Date();
+                }
+
+                var dynamicExp = "var sortWrapper = function(a,b) {",
+                    l = sortList.length;
+
+                // TODO: inline functions.
+                for (var i = 0; i < l; i++) {
+
+                    var c = sortList[i][0];
+                    var order = sortList[i][1];
+                    // var s = (getCachedSortType(table.config.parsers,c) == "text") ?
+                    // ((order == 0) ? "sortText" : "sortTextDesc") : ((order == 0) ?
+                    // "sortNumeric" : "sortNumericDesc");
+                    // var s = (table.config.parsers[c].type == "text") ? ((order == 0)
+                    // ? makeSortText(c) : makeSortTextDesc(c)) : ((order == 0) ?
+                    // makeSortNumeric(c) : makeSortNumericDesc(c));
+                    var s = (table.config.parsers[c].type == "text") ? ((order == 0) ? makeSortFunction("text", "asc", c) : makeSortFunction("text", "desc", c)) : ((order == 0) ? makeSortFunction("numeric", "asc", c) : makeSortFunction("numeric", "desc", c));
+                    var e = "e" + i;
+
+                    dynamicExp += "var " + e + " = " + s; // + "(a[" + c + "],b[" + c
+                    // + "]); ";
+                    dynamicExp += "if(" + e + ") { return " + e + "; } ";
+                    dynamicExp += "else { ";
+
+                }
+
+                // if value is the same keep orignal order
+                var orgOrderCol = cache.normalized[0].length - 1;
+                dynamicExp += "return a[" + orgOrderCol + "]-b[" + orgOrderCol + "];";
+
+                for (var i = 0; i < l; i++) {
+                    dynamicExp += "}; ";
+                }
+
+                dynamicExp += "return 0; ";
+                dynamicExp += "}; ";
+
+                if (table.config.debug) {
+                    benchmark("Evaling expression:" + dynamicExp, new Date());
+                }
+
+                eval(dynamicExp);
+
+                cache.normalized.sort(sortWrapper);
+
+                if (table.config.debug) {
+                    benchmark("Sorting on " + sortList.toString() + " and dir " + order + " time:", sortTime);
+                }
+
+                return cache;
+            };
+
+            function makeSortFunction(type, direction, index) {
+                var a = "a[" + index + "]",
+                    b = "b[" + index + "]";
+                if (type == 'text' && direction == 'asc') {
+                    return "(" + a + " == " + b + " ? 0 : (" + a + " === null ? Number.POSITIVE_INFINITY : (" + b + " === null ? Number.NEGATIVE_INFINITY : (" + a + " < " + b + ") ? -1 : 1 )));";
+                } else if (type == 'text' && direction == 'desc') {
+                    return "(" + a + " == " + b + " ? 0 : (" + a + " === null ? Number.POSITIVE_INFINITY : (" + b + " === null ? Number.NEGATIVE_INFINITY : (" + b + " < " + a + ") ? -1 : 1 )));";
+                } else if (type == 'numeric' && direction == 'asc') {
+                    return "(" + a + " === null && " + b + " === null) ? 0 :(" + a + " === null ? Number.POSITIVE_INFINITY : (" + b + " === null ? Number.NEGATIVE_INFINITY : " + a + " - " + b + "));";
+                } else if (type == 'numeric' && direction == 'desc') {
+                    return "(" + a + " === null && " + b + " === null) ? 0 :(" + a + " === null ? Number.POSITIVE_INFINITY : (" + b + " === null ? Number.NEGATIVE_INFINITY : " + b + " - " + a + "));";
+                }
+            };
+
+            function makeSortText(i) {
+                return "((a[" + i + "] < b[" + i + "]) ? -1 : ((a[" + i + "] > b[" + i + "]) ? 1 : 0));";
+            };
+
+            function makeSortTextDesc(i) {
+                return "((b[" + i + "] < a[" + i + "]) ? -1 : ((b[" + i + "] > a[" + i + "]) ? 1 : 0));";
+            };
+
+            function makeSortNumeric(i) {
+                return "a[" + i + "]-b[" + i + "];";
+            };
+
+            function makeSortNumericDesc(i) {
+                return "b[" + i + "]-a[" + i + "];";
+            };
+
+            function sortText(a, b) {
+                if (table.config.sortLocaleCompare) return a.localeCompare(b);
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            };
+
+            function sortTextDesc(a, b) {
+                if (table.config.sortLocaleCompare) return b.localeCompare(a);
+                return ((b < a) ? -1 : ((b > a) ? 1 : 0));
+            };
+
+            function sortNumeric(a, b) {
+                return a - b;
+            };
+
+            function sortNumericDesc(a, b) {
+                return b - a;
+            };
+
+            function getCachedSortType(parsers, i) {
+                return parsers[i].type;
+            }; /* public methods */
+            this.construct = function (settings) {
+                return this.each(function () {
+                    // if no thead or tbody quit.
+                    if (!this.tHead || !this.tBodies) return;
+                    // declare
+                    var $this, $document, $headers, cache, config, shiftDown = 0,
+                        sortOrder;
+                    // new blank config object
+                    this.config = {};
+                    // merge and extend.
+                    config = $.extend(this.config, $.tablesorter.defaults, settings);
+                    // store common expression for speed
+                    $this = $(this);
+                    // save the settings where they read
+                    $.data(this, "tablesorter", config);
+                    // build headers
+                    $headers = buildHeaders(this);
+                    // try to auto detect column type, and store in tables config
+                    this.config.parsers = buildParserCache(this, $headers);
+                    // build the cache for the tbody cells
+                    cache = buildCache(this);
+                    // get the css class names, could be done else where.
+                    var sortCSS = [config.cssDesc, config.cssAsc];
+                    // fixate columns if the users supplies the fixedWidth option
+                    fixColumnWidth(this);
+                    // apply event handling to headers
+                    // this is to big, perhaps break it out?
+                    $headers.click(
+
+                    function (e) {
+                        var totalRows = ($this[0].tBodies[0] && $this[0].tBodies[0].rows.length) || 0;
+                        if (!this.sortDisabled && totalRows > 0) {
+                            // Only call sortStart if sorting is
+                            // enabled.
+                            $this.trigger("sortStart");
+                            // store exp, for speed
+                            var $cell = $(this);
+                            // get current column index
+                            var i = this.column;
+                            // get current column sort order
+                            this.order = this.count++ % 2;
+							// always sort on the locked order.
+							if(this.lockedOrder) this.order = this.lockedOrder;
+							
+							// user only whants to sort on one
+                            // column
+                            if (!e[config.sortMultiSortKey]) {
+                                // flush the sort list
+                                config.sortList = [];
+                                if (config.sortForce != null) {
+                                    var a = config.sortForce;
+                                    for (var j = 0; j < a.length; j++) {
+                                        if (a[j][0] != i) {
+                                            config.sortList.push(a[j]);
+                                        }
+                                    }
+                                }
+                                // add column to sort list
+                                config.sortList.push([i, this.order]);
+                                // multi column sorting
+                            } else {
+                                // the user has clicked on an all
+                                // ready sortet column.
+                                if (isValueInArray(i, config.sortList)) {
+                                    // revers the sorting direction
+                                    // for all tables.
+                                    for (var j = 0; j < config.sortList.length; j++) {
+                                        var s = config.sortList[j],
+                                            o = config.headerList[s[0]];
+                                        if (s[0] == i) {
+                                            o.count = s[1];
+                                            o.count++;
+                                            s[1] = o.count % 2;
+                                        }
+                                    }
+                                } else {
+                                    // add column to sort list array
+                                    config.sortList.push([i, this.order]);
+                                }
+                            };
+                            setTimeout(function () {
+                                // set css for headers
+                                setHeadersCss($this[0], $headers, config.sortList, sortCSS);
+                                appendToTable(
+	                                $this[0], multisort(
+	                                $this[0], config.sortList, cache)
+								);
+                            }, 1);
+                            // stop normal event by returning false
+                            return false;
+                        }
+                        // cancel selection
+                    }).mousedown(function () {
+                        if (config.cancelSelection) {
+                            this.onselectstart = function () {
+                                return false
+                            };
+                            return false;
+                        }
+                    });
+                    // apply easy methods that trigger binded events
+                    $this.bind("update", function () {
+                        var me = this;
+                        setTimeout(function () {
+                            // rebuild parsers.
+                            me.config.parsers = buildParserCache(
+                            me, $headers);
+                            // rebuild the cache map
+                            cache = buildCache(me);
+                        }, 1);
+                    }).bind("updateCell", function (e, cell) {
+                        var config = this.config;
+                        // get position from the dom.
+                        var pos = [(cell.parentNode.rowIndex - 1), cell.cellIndex];
+                        // update cache
+                        cache.normalized[pos[0]][pos[1]] = config.parsers[pos[1]].format(
+                        getElementText(config, cell), cell);
+                    }).bind("sorton", function (e, list) {
+                        $(this).trigger("sortStart");
+                        config.sortList = list;
+                        // update and store the sortlist
+                        var sortList = config.sortList;
+                        // update header count index
+                        updateHeaderSortCount(this, sortList);
+                        // set css for headers
+                        setHeadersCss(this, $headers, sortList, sortCSS);
+                        // sort the table and append it to the dom
+                        appendToTable(this, multisort(this, sortList, cache));
+                    }).bind("appendCache", function () {
+                        appendToTable(this, cache);
+                    }).bind("applyWidgetId", function (e, id) {
+                        getWidgetById(id).format(this);
+                    }).bind("applyWidgets", function () {
+                        // apply widgets
+                        applyWidget(this);
+                    });
+                    if ($.metadata && ($(this).metadata() && $(this).metadata().sortlist)) {
+                        config.sortList = $(this).metadata().sortlist;
+                    }
+                    // if user has supplied a sort list to constructor.
+                    if (config.sortList.length > 0) {
+                        $this.trigger("sorton", [config.sortList]);
+                    }
+                    // apply widgets
+                    applyWidget(this);
+                });
+            };
+            this.addParser = function (parser) {
+                var l = parsers.length,
+                    a = true;
+                for (var i = 0; i < l; i++) {
+                    if (parsers[i].id.toLowerCase() == parser.id.toLowerCase()) {
+                        a = false;
+                    }
+                }
+                if (a) {
+                    parsers.push(parser);
+                };
+            };
+            this.addWidget = function (widget) {
+                widgets.push(widget);
+            };
+            this.formatFloat = function (s) {
+                var i = parseFloat(s);
+                return (isNaN(i)) ? 0 : i;
+            };
+            this.formatInt = function (s) {
+                var i = parseInt(s);
+                return (isNaN(i)) ? 0 : i;
+            };
+            this.isDigit = function (s, config) {
+                // replace all an wanted chars and match.
+                return /^[-+]?\d*$/.test($.trim(s.replace(/[,.']/g, '')));
+            };
+            this.clearTableBody = function (table) {
+                if ($.browser.msie) {
+                    function empty() {
+                        while (this.firstChild)
+                        this.removeChild(this.firstChild);
+                    }
+                    empty.apply(table.tBodies[0]);
+                } else {
+                    table.tBodies[0].innerHTML = "";
+                }
+            };
+        }
     });
 
-  },
+    // extend plugin scope
+    $.fn.extend({
+        tablesorter: $.tablesorter.construct
+    });
 
-  makeSortable: function(table) {
-    if (table.getElementsByTagName('thead').length == 0) {
-      // table doesn't have a tHead. Since it should have, create one and
-      // put the first table row in it.
-      the = document.createElement('thead');
-      the.appendChild(table.rows[0]);
-      table.insertBefore(the,table.firstChild);
-    }
-    // Safari doesn't support table.tHead, sigh
-    if (table.tHead == null) table.tHead = table.getElementsByTagName('thead')[0];
+    // make shortcut
+    var ts = $.tablesorter;
 
-    if (table.tHead.rows.length != 1) return; // can't cope with two header rows
+    // add default parsers
+    ts.addParser({
+        id: "text",
+        is: function (s) {
+            return true;
+        }, format: function (s) {
+            return $.trim(s.toLocaleLowerCase());
+        }, type: "text"
+    });
 
-    // Sorttable v1 put rows with a class of "sortbottom" at the bottom (as
-    // "total" rows, for example). This is B&R, since what you're supposed
-    // to do is put them in a tfoot. So, if there are sortbottom rows,
-    // for backwards compatibility, move them to tfoot (creating it if needed).
-    sortbottomrows = [];
-    for (var i=0; i<table.rows.length; i++) {
-      if (table.rows[i].className.search(/\bsortbottom\b/) != -1) {
-        sortbottomrows[sortbottomrows.length] = table.rows[i];
-      }
-    }
-    if (sortbottomrows) {
-      if (table.tFoot == null) {
-        // table doesn't have a tfoot. Create one.
-        tfo = document.createElement('tfoot');
-        table.appendChild(tfo);
-      }
-      for (var i=0; i<sortbottomrows.length; i++) {
-        tfo.appendChild(sortbottomrows[i]);
-      }
-      delete sortbottomrows;
-    }
+    ts.addParser({
+        id: "digit",
+        is: function (s, table) {
+            var c = table.config;
+            return $.tablesorter.isDigit(s, c);
+        }, format: function (s) {
+            return $.tablesorter.formatFloat(s);
+        }, type: "numeric"
+    });
 
-    // work through each column and calculate its type
-    headrow = table.tHead.rows[0].cells;
-    for (var i=0; i<headrow.length; i++) {
-      // manually override the type with a sorttable_type attribute
-      if (!headrow[i].className.match(/\bsorttable_nosort\b/)) { // skip this col
-        mtch = headrow[i].className.match(/\bsorttable_([a-z0-9]+)\b/);
-        if (mtch) { override = mtch[1]; }
-	      if (mtch && typeof sorttable["sort_"+override] == 'function') {
-	        headrow[i].sorttable_sortfunction = sorttable["sort_"+override];
-	      } else {
-	        headrow[i].sorttable_sortfunction = sorttable.guessType(table,i);
-	      }
-	      // make it clickable to sort
-	      headrow[i].sorttable_columnindex = i;
-	      headrow[i].sorttable_tbody = table.tBodies[0];
-	      dean_addEvent(headrow[i],"click", sorttable.innerSortFunction = function(e) {
+    ts.addParser({
+        id: "currency",
+        is: function (s) {
+            return /^[£$€?.]/.test(s);
+        }, format: function (s) {
+            return $.tablesorter.formatFloat(s.replace(new RegExp(/[£$€]/g), ""));
+        }, type: "numeric"
+    });
 
-          if (this.className.search(/\bsorttable_sorted\b/) != -1) {
-            // if we're already sorted by this column, just
-            // reverse the table, which is quicker
-            sorttable.reverse(this.sorttable_tbody);
-            this.className = this.className.replace('sorttable_sorted',
-                                                    'sorttable_sorted_reverse');
-            this.removeChild(document.getElementById('sorttable_sortfwdind'));
-            sortrevind = document.createElement('span');
-            sortrevind.id = "sorttable_sortrevind";
-            sortrevind.innerHTML = stIsIE ? '&nbsp<font face="webdings">5</font>' : '&nbsp;&#x25B4;';
-            this.appendChild(sortrevind);
-            return;
-          }
-          if (this.className.search(/\bsorttable_sorted_reverse\b/) != -1) {
-            // if we're already sorted by this column in reverse, just
-            // re-reverse the table, which is quicker
-            sorttable.reverse(this.sorttable_tbody);
-            this.className = this.className.replace('sorttable_sorted_reverse',
-                                                    'sorttable_sorted');
-            this.removeChild(document.getElementById('sorttable_sortrevind'));
-            sortfwdind = document.createElement('span');
-            sortfwdind.id = "sorttable_sortfwdind";
-            sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : '&nbsp;&#x25BE;';
-            this.appendChild(sortfwdind);
-            return;
-          }
-
-          // remove sorttable_sorted classes
-          theadrow = this.parentNode;
-          forEach(theadrow.childNodes, function(cell) {
-            if (cell.nodeType == 1) { // an element
-              cell.className = cell.className.replace('sorttable_sorted_reverse','');
-              cell.className = cell.className.replace('sorttable_sorted','');
+    ts.addParser({
+        id: "ipAddress",
+        is: function (s) {
+            return /^\d{2,3}[\.]\d{2,3}[\.]\d{2,3}[\.]\d{2,3}$/.test(s);
+        }, format: function (s) {
+            var a = s.split("."),
+                r = "",
+                l = a.length;
+            for (var i = 0; i < l; i++) {
+                var item = a[i];
+                if (item.length == 2) {
+                    r += "0" + item;
+                } else {
+                    r += item;
+                }
             }
-          });
-          sortfwdind = document.getElementById('sorttable_sortfwdind');
-          if (sortfwdind) { sortfwdind.parentNode.removeChild(sortfwdind); }
-          sortrevind = document.getElementById('sorttable_sortrevind');
-          if (sortrevind) { sortrevind.parentNode.removeChild(sortrevind); }
+            return $.tablesorter.formatFloat(r);
+        }, type: "numeric"
+    });
 
-          this.className += ' sorttable_sorted';
-          sortfwdind = document.createElement('span');
-          sortfwdind.id = "sorttable_sortfwdind";
-          sortfwdind.innerHTML = stIsIE ? '&nbsp<font face="webdings">6</font>' : '&nbsp;&#x25BE;';
-          this.appendChild(sortfwdind);
+    ts.addParser({
+        id: "url",
+        is: function (s) {
+            return /^(https?|ftp|file):\/\/$/.test(s);
+        }, format: function (s) {
+            return jQuery.trim(s.replace(new RegExp(/(https?|ftp|file):\/\//), ''));
+        }, type: "text"
+    });
 
-	        // build an array to sort. This is a Schwartzian transform thing,
-	        // i.e., we "decorate" each row with the actual sort key,
-	        // sort based on the sort keys, and then put the rows back in order
-	        // which is a lot faster because you only do getInnerText once per row
-	        row_array = [];
-	        col = this.sorttable_columnindex;
-	        rows = this.sorttable_tbody.rows;
-	        for (var j=0; j<rows.length; j++) {
-	          row_array[row_array.length] = [sorttable.getInnerText(rows[j].cells[col]), rows[j]];
-	        }
-	        /* If you want a stable sort, uncomment the following line */
-	        //sorttable.shaker_sort(row_array, this.sorttable_sortfunction);
-	        /* and comment out this one */
-	        row_array.sort(this.sorttable_sortfunction);
+    ts.addParser({
+        id: "isoDate",
+        is: function (s) {
+            return /^\d{4}[\/-]\d{1,2}[\/-]\d{1,2}$/.test(s);
+        }, format: function (s) {
+            return $.tablesorter.formatFloat((s != "") ? new Date(s.replace(
+            new RegExp(/-/g), "/")).getTime() : "0");
+        }, type: "numeric"
+    });
 
-	        tb = this.sorttable_tbody;
-	        for (var j=0; j<row_array.length; j++) {
-	          tb.appendChild(row_array[j][1]);
-	        }
+    ts.addParser({
+        id: "percent",
+        is: function (s) {
+            return /\%$/.test($.trim(s));
+        }, format: function (s) {
+            return $.tablesorter.formatFloat(s.replace(new RegExp(/%/g), ""));
+        }, type: "numeric"
+    });
 
-	        delete row_array;
-	      });
-	    }
-    }
-  },
+    ts.addParser({
+        id: "usLongDate",
+        is: function (s) {
+            return s.match(new RegExp(/^[A-Za-z]{3,10}\.? [0-9]{1,2}, ([0-9]{4}|'?[0-9]{2}) (([0-2]?[0-9]:[0-5][0-9])|([0-1]?[0-9]:[0-5][0-9]\s(AM|PM)))$/));
+        }, format: function (s) {
+            return $.tablesorter.formatFloat(new Date(s).getTime());
+        }, type: "numeric"
+    });
 
-  guessType: function(table, column) {
-    // guess the type of a column based on its first non-blank row
-    sortfn = sorttable.sort_alpha;
-    for (var i=0; i<table.tBodies[0].rows.length; i++) {
-      text = sorttable.getInnerText(table.tBodies[0].rows[i].cells[column]);
-      if (text != '') {
-        if (text.match(/^-?[£$¤]?[\d,.]+%?$/)) {
-          return sorttable.sort_numeric;
-        }
-        // check for a date: dd/mm/yyyy or dd/mm/yy
-        // can have / or . or - as separator
-        // can be mm/dd as well
-        possdate = text.match(sorttable.DATE_RE)
-        if (possdate) {
-          // looks like a date
-          first = parseInt(possdate[1]);
-          second = parseInt(possdate[2]);
-          if (first > 12) {
-            // definitely dd/mm
-            return sorttable.sort_ddmm;
-          } else if (second > 12) {
-            return sorttable.sort_mmdd;
-          } else {
-            // looks like a date, but we can't tell which, so assume
-            // that it's dd/mm (English imperialism!) and keep looking
-            sortfn = sorttable.sort_ddmm;
-          }
-        }
-      }
-    }
-    return sortfn;
-  },
-
-  getInnerText: function(node) {
-    // gets the text we want to use for sorting for a cell.
-    // strips leading and trailing whitespace.
-    // this is *not* a generic getInnerText function; it's special to sorttable.
-    // for example, you can override the cell text with a customkey attribute.
-    // it also gets .value for <input> fields.
-
-    if (!node) return "";
-
-    hasInputs = (typeof node.getElementsByTagName == 'function') &&
-                 node.getElementsByTagName('input').length;
-
-    if (node.getAttribute("sorttable_customkey") != null) {
-      return node.getAttribute("sorttable_customkey");
-    }
-    else if (typeof node.textContent != 'undefined' && !hasInputs) {
-      return node.textContent.replace(/^\s+|\s+$/g, '');
-    }
-    else if (typeof node.innerText != 'undefined' && !hasInputs) {
-      return node.innerText.replace(/^\s+|\s+$/g, '');
-    }
-    else if (typeof node.text != 'undefined' && !hasInputs) {
-      return node.text.replace(/^\s+|\s+$/g, '');
-    }
-    else {
-      switch (node.nodeType) {
-        case 3:
-          if (node.nodeName.toLowerCase() == 'input') {
-            return node.value.replace(/^\s+|\s+$/g, '');
-          }
-        case 4:
-          return node.nodeValue.replace(/^\s+|\s+$/g, '');
-          break;
-        case 1:
-        case 11:
-          var innerText = '';
-          for (var i = 0; i < node.childNodes.length; i++) {
-            innerText += sorttable.getInnerText(node.childNodes[i]);
-          }
-          return innerText.replace(/^\s+|\s+$/g, '');
-          break;
-        default:
-          return '';
-      }
-    }
-  },
-
-  reverse: function(tbody) {
-    // reverse the rows in a tbody
-    newrows = [];
-    for (var i=0; i<tbody.rows.length; i++) {
-      newrows[newrows.length] = tbody.rows[i];
-    }
-    for (var i=newrows.length-1; i>=0; i--) {
-       tbody.appendChild(newrows[i]);
-    }
-    delete newrows;
-  },
-
-  /* sort functions
-     each sort function takes two parameters, a and b
-     you are comparing a[0] and b[0] */
-  sort_numeric: function(a,b) {
-    aa = parseFloat(a[0].replace(/[^0-9.-]/g,''));
-    if (isNaN(aa)) aa = 0;
-    bb = parseFloat(b[0].replace(/[^0-9.-]/g,''));
-    if (isNaN(bb)) bb = 0;
-    return aa-bb;
-  },
-  sort_alpha: function(a,b) {
-    if (a[0]==b[0]) return 0;
-    if (a[0]<b[0]) return -1;
-    return 1;
-  },
-  sort_ddmm: function(a,b) {
-    mtch = a[0].match(sorttable.DATE_RE);
-    y = mtch[3]; m = mtch[2]; d = mtch[1];
-    if (m.length == 1) m = '0'+m;
-    if (d.length == 1) d = '0'+d;
-    dt1 = y+m+d;
-    mtch = b[0].match(sorttable.DATE_RE);
-    y = mtch[3]; m = mtch[2]; d = mtch[1];
-    if (m.length == 1) m = '0'+m;
-    if (d.length == 1) d = '0'+d;
-    dt2 = y+m+d;
-    if (dt1==dt2) return 0;
-    if (dt1<dt2) return -1;
-    return 1;
-  },
-  sort_mmdd: function(a,b) {
-    mtch = a[0].match(sorttable.DATE_RE);
-    y = mtch[3]; d = mtch[2]; m = mtch[1];
-    if (m.length == 1) m = '0'+m;
-    if (d.length == 1) d = '0'+d;
-    dt1 = y+m+d;
-    mtch = b[0].match(sorttable.DATE_RE);
-    y = mtch[3]; d = mtch[2]; m = mtch[1];
-    if (m.length == 1) m = '0'+m;
-    if (d.length == 1) d = '0'+d;
-    dt2 = y+m+d;
-    if (dt1==dt2) return 0;
-    if (dt1<dt2) return -1;
-    return 1;
-  },
-
-  shaker_sort: function(list, comp_func) {
-    // A stable sort function to allow multi-level sorting of data
-    // see: http://en.wikipedia.org/wiki/Cocktail_sort
-    // thanks to Joseph Nahmias
-    var b = 0;
-    var t = list.length - 1;
-    var swap = true;
-
-    while(swap) {
-        swap = false;
-        for(var i = b; i < t; ++i) {
-            if ( comp_func(list[i], list[i+1]) > 0 ) {
-                var q = list[i]; list[i] = list[i+1]; list[i+1] = q;
-                swap = true;
+    ts.addParser({
+        id: "shortDate",
+        is: function (s) {
+            return /\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}/.test(s);
+        }, format: function (s, table) {
+            var c = table.config;
+            s = s.replace(/\-/g, "/");
+            if (c.dateFormat == "us") {
+                // reformat the string in ISO format
+                s = s.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/, "$3/$1/$2");
+            } else if (c.dateFormat == "uk") {
+                // reformat the string in ISO format
+                s = s.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/, "$3/$2/$1");
+            } else if (c.dateFormat == "dd/mm/yy" || c.dateFormat == "dd-mm-yy") {
+                s = s.replace(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2})/, "$1/$2/$3");
             }
-        } // for
-        t--;
-
-        if (!swap) break;
-
-        for(var i = t; i > b; --i) {
-            if ( comp_func(list[i], list[i-1]) < 0 ) {
-                var q = list[i]; list[i] = list[i-1]; list[i-1] = q;
-                swap = true;
+            return $.tablesorter.formatFloat(new Date(s).getTime());
+        }, type: "numeric"
+    });
+    ts.addParser({
+        id: "time",
+        is: function (s) {
+            return /^(([0-2]?[0-9]:[0-5][0-9])|([0-1]?[0-9]:[0-5][0-9]\s(am|pm)))$/.test(s);
+        }, format: function (s) {
+            return $.tablesorter.formatFloat(new Date("2000/01/01 " + s).getTime());
+        }, type: "numeric"
+    });
+    ts.addParser({
+        id: "metadata",
+        is: function (s) {
+            return false;
+        }, format: function (s, table, cell) {
+            var c = table.config,
+                p = (!c.parserMetadataName) ? 'sortValue' : c.parserMetadataName;
+            return $(cell).metadata()[p];
+        }, type: "numeric"
+    });
+    // add default widgets
+    ts.addWidget({
+        id: "zebra",
+        format: function (table) {
+            if (table.config.debug) {
+                var time = new Date();
             }
-        } // for
-        b++;
-
-    } // while(swap)
-  }
-}
-
-/* ******************************************************************
-   Supporting functions: bundled here to avoid depending on a library
-   ****************************************************************** */
-
-// Dean Edwards/Matthias Miller/John Resig
-
-/* for Mozilla/Opera9 */
-if (document.addEventListener) {
-    document.addEventListener("DOMContentLoaded", sorttable.init, false);
-}
-
-/* for Internet Explorer */
-/*@cc_on @*/
-/*@if (@_win32)
-    document.write("<script id=__ie_onload defer src=javascript:void(0)><\/script>");
-    var script = document.getElementById("__ie_onload");
-    script.onreadystatechange = function() {
-        if (this.readyState == "complete") {
-            sorttable.init(); // call the onload handler
+            var $tr, row = -1,
+                odd;
+            // loop through the visible rows
+            $("tr:visible", table.tBodies[0]).each(function (i) {
+                $tr = $(this);
+                // style children rows the same way the parent
+                // row was styled
+                if (!$tr.hasClass(table.config.cssChildRow)) row++;
+                odd = (row % 2 == 0);
+                $tr.removeClass(
+                table.config.widgetZebra.css[odd ? 0 : 1]).addClass(
+                table.config.widgetZebra.css[odd ? 1 : 0])
+            });
+            if (table.config.debug) {
+                $.tablesorter.benchmark("Applying Zebra widget", time);
+            }
         }
-    };
-/*@end @*/
-
-/* for Safari */
-if (/WebKit/i.test(navigator.userAgent)) { // sniff
-    var _timer = setInterval(function() {
-        if (/loaded|complete/.test(document.readyState)) {
-            sorttable.init(); // call the onload handler
-        }
-    }, 10);
-}
-
-/* for other browsers */
-window.onload = sorttable.init;
-
-// written by Dean Edwards, 2005
-// with input from Tino Zijdel, Matthias Miller, Diego Perini
-
-// http://dean.edwards.name/weblog/2005/10/add-event/
-
-function dean_addEvent(element, type, handler) {
-	if (element.addEventListener) {
-		element.addEventListener(type, handler, false);
-	} else {
-		// assign each event handler a unique ID
-		if (!handler.$$guid) handler.$$guid = dean_addEvent.guid++;
-		// create a hash table of event types for the element
-		if (!element.events) element.events = {};
-		// create a hash table of event handlers for each element/event pair
-		var handlers = element.events[type];
-		if (!handlers) {
-			handlers = element.events[type] = {};
-			// store the existing event handler (if there is one)
-			if (element["on" + type]) {
-				handlers[0] = element["on" + type];
-			}
-		}
-		// store the event handler in the hash table
-		handlers[handler.$$guid] = handler;
-		// assign a global event handler to do all the work
-		element["on" + type] = handleEvent;
-	}
-};
-// a counter used to create unique IDs
-dean_addEvent.guid = 1;
-
-function removeEvent(element, type, handler) {
-	if (element.removeEventListener) {
-		element.removeEventListener(type, handler, false);
-	} else {
-		// delete the event handler from the hash table
-		if (element.events && element.events[type]) {
-			delete element.events[type][handler.$$guid];
-		}
-	}
-};
-
-function handleEvent(event) {
-	var returnValue = true;
-	// grab the event object (IE uses a global event object)
-	event = event || fixEvent(((this.ownerDocument || this.document || this).parentWindow || window).event);
-	// get a reference to the hash table of event handlers
-	var handlers = this.events[event.type];
-	// execute each event handler
-	for (var i in handlers) {
-		this.$$handleEvent = handlers[i];
-		if (this.$$handleEvent(event) === false) {
-			returnValue = false;
-		}
-	}
-	return returnValue;
-};
-
-function fixEvent(event) {
-	// add W3C standard event methods
-	event.preventDefault = fixEvent.preventDefault;
-	event.stopPropagation = fixEvent.stopPropagation;
-	return event;
-};
-fixEvent.preventDefault = function() {
-	this.returnValue = false;
-};
-fixEvent.stopPropagation = function() {
-  this.cancelBubble = true;
-}
-
-// Dean's forEach: http://dean.edwards.name/base/forEach.js
-/*
-	forEach, version 1.0
-	Copyright 2006, Dean Edwards
-	License: http://www.opensource.org/licenses/mit-license.php
-*/
-
-// array-like enumeration
-if (!Array.forEach) { // mozilla already supports this
-	Array.forEach = function(array, block, context) {
-		for (var i = 0; i < array.length; i++) {
-			block.call(context, array[i], i, array);
-		}
-	};
-}
-
-// generic enumeration
-Function.prototype.forEach = function(object, block, context) {
-	for (var key in object) {
-		if (typeof this.prototype[key] == "undefined") {
-			block.call(context, object[key], key, object);
-		}
-	}
-};
-
-// character enumeration
-String.forEach = function(string, block, context) {
-	Array.forEach(string.split(""), function(chr, index) {
-		block.call(context, chr, index, string);
-	});
-};
-
-// globally resolve forEach enumeration
-var forEach = function(object, block, context) {
-	if (object) {
-		var resolve = Object; // default
-		if (object instanceof Function) {
-			// functions have a "length" property
-			resolve = Function;
-		} else if (object.forEach instanceof Function) {
-			// the object implements a custom forEach method so use that
-			object.forEach(block, context);
-			return;
-		} else if (typeof object == "string") {
-			// the object is a string
-			resolve = String;
-		} else if (typeof object.length == "number") {
-			// the object is array-like
-			resolve = Array;
-		}
-		resolve.forEach(object, block, context);
-	}
-};
+    });
+})(jQuery);
