@@ -19,17 +19,11 @@ function showEvents()
     }  
     
 function callback(json){
-	alert("In1");
     $.each(json, function(key, val) {
     	  
     	startDate = new Date(val['start_date']);
     	endDate = new Date();
 		alert(startDate);
-		alert(endDate);
-    	if(startDate > endDate)
-    		{
-	        alert("DOIN!");
-    		}
       }); 
 	}     
     
