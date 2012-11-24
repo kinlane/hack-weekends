@@ -69,7 +69,7 @@ function showEventsByCity()
 	          		alert(allEvents.length);
 	          		for (i=0;i<allEvents.length;i++)
 	          			{
-	          			alert(allEvents[i]);
+	          			alert(dodump(allEvents[i]));
 	          			}
 	          		
 	          		//$.each(allEvents, function(key, val) {
