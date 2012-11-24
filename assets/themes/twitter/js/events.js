@@ -69,6 +69,7 @@ function showEventsByCity()
 	          			alert(val['name']);
 	          			
 	          			jEvent = JSON.stringify(val);
+	          			alert(jEvent);
 	          			
 				        //var template = $('#eventListingItemTemplate').html();
 				        //var html = Mustache.to_html(template, val);
