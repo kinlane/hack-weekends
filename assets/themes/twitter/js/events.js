@@ -49,7 +49,7 @@ function showEventsByCity()
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
 					        //alert(html);
-					        $('#eventListBody').append(html);  
+					        $('#eventList').append(html);  
 			        		}
 			          }); 
 			          
