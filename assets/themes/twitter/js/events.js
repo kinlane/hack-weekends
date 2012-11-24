@@ -88,3 +88,8 @@ function showCountries()
         });
     }   
     
+function showsortedevents()
+	{
+	alert(allEvents[0]);	
+	}
+    
