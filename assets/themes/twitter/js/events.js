@@ -79,29 +79,3 @@ function getEvent(id)
         });
     }  
 
-function sorttable()
-{
-    var rows = $('#eventList tr');
-
-    rows.eq(0).find('th').sort(function(a, b) {
-
-        return $.text([a]) > $.text([b]) ? 1 : -1;
-
-    }).each(function(new_Index) {
-
-        var original_Index = $(this).index();
-
-        rows.each(function() {
-            var th = $(this).find('th');
-            if (original_Index !== new_Index)
-                th.eq(original_Index).insertAfter(th.eq(new_Index));
-        });
-        
-        rows.each(function() {
-            var td = $(this).find('td');
-            if (original_Index !== new_Index)
-                td.eq(original_Index).insertAfter(td.eq(new_Index));
-        });
-
-    });	
-}
