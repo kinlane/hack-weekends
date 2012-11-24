@@ -93,7 +93,20 @@ function showEventsByCity()
           		alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
 			          	
-
+				var aTemp = [];
+			    for (var sKey in allEvents){
+			        aTemp[aTemp.length] = sKey; 
+			    }
+			    aTemp.sort();
+			    
+				 var aOutput = {};
+				    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
+				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
+				    }			    
+			              	
+			    alert("2:"+dodump(aOutput[1]));
+			    alert("3:"+dodump(aOutput[2]));
+			    alert("4:"+dodump(aOutput[3]));
 		
 	          	}   	        	       	
           });           
