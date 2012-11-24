@@ -63,7 +63,7 @@ function pullEventsByCity()
 			               		        	
 	        	}  
 	        citycount++;
-	        oDisplayEvent(citycount,totalcities);        	       	
+	        doDisplayEvent(citycount,totalcities);        	       	
           });           
             
         }); 
