@@ -92,7 +92,13 @@ function showEventsByCity()
 	          	       	
           		alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
-          	
+			          	
+				var aTemp = [];
+			    for (var sKey in allEvents){
+			        aTemp[aTemp.length] = sKey; 
+			    }
+			    //aTemp.sort();          	
+			          	
           		for (i=0;i<allEvents.length;i++)
           			{
           			//alert("2:"+dodump(results[i]));
