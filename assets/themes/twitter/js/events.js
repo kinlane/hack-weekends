@@ -1,23 +1,6 @@
 var allEvents = new Array();
 
-function showEvents()
-    {
-   // alert("firing!");	
-    $.getJSON('data/events/san-francisco.json', function(data) {
-	//alert('in');
-        $.each(data, function(key, val) {
-        	startDate = val['start_date'];     	
-        	startDate = new Date(startDate);
-        	endDate = new Date();
-        	alert(startDate);
-        	if(startDate > endDate)
-        		{
-        		alert("in!");	
-        		}
-          }); 
-        });
-    }  
-    
+
 function addDisplayEvent(eventdata){
     $.each(eventdata['events'], function(key2, val2) { 	 
     	startDate = new Date(val2['start_date']);
@@ -62,7 +45,7 @@ function pullEventsByCity()
 	        	
 			    $.getJSON(filename, function(eventdata) {
 			    	
-			    	eventcallback(eventdata);
+			    	addDisplayEvent(eventdata);
 			    	
 			    	});
 			               		        	
