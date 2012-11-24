@@ -19,7 +19,11 @@ function showEvents()
     }  
     
 function callback(json){
-	alert(json);
+	alert("in!");
+    $.each(json, function(key2, val2) {
+    	alert(dodump(val2));
+      }); 
+
 	}     
     
 function showEventsByCity()
