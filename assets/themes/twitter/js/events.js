@@ -58,7 +58,7 @@ function showEventsByCity()
           		citycount++; 
 	          	if(totalcities==citycount){
 	          	       	
-          		alert(totalcities + ":" + citycount);
+          		//alert(totalcities + ":" + citycount);
 			          	
 				var aTemp = [];
 			    for (var sKey in allEvents){
@@ -88,8 +88,12 @@ function showEventsByCity()
 			        var template = $('#eventListingItemTemplate').html();
 			        var html = Mustache.to_html(template, val3);
 			       // alert(html);
-			        $('#eventList').append(html);         			
+			        $('#eventList').append(html);  
+			               			
           			}); 
+          			
+          		alert('done!');	
+          			
 	          	}   	        	       	
           });           
             
