@@ -74,8 +74,8 @@ function showEventsByCity()
 			    aTemp.sort(function(a,b){
 			    	//alert(allEvents[aTemp[a]].name);
 			    	//alert(allEvents[aTemp[b]].name);
-				    //if(allEvents[aTemp[a]].start_date < allEvents[aTemp[b]].start_date) return -1;
-				    //if(allEvents[aTemp[a]].start_date > allEvents[aTemp[b]].start_date) return 1;
+				    if(allEvents[aTemp[a]].start_date < allEvents[aTemp[b]].start_date) return -1;
+				    if(allEvents[aTemp[a]].start_date > allEvents[aTemp[b]].start_date) return 1;
 				    
 				    //if(allEvents[aTemp[a]].name < allEvents[aTemp[b]].name) return -1;
 				    //if(allEvents[aTemp[a]].name > allEvents[aTemp[b]].name) return 1;				    
