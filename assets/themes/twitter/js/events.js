@@ -33,10 +33,8 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-	if(currCount==totalCount)
-	{
 	alert(currCount+':'+totalCount);
-	}	
+		
 } 
     
 function pullEventsByCity()
