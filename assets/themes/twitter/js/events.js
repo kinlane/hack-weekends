@@ -97,7 +97,8 @@ function showEventsByCity()
 			    for (var sKey in allEvents){
 			        aTemp[aTemp.length] = sKey; 
 			    }
-			    //aTemp.sort();          	
+			    aTemp.sort();
+			              	
 			      alert("2:"+dodump(aTemp[0]));    	
           		for (i=0;i<allEvents.length;i++)
           			{
@@ -105,7 +106,7 @@ function showEventsByCity()
           			
 			        var template = $('#eventListingItemTemplate').html();
 			        var html = Mustache.to_html(template, allEvents[i]);
-			        alert(html);
+			        //alert(html);
 			        //$('#eventList').append(html);          			
           			
           			}
