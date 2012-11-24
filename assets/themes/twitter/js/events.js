@@ -68,8 +68,8 @@ function showEventsByCity()
 	          		alert(totalcities + ":" + citycount);
 	          		
 	          		$.each(allEvents, function(key, val) {
-	          			//alert(val['name']);
-	          			alert("2:"+dodump(val));
+	          			alert(val);
+	          			//alert("2:"+dodump(val));
 	          			
 	          			//jEvent = JSON.stringify(val);
 	          			//alert(jEvent);
