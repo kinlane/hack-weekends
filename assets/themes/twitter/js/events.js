@@ -58,7 +58,7 @@ function showEventsByCity()
           		citycount++; 
 	          	if(totalcities==citycount){
 	          	       	
-          		//alert(totalcities + ":" + citycount);
+          		alert(totalcities + ":" + citycount);
 			          	
 				var aTemp = [];
 			    for (var sKey in allEvents){
