@@ -87,11 +87,11 @@ function showEventsByCity()
 			    for(var key in allEvents) {
 			        temp.push(allEvents[key].name);
 			    }
-			    temp = temp.sort();
+			    //temp = temp.sort();
 			            	
 	          	
           		alert(totalcities + ":" + citycount);
-          		//alert(allEvents.length);
+          		alert(temp.length);
           		
 	          	}   	        	       	
           });           
