@@ -98,8 +98,13 @@ function showEventsByCity()
 			        aTemp[aTemp.length] = sKey; 
 			    }
 			    aTemp.sort();
+			    
+				 var aOutput = {};
+				    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
+				        aOutput[aTemp[nIndex]] = aInput[aTemp[nIndex]];
+				    }			    
 			              	
-			      alert("2:"+dodump(aTemp[0]));    	
+			      alert("2:"+dodump(aOutput[0]));    	
           		for (i=0;i<allEvents.length;i++)
           			{
           			//alert("2:"+dodump(results[i]));
