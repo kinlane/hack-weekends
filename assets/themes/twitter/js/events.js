@@ -19,7 +19,7 @@ function showEvents()
     }  
     
 function eventcallback(eventdata){
-	alert("1:"+eventdata);
+	alert("in!");
 	}     
     
 function showEventsByCity()
