@@ -60,7 +60,7 @@ function showEventsByCity()
             
         }); 
         
-        $("#eventList").tablesorter( {sortList: [[0,0], [1,0]]} ); 
+       // $("#eventList").tablesorter( {sortList: [[0,0], [1,0]]} ); 
  
     }       
      
