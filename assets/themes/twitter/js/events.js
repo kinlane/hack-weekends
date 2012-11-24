@@ -107,7 +107,8 @@ function showEventsByCity()
 			    alert("2:"+dodump(aOutput[1]));
 			    alert("3:"+dodump(aOutput[2]));
 			    alert("4:"+dodump(aOutput[3]));
-		
+			   alert("length: "+aOutput.length)    	
+          		
 	          	}   	        	       	
           });           
             
