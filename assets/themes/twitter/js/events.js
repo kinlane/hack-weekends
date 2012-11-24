@@ -70,7 +70,6 @@ function showEventsByCity()
 	          		for (i=0;i<allEvents.length;i++)
 	          			{
 	          			alert('in');
-	          				
 	          			}
 	          		
 	          		//$.each(allEvents, function(key, val) {
