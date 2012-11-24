@@ -20,9 +20,7 @@ function showEvents()
     
 function callback(json){
 	alert("in!");
-    $.each(json, function(key2, val2) {
-    	alert(dodump(val2));
-      }); 
+ 
 
 	}     
     
