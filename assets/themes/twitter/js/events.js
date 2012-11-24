@@ -94,7 +94,8 @@ function showCountries()
 function loadTableSort()
 	{
 	alert("turnign on sort!");
-	$("#eventList").tablesorter(); 
+	//$("#eventList").tablesorter(); 
+	$("#eventList").tablesorter( {sortList: [[0,0], [1,0]]} ); 
 	alert("turned on!");
 	}
     
