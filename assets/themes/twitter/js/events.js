@@ -80,17 +80,7 @@ function showEventsByCity()
 	        	
           		citycount++; 
 	          	if(totalcities==citycount){
-	          	
-	          	//associativeSort(allEvents,'name');
-	          	var results = [];
-			 	var temp = [];
-			    for(var key in allEvents) {
-			        temp.push(allEvents[key].name);
-			    }
-			    temp = temp.sort();
-			    for(var x = 0; x < temp.length; x++) {
-			        results[x] = allEvents[temp[x]];
-			    }	          	
+	          	       	
 	          	
           		alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
