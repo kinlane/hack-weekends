@@ -41,7 +41,7 @@ function showEventsByCity()
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
-			    $.getJSON(filename, function(eventdata) {},callback);
+			    $.getJSON(filename, function(json) {},callback);
 			               		        	
 	        	}  	        	       	
           });           
