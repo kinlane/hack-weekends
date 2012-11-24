@@ -20,7 +20,7 @@ function showEvents()
     
 function showEventsByCities()
 	{
-	alert($('#myTable').HTML);
+	alert($('#myTable').html());
 	}    
 function showEventsByCity()
     {
