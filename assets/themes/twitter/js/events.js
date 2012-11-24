@@ -17,6 +17,11 @@ function showEvents()
         });
     }   
     
+    
+function showEventsByCities()
+	{
+	alert($('#myTable').html);
+	}    
 function showEventsByCity()
     {
     citycount = 0;
@@ -49,7 +54,7 @@ function showEventsByCity()
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
 					        //alert(html);
-					        $('#myTable').append(html);  
+					        $('#eventList').append(html);  
 			        		}
 			          }); 
 			          
