@@ -87,7 +87,8 @@ function showEventsByCity()
 			    for(var key in allEvents) {
 			        temp.push(allEvents[key].name);
 			    }
-          	
+			    temp = temp.sort();
+			            	
 	          	
           		alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
