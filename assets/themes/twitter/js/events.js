@@ -70,7 +70,7 @@ function showEventsByCity()
           		//alert(allEvents.length);
           		for (i=0;i<allEvents.length;i++)
           			{
-          			//alert("2:"+dodump(allEvents[i]));
+          			alert("2:"+dodump(allEvents[i]));
           			
 			        var template = $('#eventListingItemTemplate').html();
 			        var html = Mustache.to_html(template, allEvents[i]);
