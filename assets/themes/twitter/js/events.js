@@ -62,6 +62,7 @@ function showEventsByCity()
         }); 
  
 	  	if(totalcities==citycount){
+	  		alert("hello!");
 			return allEvents;
 	  	}  
  
