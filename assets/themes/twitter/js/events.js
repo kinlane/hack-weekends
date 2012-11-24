@@ -81,7 +81,7 @@ function showEventsByCity()
           		citycount++; 
 	          	if(totalcities==citycount){
 	          	
-	          	associativeSort(allEvents,'name');
+	          	//associativeSort(allEvents,'name');
           		//alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
           		for (i=0;i<allEvents.length;i++)
