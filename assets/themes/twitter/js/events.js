@@ -104,14 +104,10 @@ function showEventsByCity()
 				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
 				    }			    
 			              	
-			   // alert("2:"+dodump(aOutput[1]));
-			   // alert("length: "+aOutput.length)    	
-          		for (i=0;i<aOutput.length;i++)
-          			{
-          			alert("2:"+aOutput[i]);
-          		      			
-          			
-          			}
+			    alert("2:"+dodump(aOutput[1]));
+			    alert("3:"+dodump(aOutput[2]));
+			    alert("4:"+dodump(aOutput[3]));
+		
 	          	}   	        	       	
           });           
             
