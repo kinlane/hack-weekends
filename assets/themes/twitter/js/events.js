@@ -81,7 +81,6 @@ function showEventsByCity()
           		citycount++; 
 	          	if(totalcities==citycount){
 	          	       	
-	          	
           		alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
           		for (i=0;i<results.length;i++)
