@@ -1,30 +1,4 @@
 
-
-function associativeSort(givenArray, keyToSort) {
-    var results = [];
-
-    var temp = [];
-    for(var key in givenArray) {
-        temp.push(givenArray[key].name);
-    }
-    temp = temp.sort();
-    for(var x = 0; x < temp.length; x++) {
-        results[x] = givenArray[temp[x]];
-    }
-
-    return results;
-}
-
-
-var date_sort_asc = function (date1, date2) {
-  // This is a comparison function that will result in dates being sorted in
-  // ASCENDING order. As you can see, JavaScript's native comparison operators
-  // can be used to compare dates. This was news to me.
-  if (date1 > date2) return 1;
-  if (date1 < date2) return -1;
-  return 0;
-};
-
 function showEvents()
     {
    // alert("firing!");	
@@ -97,25 +71,21 @@ function showEventsByCity()
 			    for (var sKey in allEvents){
 			        aTemp[aTemp.length] = sKey; 
 			    }
-			    aTemp.sort();
-			    
+			    aTemp.sort(function(a,b) {
+				    return a.val - b.val;
+				});
+							    
 				 var aOutput = {};
 				    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
 				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
 				    }			    
 			              	
-			    //alert("2:"+dodump(aOutput[1]));
-			    //alert("3:"+dodump(aOutput[2]));
-			    //alert("4:"+dodump(aOutput[3]));
-			   // alert("length: "+aOutput.length)    	
+  	
           		$.each(aOutput, function(key3, val3) {
-          			//alert("2:"+dodump(aOutput[i]));
-          			//alert(dodump(val3,3));
 			        var template = $('#eventListingItemTemplate').html();
 			        var html = Mustache.to_html(template, val3);
 			        alert(html);
-			        $('#eventList').append(html);          			
-          			
+			        $('#eventList').append(html);         			
           			}); 
 	          	}   	        	       	
           });           
