@@ -68,8 +68,8 @@ function showEventsByCity()
 	          		$.each(allEvents, function(key, val) {
 	          			//alert(val['name']);
 	          			
-	          			myJsonString = array1dToJson(val)
-	          			alert(myJsonString);
+	          			//myJsonString = array1dToJson(val)
+	          			//alert(myJsonString);
 	          			
 				        //var template = $('#eventListingItemTemplate').html();
 				        //var html = Mustache.to_html(template, val);
