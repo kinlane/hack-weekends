@@ -73,8 +73,8 @@ function showEventsByCity()
 			    }
 			    aTemp.sort(function(a,b){
 			    	
-			    	alert(allEvents[aTemp[a]].start_date);
-			    	alert(allEvents[aTemp[b]].start_date);
+			    	//alert(allEvents[aTemp[a]].start_date);
+			    	//alert(allEvents[aTemp[b]].start_date);
 			    	
 				    if(allEvents[aTemp[a]].start_date < allEvents[aTemp[b]].start_date) return -1;
 				    if(allEvents[aTemp[a]].start_date > allEvents[aTemp[b]].start_date) return 1;
@@ -94,7 +94,7 @@ function showEventsByCity()
           		$.each(aOutput, function(key3, val3) {
 			        var template = $('#eventListingItemTemplate').html();
 			        var html = Mustache.to_html(template, val3);
-			        alert(html);
+			       // alert(html);
 			        $('#eventList').append(html);         			
           			}); 
 	          	}   	        	       	
