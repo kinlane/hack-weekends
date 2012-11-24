@@ -52,6 +52,21 @@ description: Join the hackathon movement.
 
 <h1>Hackathons</h1>
 
+ <table id="mainList" class="tablesorter">
+     <tr>
+         <th>title</th>
+         <th>title<th>
+     </tr>     
+     <tr>
+         <td>hello</td>
+         <td>goodbye<td>
+     </tr>
+     <tr>
+         <td>goodbye</td>
+         <td>hello<td>
+     </tr>     
+ </table>
+
 <div>
     <table id="eventList" class="tablesorter">
 
@@ -60,4 +75,11 @@ description: Join the hackathon movement.
 
 <script type="text/javascript">
 showEventsByCity();
+
+$(document).ready(function() 
+    { 
+        $("#mainList").tablesorter(); 
+    } 
+); 
+    
 </script>
