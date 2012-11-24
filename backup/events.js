@@ -1,3 +1,4 @@
+var allEvents = new Array();
 
 function showEvents()
     {
@@ -19,8 +20,6 @@ function showEvents()
     
 function showEventsByCity()
     {
-    var allEvents = new Array();	
-    	
     citycount = 0;
     eventcount = 0;	
 	
@@ -58,7 +57,44 @@ function showEventsByCity()
 	        	
           		citycount++; 
 	          	if(totalcities==citycount){
-          			return allEvents;
+	          	       	
+          		alert(totalcities + ":" + citycount);
+			          	
+				var aTemp = [];
+			    for (var sKey in allEvents){
+			        aTemp[aTemp.length] = sKey; 
+			    }
+			    
+			    aTemp.sort(function(a,b){
+			    	
+			    	//alert(allEvents[aTemp[a]].start_date);
+			    	//alert(allEvents[aTemp[b]].start_date);
+			    	
+				    if(allEvents[aTemp[a]].start_date < allEvents[aTemp[b]].start_date) return -1;
+				    if(allEvents[aTemp[a]].start_date > allEvents[aTemp[b]].start_date) return 1;
+				    
+				    //if(allEvents[aTemp[a]].name < allEvents[aTemp[b]].name) return -1;
+				    //if(allEvents[aTemp[a]].name > allEvents[aTemp[b]].name) return 1;				    
+				    
+				    return 0;
+				});
+							    
+				 var aOutput = {};
+				    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
+				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
+				    }			    
+			              	
+  	
+          		$.each(aOutput, function(key3, val3) {
+			        var template = $('#eventListingItemTemplate').html();
+			        var html = Mustache.to_html(template, val3);
+			        //alert(html);
+			        $('#eventList').append(html);  
+			               			
+          			}); 
+          			
+          		//alert('done!');	
+          			
 	          	}   	        	       	
           });           
             
@@ -92,9 +128,4 @@ function showCountries()
         $('#eventList').html(html);
         });
     }   
-    
-function SortShowEvents(rawEvents)
-	{
-		
-	}
     
