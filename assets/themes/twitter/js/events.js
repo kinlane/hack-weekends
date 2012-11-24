@@ -65,15 +65,15 @@ function showEventsByCity()
           		citycount++; 
 	          	if(totalcities==citycount){
 	          	
-	          	sortedArray = allEvents.sort();
+	          	//sortedArray = allEvents.sort();
           		//alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
-          		for (i=0;i<sortedArray.length;i++)
+          		for (i=0;i<allEvents.length;i++)
           			{
           			//alert("2:"+dodump(allEvents[i]));
           			
 			        var template = $('#eventListingItemTemplate').html();
-			        var html = Mustache.to_html(template, sortedArray[i]);
+			        var html = Mustache.to_html(template, allEvents[i]);
 			        //alert(html);
 			        $('#eventList').append(html);          			
           			
