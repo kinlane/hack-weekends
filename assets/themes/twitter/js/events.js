@@ -5,7 +5,7 @@ function showEvents()
    // alert("firing!");	
     $.getJSON('data/events/san-francisco.json', function(data) {
 	//alert('in');
-        $.each(data['events'], function(key, val) {
+        $.each(data, function(key, val) {
         	startDate = val['start_date'];     	
         	startDate = new Date(startDate);
         	endDate = new Date();
