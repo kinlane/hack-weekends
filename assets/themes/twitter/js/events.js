@@ -96,7 +96,7 @@ function loadTableSort()
 	{
 	alert("turning on - 11");
 	//$("#eventList").tablesorter(); 
-	$("#eventList").tablesorter( {sortList: [[0,0], [1,0]]} ); 
+	//$("#eventList").tablesorter( {sortList: [[0,0], [1,0]]} ); 
 	alert("turning on - 22");
 	}
     
