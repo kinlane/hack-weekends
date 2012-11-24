@@ -67,12 +67,7 @@ function showEventsByCity()
 	          		
 	          		alert(totalcities + ":" + citycount);
 	          		
-	          		for (i=0;i<allEvents.length;i++)
-	          			{
-	          			//alert(allEvents[i]);
-	          			alert("in");
-	          				
-	          			}
+	
 	          		
 	          		//$.each(allEvents, function(key, val) {
 	          			//alert(dodump(val));
