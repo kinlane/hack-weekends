@@ -20,7 +20,9 @@ function showEvents()
     
 function eventcallback(data){
 	$.each(data, function(key, val) {
-		alert(val);
+	$.each(val, function(key2, val2) {
+		alert(val2);
+		});
 		});
 	}     
     
