@@ -19,8 +19,9 @@ function showEvents()
     }  
     
 function eventcallback(data){
-	alert(data['cities'][1]['city']);
-
+	$.each(data, function(key, val) {
+		alert(val);
+		});
 	}     
     
 function showEventsByCity()
