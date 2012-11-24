@@ -90,3 +90,9 @@ function showCountries()
         $('#eventList').html(html);
         });
     }   
+    
+function loadTable()
+	{
+	$("#eventList").tablesorter( {sortList: [[0,0]]} ); 	
+	}
+    
