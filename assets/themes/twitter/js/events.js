@@ -54,8 +54,7 @@ function showEventsByCity()
 			          
 			        });
 			               		        	
-	        	}        	
-          		citycount++;   	        	       	
+	        	}        	        	       	
           });           
             
         }); 
