@@ -78,35 +78,3 @@ function getEvent(id)
           });                            
         });
     }  
-
-function sorttable()
-{
-  //Get all the rows of employee grid
-    var rows = $('#eventList tr');
-
-    //Start sorting column along with data
-    rows.eq(0).find('th').sort(function(a, b) {
-
-        return $.text([a]) > $.text([b]) ? 1 : -1;
-
-    }).each(function(new_Index) {
-
-        //Original Index
-        var original_Index = $(this).index();
-
-        //Reorder Header Text
-        rows.each(function() {
-            var th = $(this).find('th');
-            if (original_Index !== new_Index)
-                th.eq(original_Index).insertAfter(th.eq(new_Index));
-        });
-        
-        //Reorder Column Data
-        rows.each(function() {
-            var td = $(this).find('td');
-            if (original_Index !== new_Index)
-                td.eq(original_Index).insertAfter(td.eq(new_Index));
-        });
-
-    });	
-}
