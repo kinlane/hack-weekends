@@ -98,7 +98,7 @@ function showEventsByCity()
 					return (a.lastname < b.lastname) ? -1 : 1;
 				}
 				
-				allEvents.sort(callbackFunc);          	
+				allEvents.sort(function callbackFunc(a,b){return (a.lastname < b.lastname) ? -1 : 1;});          	
           		
           		for (i=0;i<allEvents.length;i++)
           			{
