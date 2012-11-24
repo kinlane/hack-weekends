@@ -56,13 +56,14 @@ function showEventsByCity()
 			               		        	
 	        	}
 	        	
-          		citycount++; 
-	          	if(totalcities==citycount){
-          			return allEvents[1];
-	          	}   	        	       	
+          		citycount++;  	        	       	
           });           
             
         }); 
+ 
+	  	if(totalcities==citycount){
+			return allEvents;
+	  	}  
  
     }       
      
