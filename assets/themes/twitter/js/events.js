@@ -90,7 +90,7 @@ function showEventsByCity()
           		citycount++; 
 	          	if(totalcities==citycount){
 	          	       	
-          		//alert(totalcities + ":" + citycount);
+          		alert(totalcities + ":" + citycount);
           		//alert(allEvents.length);
           		
 				//allEvents.sort(function callbackFunc(a,b){return (a.name < b.name) ? -1 : 1;});          	
