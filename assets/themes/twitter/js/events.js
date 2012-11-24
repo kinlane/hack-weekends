@@ -99,15 +99,15 @@ function showEventsByCity()
 			    }
 			    aTemp.sort();
 			    
-				 var aOutput = {};
+				 var sortedEvents = {};
 				    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
-				        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
+				        sortedEvents[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
 				    }			    
 			              	
-			    alert("2:"+dodump(aOutput[1]));
-			    alert("3:"+dodump(aOutput[2]));
-			    alert("4:"+dodump(aOutput[3]));
-			   alert("length: "+aOutput.length)    	
+			    alert("2:"+dodump(sortedEvents[1]));
+			    alert("3:"+dodump(sortedEvents[2]));
+			    alert("4:"+dodump(sortedEvents[3]));
+			   alert(sortedEvents.length)    	
           		
 	          	}   	        	       	
           });           
