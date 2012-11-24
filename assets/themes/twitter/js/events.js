@@ -107,7 +107,16 @@ function showEventsByCity()
 			    alert("2:"+dodump(aOutput[1]));
 			    alert("3:"+dodump(aOutput[2]));
 			    alert("4:"+dodump(aOutput[3]));
-			   
+			   // alert("length: "+aOutput.length)    	
+          		$.each(aOutput, function(key, val) {
+          			//alert("2:"+dodump(aOutput[i]));
+          			alert(val);
+			        //var template = $('#eventListingItemTemplate').html();
+			        //var html = Mustache.to_html(template, allEvents[i]);
+			       // alert(html);
+			        //$('#eventList').append(html);          			
+          			
+          			}); 
 	          	}   	        	       	
           });           
             
