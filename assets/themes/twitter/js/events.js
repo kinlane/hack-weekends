@@ -18,8 +18,8 @@ function showEvents()
         });
     }  
     
-function eventcallback(data){
-	alert(data);
+function eventcallback(json){
+	alert("1:"+json);
 	}     
     
 function showEventsByCity()
