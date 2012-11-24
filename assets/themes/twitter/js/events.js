@@ -111,9 +111,9 @@ function showEventsByCity()
           		$.each(aOutput, function(key3, val3) {
           			//alert("2:"+dodump(aOutput[i]));
           			alert(dodump(val3,3));
-			        //var template = $('#eventListingItemTemplate').html();
-			        //var html = Mustache.to_html(template, allEvents[i]);
-			       // alert(html);
+			        var template = $('#eventListingItemTemplate').html();
+			        var html = Mustache.to_html(template, val3);
+			        alert(html);
 			        //$('#eventList').append(html);          			
           			
           			}); 
