@@ -19,14 +19,11 @@ function doDisplayEvent(currCount,totalCount)
 	if(currCount==totalCount){
 	alert(currCount+':'+totalCount);
 	alert(allEvents[0]['name']);
-	alert(allEvents[1]['name']);
-	alert(allEvents[2]['name']);
+	//alert(allEvents[1]['name']);
+	//alert(allEvents[2]['name']);
 	
-	var aTemp = [];
-    for (var sKey in allEvents){
-        aTemp[aTemp.length] = sKey; 
-    }
-    
+	
+	
 	alert("done22");
 
 	}	
