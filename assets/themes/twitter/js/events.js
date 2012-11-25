@@ -1,3 +1,4 @@
+citycount = 1;
 var allEvents = new Array();
 
 function addDisplayEvent(eventdata){
@@ -20,37 +21,17 @@ function doDisplayEvent(currCount,totalCount)
 	alert(currCount+':'+totalCount);
 	//alert(allEvents[0]['name']);
 	//alert(allEvents[1]['name']);
-	//alert(allEvents[2]['name']);
-	
-	var aTemp = [];
-    for (var sKey in allEvents){
-        aTemp[aTemp.length] = sKey; 
-    }
-    
-    aTemp.sort(function(a,b){
-    	
-    	//alert(dodump(allEvents[aTemp[a]]));
-    	//item1 = allEvents[aTemp[a]];
-    	
-    	//alert(dodump(item1));
-    	
-	    //if(allEvents[aTemp[a]]['start_date'] < allEvents[aTemp[b]]['start_date']) return -1;
-	    //if(allEvents[aTemp[a]]['start_date'] > allEvents[aTemp[b]]['start_date']) return 1;
-	    
-	    //if(allEvents[aTemp[a]].name < allEvents[aTemp[b]].name) return -1;
-	    //if(allEvents[aTemp[a]].name > allEvents[aTemp[b]].name) return 1;				    
-	    
-	    return 1;
-	});
-	
+
 	alert("done2");
 
 	}	
+	
+	citycount++;
 } 
     
 function pullEventsByCity()
     {
-    citycount = 1;
+
     eventcount = 0;	
 	
     $.getJSON('data/events/cities.json', function(data) {
@@ -70,15 +51,12 @@ function pullEventsByCity()
 			    	
 			    	addDisplayEvent(eventdata);
 			    	
-			    	citycount++;    
-			    	
-			    	});
-			           		        	
+			    	});   		        	
 	        	}  
 	        else
-	        {
-	        citycount++;	
-	        }
+		        {
+		        citycount++;	
+		        }
 	        doDisplayEvent(citycount,totalcities);        	       	
           });           
             
