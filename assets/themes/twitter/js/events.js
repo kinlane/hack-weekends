@@ -16,16 +16,18 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-	if(currCount==totalCount-1)
+	alert(currCount+':'+totalCount);
+	if(currCount==totalCount)
 		{
 		
 		alert(currCount+':'+totalCount);
 		alert(allEvents[0]['name']);
 		//alert(allEvents[1]['name']);
-		alert(allEvents[2]['name']);
-		            		
+		//alert(allEvents[2]['name']);
+		
+           		
 					
-		alert("done2!");
+		alert("done3");
 	
 		}	
 	} 
