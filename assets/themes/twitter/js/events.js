@@ -40,8 +40,12 @@ function doDisplayEvent(currCount,totalCount)
 	        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
 	    }			    
               		
+	$.each(aOutput, function(key3, val3) {
+		alert(val3);
+               			
+		});               		
 				
-	alert("done66!!");
+	alert("done77!!");
 
 	}	
 } 
