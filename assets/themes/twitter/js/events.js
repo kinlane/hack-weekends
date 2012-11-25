@@ -17,7 +17,7 @@ function addDisplayEvent(eventdata){
 function doDisplayEvent(currCount,totalCount)
 {
 	alert(currCount+':'+totalCount);
-	if(currCount==totalCount)
+	if(currCount>totalCount)
 		{
 		
 		alert(currCount+':'+totalCount);
@@ -30,7 +30,14 @@ function doDisplayEvent(currCount,totalCount)
 	        aTemp[aTemp.length] = i; 
 	    }
 	    
-	         		
+	    aTemp.sort(function(a,b){
+	    	
+		    if(allEvents[aTemp[a]]['start_date'] < allEvents[aTemp[b]]['start_date']) return -1;
+		    if(allEvents[aTemp[a]]['start_date'] > allEvents[aTemp[b]]['start_date']) return 1;
+		    
+		    return 0;
+		});
+		             		
 					
 		alert("done55!");
 	
