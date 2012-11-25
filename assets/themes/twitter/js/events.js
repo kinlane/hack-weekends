@@ -29,7 +29,7 @@ function doDisplayEvent(currCount,totalCount)
     
     aTemp.sort(function(a,b){
     	
-    	//alert(aTemp[a]);
+    	alert(dodump(aTemp[a]));
     	//item1 = allEvents[aTemp[a]];
     	
     	//alert(dodump(item1));
