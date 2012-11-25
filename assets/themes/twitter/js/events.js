@@ -16,7 +16,7 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-	if(currCount==totalCount)
+	if(currCount==totalCount-1)
 		{
 		
 		alert(currCount+':'+totalCount);
