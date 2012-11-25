@@ -34,9 +34,14 @@ function doDisplayEvent(currCount,totalCount)
 	    
 	    return 0;
 	});
-		
+	
+	 var aOutput = {};
+	    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
+	        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
+	    }			    
+              		
 				
-	alert("done55!!");
+	alert("done66!!");
 
 	}	
 } 
