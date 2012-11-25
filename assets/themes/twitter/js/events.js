@@ -16,7 +16,17 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-	alert("hey");}	
+	if(currCount==totalCount)
+	{
+	alert(currCount+':'+totalCount);
+	alert(allEvents[0]['name']);
+	alert(allEvents[1]['name']);
+	alert(allEvents[2]['name']);
+
+	
+	alert("done111");
+
+	}	
 } 
     
 function pullEventsByCity()
