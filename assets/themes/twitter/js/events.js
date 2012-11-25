@@ -19,8 +19,8 @@ function doDisplayEvent(currCount,totalCount)
 	if(currCount==totalCount){
 	alert(currCount+':'+totalCount);
 	alert(allEvents[0]['name']);
-	//alert(allEvents[1]['name']);
-	//alert(allEvents[2]['name']);
+	alert(allEvents[1]['name']);
+	alert(allEvents[2]['name']);
 	
 	var aTemp = [];
     for (var sKey in allEvents){
@@ -29,7 +29,7 @@ function doDisplayEvent(currCount,totalCount)
     
     aTemp.sort(function(a,b){
     	
-   		alert(aTemp[0]);
+   		alert(aTemp[a]);
     	//alert(aTemp[0]['name']);
     	//alert(dodump(allEvents[aTemp[a]]));
     	//item1 = allEvents[aTemp[a]];
