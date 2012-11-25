@@ -1075,7 +1075,7 @@
             "eventcount": 0
         },
         {
-            "city": "Kobenhavn",
+            "city": "København",
             "state": "Hovedstaden",
             "country": "Denmark",
             "eventcount": 1
@@ -2084,6 +2084,12 @@
         },
         {
             "city": "Sao Paulo",
+            "state": "São Paulo",
+            "country": "Brazil",
+            "eventcount": 1
+        },
+        {
+            "city": "São Paulo",
             "state": "Sao Paulo",
             "country": "Brazil",
             "eventcount": 1
