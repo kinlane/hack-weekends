@@ -38,7 +38,7 @@ function doDisplayEvent(currCount,totalCount)
 		    return 0;
 		});
 		             		
-					]
+					
 		alert("done55!");
 	
 		}	
