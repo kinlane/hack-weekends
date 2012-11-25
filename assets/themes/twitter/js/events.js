@@ -31,7 +31,6 @@ function doDisplayEvent(currCount,totalCount)
     	
     	//alert(aTemp[a]);
     	item1 = allEvents[aTemp[a]];
-    	item2 = allEvents[aTemp[b]];
     	
     	alert(dodump(item1));
     	
