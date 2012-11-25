@@ -59,7 +59,7 @@ function pullEventsByCity()
         $.each(data['cities'], function(key, val) {
         	
         	city = val['city'];
-        	alert(city.length);	
+        	alert(cityf);	
         	if(val['eventcount']>0)
 	        	{
 	        		
@@ -72,9 +72,12 @@ function pullEventsByCity()
 			    	addDisplayEvent(eventdata);
 			    	
 			    	});
-			               		        	
+			         citycount++;      		        	
 	        	}  
-	        citycount++;
+	        else
+	        {
+	        citycount++;	
+	        }
 	        doDisplayEvent(citycount,totalcities);        	       	
           });           
             
