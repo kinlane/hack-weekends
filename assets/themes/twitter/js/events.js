@@ -45,7 +45,9 @@ function pullEventsByCity()
         	if(val['eventcount']>0)
 	        	{
 	        		
-	        	filename = city.replace(" ","-");	
+	        	filename = city.replace(" ","-");
+	        	filename = city.replace(" ","-");
+	        	filename = city.replace("%20","-")	
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
