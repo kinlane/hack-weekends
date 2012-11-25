@@ -23,14 +23,12 @@ function doDisplayEvent(currCount,totalCount)
 	alert(allEvents[2]['name']);
 	
 	var aTemp = [];
-    for (var i=0;i<allEvents.length;i++)
-        //aTemp[aTemp.length] = i;
-        alert(i); 
+    for (var sKey in allEvents){
+        aTemp[aTemp.length] = sKey; 
     }
     
-	aler(dodump(aTemp));
-	
-	alert("done");
+   	alert(dodump(aTemp));
+	alert("done22");
 
 	}	
 } 
