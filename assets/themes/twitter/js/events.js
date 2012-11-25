@@ -59,6 +59,8 @@ function pullEventsByCity()
         $.each(data['cities'], function(key, val) {
         	
         	city = val['city'];
+        	
+        	if(city){}
 	        		
         	filename = city.replace(" ","-");	
         	filename = filename.toLowerCase();
@@ -71,7 +73,8 @@ function pullEventsByCity()
 		    	});
 			    	
 	        citycount++;
-	        doDisplayEvent(citycount,totalcities);        	       	
+	        doDisplayEvent(citycount,totalcities);   
+	        }     	       	
           });           
             
         }); 
