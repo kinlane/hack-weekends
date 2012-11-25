@@ -16,7 +16,7 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-	alert("hey");	
+	alert("hey");}	
 } 
     
 function pullEventsByCity()
