@@ -69,9 +69,9 @@ function pullEventsByCity()
 			    $.getJSON(filename, function(eventdata) {
 			    	
 			    	addDisplayEvent(eventdata);
-			    	
+			    	citycount++;  
 			    	});
-			         citycount++;      		        	
+			             		        	
 	        	}  
 	        else
 	        {
