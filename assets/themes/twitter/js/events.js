@@ -25,7 +25,7 @@ function doDisplayEvent(currCount,totalCount)
 		//alert(allEvents[1]['name']);
 		alert(allEvents[2]['name']);
               		
-					
+				}
 		alert("done2!");
 	
 		}	
