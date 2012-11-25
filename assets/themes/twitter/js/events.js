@@ -60,7 +60,7 @@ function pullEventsByCity()
         	
         	city = val['city'];
         	
-        	if(city){
+        	alert(city);
 	        		
         	filename = city.replace(" ","-");	
         	filename = filename.toLowerCase();
@@ -73,8 +73,7 @@ function pullEventsByCity()
 		    	});
 			    	
 	        citycount++;
-	        doDisplayEvent(citycount,totalcities);   
-	        }     	       	
+	        doDisplayEvent(citycount,totalcities);        	       	
           });           
             
         }); 
