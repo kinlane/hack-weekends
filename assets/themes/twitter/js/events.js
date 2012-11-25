@@ -31,7 +31,7 @@ function doDisplayEvent(currCount,totalCount)
 function pullEventsByCity()
     {
     citycount = 0;
-    eventcount = 0;	
+    eventcount = 0;	   
 	
     $.getJSON('data/events/cities.json', function(data) {
     	allcities = data['cities'];
@@ -50,10 +50,10 @@ function pullEventsByCity()
 			    $.getJSON(filename, function(eventdata) {
 			    	
 			    	addDisplayEvent(eventdata);
-			    	citycount++;
 			    	
 			    	});               		        	
 	        	}  
+	        citycount++;	
 	        doDisplayEvent(citycount,totalcities);        	       	
           });           
             
