@@ -70,8 +70,10 @@ function pullEventsByCity()
 			    	
 			    	addDisplayEvent(eventdata);
 			    	
+			    	citycount++;    
+			    	
 			    	});
-			         citycount++;      		        	
+			           		        	
 	        	}  
 	        else
 	        {
