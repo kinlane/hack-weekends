@@ -20,12 +20,6 @@ function doDisplayEvent(currCount,totalCount)
 	alert(currCount+':'+totalCount);
 	alert(allEvents[2]['name']);
 	
-	var aTemp = [];
-    for (var sKey in allEvents){
-    	alert(sKey);
-        aTemp[aTemp.length] = sKey; 
-    }
-    
 
 
 	}	
