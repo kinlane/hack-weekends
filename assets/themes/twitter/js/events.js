@@ -22,6 +22,11 @@ function doDisplayEvent(currCount,totalCount)
 	alert(allEvents[1]['name']);
 	alert(allEvents[2]['name']);
 	
+	var aTemp = [];
+    for (var sKey in allEvents){
+        alert(sKey);
+    }
+
 	
 	alert("done11");
 
