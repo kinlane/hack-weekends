@@ -22,6 +22,7 @@ function doDisplayEvent(currCount,totalCount)
 	
 	var aTemp = [];
     for (var sKey in allEvents){
+    	alert(sKey);
         aTemp[aTemp.length] = sKey; 
     }
     
