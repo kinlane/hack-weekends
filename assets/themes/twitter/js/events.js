@@ -16,7 +16,6 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-	alert("in!");
 	if(currCount==totalCount){
 	alert(currCount+':'+totalCount);
 	alert(allEvents[0]['name']);
@@ -30,7 +29,7 @@ function doDisplayEvent(currCount,totalCount)
     
 function pullEventsByCity()
     {
-    citycount = 1;
+    citycount = 0;
     eventcount = 0;	
 	
     $.getJSON('data/events/cities.json', function(data) {
