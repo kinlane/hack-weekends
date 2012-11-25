@@ -19,8 +19,8 @@ function doDisplayEvent(currCount,totalCount)
 	if(currCount==totalCount){
 	alert(currCount+':'+totalCount);
 	alert(allEvents[0]['name']);
-	alert(allEvents[1]['name']);
-	alert(allEvents[2]['name']);
+	//alert(allEvents[1]['name']);
+	//alert(allEvents[2]['name']);
 	
 	var aTemp = [];
 	for (var i=0;i<allEvents.length;i++){
@@ -43,12 +43,12 @@ function doDisplayEvent(currCount,totalCount)
 	$.each(aOutput, function(key3, val3) {
         var template = $('#eventListingItemTemplate').html();
         var html = Mustache.to_html(template, val3);
-        alert(html);
-        //$('#eventList').append(html);  
+        //alert(html);
+        $('#eventList').append(html);  
                			
 		});               		
 				
-	alert("done88!!");
+	alert("done99!!");
 
 	}	
 } 
