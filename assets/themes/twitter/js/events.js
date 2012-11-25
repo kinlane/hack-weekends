@@ -43,7 +43,7 @@ function doDisplayEvent(currCount,totalCount)
 	    return 1;
 	});
 	
-	alert("done2");
+	alert("done3");
 
 	}	
 } 
