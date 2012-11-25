@@ -49,7 +49,7 @@ function doDisplayEvent(currCount,totalCount)
                			
 		}); 	
 				
-	alert("done22");
+	alert("done55!!");
 
 	}	
 } 
