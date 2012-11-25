@@ -24,7 +24,7 @@ function doDisplayEvent(currCount,totalCount)
 	
 	
 	
-	alert("don23);
+	alert("don23");
 
 	}	
 } 
