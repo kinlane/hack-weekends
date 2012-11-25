@@ -32,7 +32,7 @@ function doDisplayEvent(currCount,totalCount)
     	first = aTemp[a];
     	//first = first - 0;
     	alert(first);
-    	
+    	alert(allEvents[0]['name']);
     	//alert(dodump(allEvents[aTemp[a]]));
     	//item1 = allEvents[aTemp[a]];
     	
