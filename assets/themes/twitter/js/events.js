@@ -39,19 +39,6 @@ function doDisplayEvent(currCount,totalCount)
 	    return 0;
 	});
 				    
-	 var aOutput = {};
-	    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
-	        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
-	    }			    
-              	
-
-	$.each(aOutput, function(key3, val3) {
-        var template = $('#eventListingItemTemplate').html();
-        var html = Mustache.to_html(template, val3);
-        //alert(html);
-        $('#eventList').append(html);  
-               			
-		}); 
 	}	
 } 
     
