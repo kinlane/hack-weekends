@@ -21,9 +21,15 @@ function doDisplayEvent(currCount,totalCount)
 	alert(allEvents[0]['name']);
 	alert(allEvents[1]['name']);
 	alert(allEvents[2]['name']);
-
-
-	alert(dodump(allEvents));
+	
+	var aTemp = [];
+    for (var sKey in allEvents){
+        aTemp[aTemp.length] = sKey; 
+    }
+    
+aler(dodump(aTemp));
+	
+	alert("done");
 
 	}	
 } 
