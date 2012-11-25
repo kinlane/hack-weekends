@@ -19,30 +19,10 @@ function doDisplayEvent(currCount,totalCount)
 	if(currCount==totalCount){
 	alert(currCount+':'+totalCount);
 	alert(allEvents[0]['name']);
-	//alert(allEvents[1]['name']);
+	alert(allEvents[1]['name']);
 	//alert(allEvents[2]['name']);
 	
-	var aTemp = [];
-	for (var i=0;i<allEvents.length;i++){
-        aTemp[aTemp.length] = i; 
-    }
-    
-    aTemp.sort(function(a,b){
-    	
-	    if(allEvents[aTemp[a]]['start_date'] < allEvents[aTemp[b]]['start_date']) return -1;
-	    if(allEvents[aTemp[a]]['start_date'] > allEvents[aTemp[b]]['start_date']) return 1;
-	    
-	    return 0;
-	});
-	
-	 var aOutput = {};
-	    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
-	        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
-	    }			    
-              		
-             		
-				
-	alert("done99!!");
+	alert("done1");
 
 	}	
 } 
