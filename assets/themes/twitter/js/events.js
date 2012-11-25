@@ -1,4 +1,3 @@
-citycount = 1;
 var allEvents = new Array();
 
 function addDisplayEvent(eventdata){
@@ -45,13 +44,13 @@ function doDisplayEvent(currCount,totalCount)
 	});
 	
 	alert("done2");
-	citycount++;
 
 	}	
 } 
     
 function pullEventsByCity()
     {
+    citycount = 1;
     eventcount = 0;	
 	
     $.getJSON('data/events/cities.json', function(data) {
@@ -71,12 +70,13 @@ function pullEventsByCity()
 			    	
 			    	addDisplayEvent(eventdata);
 			    	
-			    	}); 		        	
+			    	});
+			         citycount++;      		        	
 	        	}  
 	        else
-		        {
-		        citycount++;	
-		        }
+	        {
+	        citycount++;	
+	        }
 	        doDisplayEvent(citycount,totalcities);        	       	
           });           
             
