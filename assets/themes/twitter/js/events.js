@@ -54,7 +54,7 @@ function pullEventsByCity()
 			    	citycount++;
 			    	addDisplayEvent(eventdata);
 			    	 
-			    	});
+			    	}).error(function() { alert("error"); });
 			              		        	
 	        	}  
 	        else

@@ -926,7 +926,7 @@
         },
         {
             "city": "Ho Chi Minh City",
-            "state": "",
+            "state": null,
             "country": "Vietnam",
             "eventcount": 1
         },
