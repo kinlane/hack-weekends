@@ -21,7 +21,7 @@ function doDisplayEvent(currCount,totalCount)
 	alert(allEvents[2]['name']);
 	for (var i=0;i<allEvents.length;i++)
 	{
-	alert(allEvent[i]['name']);
+	//alert(allEvent[i]['name']);
 	}
 	//$.each(allEvents, function(key3, val3) { alert(val3); });
 	}
