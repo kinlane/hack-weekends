@@ -457,12 +457,6 @@
             "eventcount": 2
         },
         {
-            "city": "Casablanca Ma",
-            "state": "",
-            "country": "Morocco",
-            "eventcount": 0
-        },
-        {
             "city": "Castelfranco Veneto",
             "state": "Veneto",
             "country": "Italy",
@@ -934,12 +928,6 @@
             "city": "Hollywood",
             "state": "CA",
             "country": "United States",
-            "eventcount": 0
-        },
-        {
-            "city": "Hong Kong",
-            "state": "",
-            "country": "China",
             "eventcount": 0
         },
         {
