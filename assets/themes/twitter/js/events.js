@@ -23,8 +23,8 @@ function doDisplayEvent(currCount,totalCount)
 	//alert(allEvents[2]['name']);
 	
 	
-	}
-	alert("done22");
+	
+	alert("don23);
 
 	}	
 } 
