@@ -20,7 +20,7 @@ function doDisplayEvent(currCount,totalCount)
 	alert(currCount+':'+totalCount);
 	alert(allEvents[0]['name']);
 	alert(allEvents[1]['name']);
-	//alert(allEvents[2]['name']);
+	alert(allEvents[2]['name']);
 
 	
 	alert("done2");
