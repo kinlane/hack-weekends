@@ -40,13 +40,7 @@ function doDisplayEvent(currCount,totalCount)
 	        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
 	    }			    
               		
-	$.each(aOutput, function(key3, val3) {
-        var template = $('#eventListingItemTemplate').html();
-        var html = Mustache.to_html(template, val3);
-        alert(html);
-       // $('#eventList').append(html);  
-               			
-		});               		
+             		
 				
 	alert("done99!!");
 
