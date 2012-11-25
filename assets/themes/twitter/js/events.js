@@ -24,8 +24,21 @@ function doDisplayEvent(currCount,totalCount)
     for (var sKey in allEvents){
         aTemp[aTemp.length] = sKey; 
     }
+    
+    aTemp.sort(function(a,b){
+    	
+    	//alert(allEvents[aTemp[a]].start_date);
+    	//alert(allEvents[aTemp[b]].start_date);
+    	
+	    if(allEvents[aTemp[a]]['start_date'] < allEvents[aTemp[b]]['start_date']) return -1;
+	    if(allEvents[aTemp[a]]['start_date'] > allEvents[aTemp[b]]['start_date']) return 1;
+	    
+	    //if(allEvents[aTemp[a]].name < allEvents[aTemp[b]].name) return -1;
+	    //if(allEvents[aTemp[a]].name > allEvents[aTemp[b]].name) return 1;				    
+	    
+	    return 0;
+	});
 
-				    
 	}	
 } 
     
