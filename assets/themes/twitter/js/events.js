@@ -23,7 +23,7 @@ function doDisplayEvent(currCount,totalCount)
 	alert(allEvents[2]['name']);
 	
 	var aTemp = [];
-	for (var i=0;i<allEvents.length;i++)
+	for (var i=0;i<allEvents.length;i++){
         aTemp[aTemp.length] = i; 
     }
     
