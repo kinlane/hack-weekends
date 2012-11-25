@@ -58,8 +58,7 @@ function pullEventsByCity()
     	totalcities = allcities.length;
         $.each(data['cities'], function(key, val) {
         	
-        	city = val['city'];
-        	alert(cityf);	
+        	city = val['city'];	
         	if(val['eventcount']>0)
 	        	{
 	        		
