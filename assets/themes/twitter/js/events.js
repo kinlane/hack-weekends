@@ -16,15 +16,17 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-	if(currCount==totalCount)
-	{
+	if(currCount==totalCount){
 	alert(currCount+':'+totalCount);
 	alert(allEvents[0]['name']);
 	alert(allEvents[1]['name']);
 	alert(allEvents[2]['name']);
-
-	
-	alert(dodump(allEvents[1]));
+	alert(allEvents.length);
+	for (var i=0;i<allEvents.length;i++)
+		{
+        aTemp[aTemp.length] = i;
+    	}
+	alert("done11");
 
 	}	
 } 
