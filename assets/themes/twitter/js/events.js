@@ -19,11 +19,33 @@ function doDisplayEvent(currCount,totalCount)
 	if(currCount==totalCount){
 	alert(currCount+':'+totalCount);
 	alert(allEvents[0]['name']);
-	//alert(allEvents[1]['name']);
-	//alert(allEvents[2]['name']);
-
+	alert(allEvents[1]['name']);
+	alert(allEvents[2]['name']);
 	
-	alert("done4");
+	var aTemp = [];
+    for (var sKey in allEvents){
+        aTemp[aTemp.length] = sKey; 
+    }
+    
+    aTemp.sort(function(a,b){
+    	//alert(allEvents[1]['name']);
+   		//alert(aTemp[a]);
+    	//alert(aTemp[0]['name']);
+    	//alert(dodump(allEvents[aTemp[a]]));
+    	//item1 = allEvents[aTemp[a]];
+    	
+    	//alert(dodump(item1));
+    	
+	    //if(allEvents[aTemp[a]]['start_date'] < allEvents[aTemp[b]]['start_date']) return -1;
+	    //if(allEvents[aTemp[a]]['start_date'] > allEvents[aTemp[b]]['start_date']) return 1;
+	    
+	    //if(allEvents[aTemp[a]].name < allEvents[aTemp[b]].name) return -1;
+	    //if(allEvents[aTemp[a]].name > allEvents[aTemp[b]].name) return 1;				    
+	    
+	    return 1;
+	});
+	
+	alert("done5");
 
 	}	
 } 
