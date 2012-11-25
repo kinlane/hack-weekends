@@ -16,42 +16,19 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-	if(currCount==totalCount){
-	alert(currCount+':'+totalCount);
-	alert(allEvents[0]['name']);
-	//alert(allEvents[1]['name']);
-	//alert(allEvents[2]['name']);
-	
-	var aTemp = [];
-	for (var i=0;i<allEvents.length;i++){
-        aTemp[aTemp.length] = i; 
-    }
-    
-    aTemp.sort(function(a,b){
-    	
-	    if(allEvents[aTemp[a]]['start_date'] < allEvents[aTemp[b]]['start_date']) return -1;
-	    if(allEvents[aTemp[a]]['start_date'] > allEvents[aTemp[b]]['start_date']) return 1;
-	    
-	    return 0;
-	});
-	
-	 var aOutput = {};
-	    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
-	        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
-	    }			    
+	if(currCount==totalCount)
+		{
+		
+		alert(currCount+':'+totalCount);
+		alert(allEvents[0]['name']);
+		//alert(allEvents[1]['name']);
+		alert(allEvents[2]['name']);
               		
-	$.each(aOutput, function(key3, val3) {
-        var template = $('#eventListingItemTemplate').html();
-        var html = Mustache.to_html(template, val3);
-        alert(html);
-       // $('#eventList').append(html);  
-               			
-		});               		
-				
-	alert("done2!");
-
-	}	
-} 
+					
+		alert("done2!");
+	
+		}	
+	} 
     
 function pullEventsByCity()
     {
@@ -73,10 +50,11 @@ function pullEventsByCity()
 	        	
 			    $.getJSON(filename, function(eventdata) {
 			    	
+			    	citycount++;
 			    	addDisplayEvent(eventdata);
-			    	
+			    	 
 			    	});
-			         citycount++;      		        	
+			              		        	
 	        	}  
 	        else
 	        {
