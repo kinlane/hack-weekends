@@ -60,7 +60,7 @@ function pullEventsByCity()
         	
         	city = val['city'];
         	
-        	if(city){}
+        	if(city){
 	        		
         	filename = city.replace(" ","-");	
         	filename = filename.toLowerCase();
