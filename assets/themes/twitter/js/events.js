@@ -25,9 +25,15 @@ function doDisplayEvent(currCount,totalCount)
 		//alert(allEvents[1]['name']);
 		//alert(allEvents[2]['name']);
 		
-           		
+		var aTemp = [];
+		for (var i=0;i<allEvents.length;i++){
+	        aTemp[aTemp.length] = i; 
+	    }
+	    
+	    alert(dodump(aTemp));
+		             		
 					
-		alert("done33");
+		alert("done3!");
 	
 		}	
 	} 
