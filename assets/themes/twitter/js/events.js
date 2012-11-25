@@ -30,7 +30,10 @@ function doDisplayEvent(currCount,totalCount)
     aTemp.sort(function(a,b){
     	
     	//alert(aTemp[a]);
-    	alert(dodump(allEvents[aTemp[a]]));
+    	item1 = allEvents[aTemp[a]];
+    	item2 = allEvents[aTemp[b]];
+    	
+    	alert(dodump(item1));
     	
 	    //if(allEvents[aTemp[a]]['start_date'] < allEvents[aTemp[b]]['start_date']) return -1;
 	    //if(allEvents[aTemp[a]]['start_date'] > allEvents[aTemp[b]]['start_date']) return 1;
