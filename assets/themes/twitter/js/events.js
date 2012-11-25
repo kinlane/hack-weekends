@@ -21,7 +21,7 @@ function doDisplayEvent(currCount,totalCount)
 	alert(allEvents[2]['name']);
 	$.each(allEvents, function(key, val) {
 		alert(dodump(val));
-	}
+	});
 		
 } 
     
