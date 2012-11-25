@@ -30,6 +30,7 @@ function doDisplayEvent(currCount,totalCount)
     aTemp.sort(function(a,b){
     	
     	first = aTemp[a];
+    	first = first - 0;
     	alert(first);
     	
     	//alert(dodump(allEvents[aTemp[a]]));
@@ -46,7 +47,7 @@ function doDisplayEvent(currCount,totalCount)
 	    return 1;
 	});
 	
-	alert("done3");
+	alert("done4");
 
 	}	
 } 
