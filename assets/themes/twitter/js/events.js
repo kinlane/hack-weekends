@@ -25,7 +25,7 @@ function doDisplayEvent(currCount,totalCount)
 	
 	
 	
-	alert("done33");
+	alert(dodump(allEvents));
 
 	}	
 } 
