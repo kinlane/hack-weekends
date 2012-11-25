@@ -59,21 +59,17 @@ function pullEventsByCity()
         $.each(data['cities'], function(key, val) {
         	
         	city = val['city'];
-        	     	
-        	if(val['eventcount']>0)
-	        	{
 	        		
-	        	filename = city.replace(" ","-");	
-	        	filename = filename.toLowerCase();
-	        	filename = 'data/events/'+ filename + ".json";
-	        	
-			    $.getJSON(filename, function(eventdata) {
+        	filename = city.replace(" ","-");	
+        	filename = filename.toLowerCase();
+        	filename = 'data/events/'+ filename + ".json";
+        	
+		    $.getJSON(filename, function(eventdata) {
+		    	
+		    	addDisplayEvent(eventdata);
+		    	citycount++;
+		    	});
 			    	
-			    	addDisplayEvent(eventdata);
-			    	
-			    	});
-			               		        	
-	        	}  
 	        citycount++;
 	        doDisplayEvent(citycount,totalcities);        	       	
           });           
