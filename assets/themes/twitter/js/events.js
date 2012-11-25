@@ -29,9 +29,7 @@ function doDisplayEvent(currCount,totalCount)
     
     aTemp.sort(function(a,b){
     	
-    	first = aTemp[a];
-    	//first = first - 0;
-    	alert(first);
+   
     	alert(allEvents[0]['name']);
     	//alert(dodump(allEvents[aTemp[a]]));
     	//item1 = allEvents[aTemp[a]];
