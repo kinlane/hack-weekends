@@ -17,7 +17,8 @@ function addDisplayEvent(eventdata){
 function doDisplayEvent(currCount,totalCount)
 	{
 
-	if(currCount > 1){
+	if(allEvents){
+		alert("in");
 	alert(dodump(allEvents));
 		}             		
 
