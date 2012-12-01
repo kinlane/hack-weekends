@@ -55,7 +55,7 @@ function showEventsByCity()
 					        $('#eventList').append(html);  
 			        		}
 			          }); 
-			          
+			         }
 			        });
 			               		        	
 	        	}	        	       	
