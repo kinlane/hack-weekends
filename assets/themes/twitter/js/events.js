@@ -17,9 +17,10 @@ function addDisplayEvent(eventdata){
 function doDisplayEvent(currCount,totalCount)
 {
 	
+	alert(currCount + ' : ' + totalCount);
 	if(currCount>totalCount)
 		{
-		alert(currCount + ' : ' + totalCount);
+		alert('IN!!!');
 		var aTemp = [];
 		for (var i=0;i<allEvents.length;i++){
 	        aTemp[aTemp.length] = i; 
