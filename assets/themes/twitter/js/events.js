@@ -18,6 +18,7 @@ function doDisplayEvent(currCount,totalCount)
 {
 	
 	displaycount = currCount + "/" + totalCount;
+	[]
 	document.getElementById('eventcountdisplay').innerHTML = displaycount;
 	
 	alert(currCount + ' : ' + totalCount);
