@@ -19,7 +19,7 @@ function doDisplayEvent(currCount,totalCount)
 
 	if(allEvents)
 		{
-		//alert("length:"+allEvents.length);
+		alert("length:"+allEvents.length);
 		
 		if(allEvents.length>0)
 			{
