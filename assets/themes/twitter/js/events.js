@@ -16,10 +16,10 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 {
-	alert(currCount + ' : ' + totalCount);
+	
 	if(currCount>totalCount)
 		{
-		
+		alert(currCount + ' : ' + totalCount);
 		var aTemp = [];
 		for (var i=0;i<allEvents.length;i++){
 	        aTemp[aTemp.length] = i; 
@@ -53,7 +53,7 @@ function pullEventsByCity()
     citycount = 1;
     eventcount = 0;	
     
-    alert('IN!');
+    //alert('IN!');
 	
     $.getJSON('data/events/cities.json', function(data) {
     	allcities = data['cities'];
