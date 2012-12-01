@@ -1,66 +1,64 @@
-var allEvents = new Array();
 
-function addDisplayEvent(eventdata){
-    $.each(eventdata['events'], function(key2, val2) { 	 
-    	startDate = new Date(val2['start_date']);
-    	endDate = new Date();
-
-    	if(startDate > endDate)
-    		{
-	        aEvent = { "name":val2['name'], "start_date": val2['start_date'], "display_start_date": val2['display_start_date'], "city": val2['city'], "country": val2['country']};
-	        var doit = allEvents.push(aEvent);	
-	        //alert(doit);
-    		}
-    	 });
-	}    
-	
-function doDisplayEvent(currCount,totalCount)
-	{
-
-	if(allEvents)
-		{
-		alert("length:"+allEvents.length);
-		
-		if(allEvents.length>0)
-			{
-			alert(dodump(allEvents));}
-			}             		
-
-	} 
-    
-function pullEventsByCity()
+function showEvents()
     {
-    citycount = 1;
-    eventcount = 0;	
+   // alert("firing!");	
+    $.getJSON('data/events/san-francisco.json', function(data) {
+	//alert('in');
+        $.each(data['events'], function(key, val) {
+        	startDate = val['start_date'];     	
+        	startDate = new Date(startDate);
+        	endDate = new Date();
+        	alert(startDate);
+        	if(startDate > endDate)
+        		{
+        		alert("in!");	
+        		}
+          }); 
+        });
+    }   
+  
     
-    //alert('IN!');
+function showEventsByCity()
+    {
+    citycount = 0;
+    eventcount = 0;	
+    var allEvents = new Array();
 	
     $.getJSON('data/events/cities.json', function(data) {
+    	
     	allcities = data['cities'];
     	totalcities = allcities.length;
+    	
         $.each(data['cities'], function(key, val) {
         	
-        	city = val['city'];	
+        	city = val['city'];
+        	     	
         	if(val['eventcount']>0)
 	        	{
 	        		
-	        	filename = city.replace(" ","-");	
+	        	filename = city.replace(" ","-");
 	        	filename = filename.toLowerCase();
 	        	filename = 'data/events/'+ filename + ".json";
 	        	
 			    $.getJSON(filename, function(eventdata) {
 			    	
-			    	citycount++;
-			    	addDisplayEvent(eventdata);
-			    	 
-			    	}).error(function() { citycount++; });
-			              		        	
-	        	}  
-	        else
-	        {
-	        citycount++;	
-	        }
-	        doDisplayEvent(citycount,totalcities);        	       	
+			        $.each(eventdata['events'], function(key2, val2) {
+			        	  
+			        	startDate = new Date(val2['start_date']);
+			        	endDate = new Date();
+
+			        	if(startDate > endDate)
+			        		{
+					        var template = $('#eventListingItemTemplate').html();
+					        var html = Mustache.to_html(template, val2);
+					        //alert(html);
+					        $('#eventList').append(html);  
+			        		}
+			          }); 
+			          
+			        });
+			               		        	
+	        	}	        	       	
           });           
             
         }); 
@@ -80,17 +78,3 @@ function getEvent(id)
           });                            
         });
     }  
-
-    
-function showCountries()
-    {
-    alert("firing!");	
-    $.getJSON('data/events/san-francisco.json', function(data) {
-    	//alert(dodump(data,5));
-        var template = $('#eventListingTemplate').html();
-        var html = Mustache.to_html(template, data);
-        //alert(html);
-        $('#eventList').html(html);
-        });
-    }   
-    
