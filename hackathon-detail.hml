@@ -16,5 +16,5 @@ layout: page
 <div id="DirectoryDetail"></div>  
 
 <script>
-getEvent(getUrlVar('id'));
+getEvent(getUrlVar('file'),getUrlVar('id'))
 </script>

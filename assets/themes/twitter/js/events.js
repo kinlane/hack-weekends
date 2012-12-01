@@ -66,9 +66,9 @@ function showEventsByCity()
     }       
      
      
-function getEvent(id)
+function getEvent(file,id)
     {
-    $.getJSON('data/events/san-francisco.json', function(data) {
+    $.getJSON('data/events/'+file, function(data) {
         $.each(data['events'], function(key, val) {
             if(id==val['id']){
                 var template = $('#directoryDetailTemplate').html();
