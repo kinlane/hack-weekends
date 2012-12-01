@@ -16,8 +16,8 @@ function addDisplayEvent(eventdata){
 	
 function doDisplayEvent(currCount,totalCount)
 	{
-	alert(allEvents.length);
-	if(allEvents.length>0){
+
+	if(currCount > 1){
 	alert(dodump(allEvents));
 		}             		
 
