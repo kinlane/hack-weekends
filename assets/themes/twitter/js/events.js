@@ -57,9 +57,7 @@ function getEvent(url,city)
                 var template = $('#eventyDetailTemplate').html();
                 var html = Mustache.to_html(template, val);
                 $('#EventDetail').html(html);
-                pHTML = document.getElementById('about').innerHTML; 
-                //alert(pHTML);
-                document.getElementById('about').innerHTML = pHTML;   
+                pHTML = document.getElementById('about').innerHTML;  
             }
           });                            
         });
