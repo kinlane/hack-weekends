@@ -1,24 +1,4 @@
-
-function showEvents()
-    {
-   // alert("firing!");	
-    $.getJSON('data/events/san-francisco.json', function(data) {
-	//alert('in');
-        $.each(data['events'], function(key, val) {
-        	startDate = val['start_date'];     	
-        	startDate = new Date(startDate);
-        	endDate = new Date();
-        	alert(startDate);
-        	if(startDate > endDate)
-        		{
-        		alert("in!");	
-        		}
-          }); 
-        });
-    }   
-  
-    
-function showEventsByCity()
+    function showEventsByCity()
     {
     citycount = 0;
     eventcount = 0;	
@@ -76,7 +56,8 @@ function getEvent(url,city)
             if(url==val['url']){
                 var template = $('#eventyDetailTemplate').html();
                 var html = Mustache.to_html(template, val);
-                $('#EventDetail').html(html);                            
+                $('#EventDetail').html(html); 
+                $('#about').html(document.getElementById('about').innerText);                   
             }
           });                            
         });
