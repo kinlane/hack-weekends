@@ -18,7 +18,7 @@ function doDisplayEvent(currCount,totalCount)
 	{
 
 	if(allEvents){
-		alert("in");
+		alert(allEvents.length);
 	alert(dodump(allEvents));
 		}             		
 
