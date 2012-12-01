@@ -19,7 +19,7 @@ function doDisplayEvent(currCount,totalCount)
 	
 	displaycount = currCount + " of " + totalCount;
 	
-	document.getElementById('eventcountdisplay').innerHTML = displaycount;
+	//document.getElementById('eventcountdisplay').innerHTML = displaycount;
 	
 	alert(currCount + ' : ' + totalCount);
 		
