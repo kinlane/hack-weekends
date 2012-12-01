@@ -3,17 +3,18 @@ layout: page
 ---
 	 
 {% literal %}
-<script id="directoryDetailTemplate" type="text/template">
-<h1>{{firstName}} {{lastName}}</h1>
+<script id="eventyDetailTemplate" type="text/template">
+<h1>{{name}}</h1>
 <br />
-<p>Email: <a href="mailto:{{email}}">{{email}}</a></p>
 <p>URL: <a href="{{url}}">{{url}}</a></p>
+<br />
+<p>{{about}}</p>
 <br />
 <p><a href="directory">Return to Main Directory</a></p>
 </script>
 {% endliteral %}
 
-<div id="DirectoryDetail"></div>  
+<div id="EventDetail"></div>  
 
 <script>
 getEvent(getUrlVar('file'),getUrlVar('id'))
