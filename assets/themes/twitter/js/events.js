@@ -66,7 +66,7 @@ function showEventsByCity()
     }       
      
      
-function getEvent(file,city)
+function getEvent(url,city)
     {
 	filename = city.replace(" ","-");
 	filename = filename.toLowerCase();
