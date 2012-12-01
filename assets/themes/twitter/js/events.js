@@ -54,6 +54,7 @@ function pullEventsByCity()
     eventcount = 0;	
     
     alert('IN!');
+    }
 	
     $.getJSON('data/events/cities.json', function(data) {
     	allcities = data['cities'];
