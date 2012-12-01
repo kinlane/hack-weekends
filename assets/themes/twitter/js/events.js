@@ -77,8 +77,9 @@ function getEvent(url,city)
         	alert(val['url'] + ' = ' + url);
             if(url==val['url']){
                 var template = $('#eventDetailTemplate').html();
-                var html = Mustache.to_html(template, val);
-                $('#EventDetail').html(html);                            
+                alert(template);
+                //var html = Mustache.to_html(template, val);
+                //$('#EventDetail').html(html);                            
             }
           });                            
         });
