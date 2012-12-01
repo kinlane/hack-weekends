@@ -4,30 +4,6 @@ title: Hack Weekends
 description: Join the hackathon movement.
 ---
 
-{% literal %}
-<script id="eventListingTemplate" type="text/template">
-    <table cellpadding="5" cellspacing="5" width="100%" border="0">
-        {{#events}}
-        <tr>
-            <td align="center">
-                <strong>{{start_date}}</strong>
-            </td>              
-            <td>
-                <a href="hackthon-detail.html?url={{url}}&city={{city}}" style="color:#000;">
-                    {{name}}
-                </a>
-            </td>    
-            <td>
-                <a href="/events/" style="color:#000;">
-                   {{city}}  {{country}}
-                </a>
-            </td>                                                                                                   
-        </tr>
-        {{/events}}
-    </table>
-    
-</script>
-{% endliteral %}
 
 {% literal %}
 <script id="eventListingItemTemplate" type="text/template">
@@ -36,7 +12,7 @@ description: Join the hackathon movement.
             <strong>{{display_start_date}}</strong>
         </td>              
         <td style="color:#000; size: 10px;">
-            <a href="/events/">
+            <a href="hackthon-detail.html?url={{url}}&city={{city}}">
                 {{name}}
             </a>
         </td>    
