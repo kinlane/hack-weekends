@@ -74,7 +74,7 @@ function getEvent(url,city)
     	
     $.getJSON(filename, function(data) {
         $.each(data['events'], function(key, val) {
-        	alert(val['url']);
+        	alert(val['url'] + ' = ' + url);
             if(url==val['url']){
                 var template = $('#eventDetailTemplate').html();
                 var html = Mustache.to_html(template, val);
