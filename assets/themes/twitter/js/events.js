@@ -51,7 +51,6 @@ function showEventsByCity()
 			        		{
 					        var template = $('#eventListingItemTemplate').html();
 					        var html = Mustache.to_html(template, val2);
-					        //alert(html);
 					        $('#eventList').append(html);  
 			        		}
 			          }); 
@@ -74,12 +73,9 @@ function getEvent(url,city)
     	
     $.getJSON(filename, function(data) {
         $.each(data['events'], function(key, val) {
-        	alert(val['url'] + ' = ' + url);
             if(url==val['url']){
                 var template = $('#eventyDetailTemplate').html();
-                //alert(template);
                 var html = Mustache.to_html(template, val);
-                alert(html);
                 $('#EventDetail').html(html);                            
             }
           });                            
