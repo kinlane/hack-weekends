@@ -18,32 +18,7 @@ function doDisplayEvent(currCount,totalCount)
 	{
 	
 	if(allEvents.length>0){
-	var aTemp = [];
-	for (var i=0;i<allEvents.length;i++){
-        aTemp[aTemp.length] = i; 
-    }
-    
-    aTemp.sort(function(a,b){
-    	
-	    if(allEvents[aTemp[a]]['start_date'] < allEvents[aTemp[b]]['start_date']) return -1;
-	    if(allEvents[aTemp[a]]['start_date'] > allEvents[aTemp[b]]['start_date']) return 1;
-	    
-	    return 0;
-	});
-	
-	 var aOutput = {};
-	    for (var nIndex=0; nIndex<aTemp.length;nIndex++){
-	        aOutput[aTemp[nIndex]] = allEvents[aTemp[nIndex]];
-	    }			    
-              		
-	$.each(aOutput, function(key3, val3) {
-        var template = $('#eventListingItemTemplate').html();
-        var html = Mustache.to_html(template, val3);
-       // alert(html);
-        $('#eventList').append(html);  
-               			
-		});  
-		
+	alert(dodump(allEvents));
 		}             		
 
 	} 
