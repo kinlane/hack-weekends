@@ -18,9 +18,11 @@ function doDisplayEvent(currCount,totalCount)
 {
 	
 	//alert(currCount + ' : ' + totalCount);
-	if(currCount>totalCount)
+	if(currCount==totalCount)
 		{
+		
 		alert('IN!!!');
+		
 		var aTemp = [];
 		for (var i=0;i<allEvents.length;i++){
 	        aTemp[aTemp.length] = i; 
@@ -42,7 +44,7 @@ function doDisplayEvent(currCount,totalCount)
 		$.each(aOutput, function(key3, val3) {
 	        var template = $('#eventListingItemTemplate').html();
 	        var html = Mustache.to_html(template, val3);
-	        //alert(html);
+	        alert(html);
 	        $('#eventList').append(html);  
 	               			
 			});               		
