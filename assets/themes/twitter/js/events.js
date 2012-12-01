@@ -18,9 +18,9 @@ function doDisplayEvent(currCount,totalCount)
 	{
 
 	if(allEvents){
-		alert(allEvents.length);
+	if(allEvents.length){
 	alert(dodump(allEvents));
-		}             		
+		}             	}	
 
 	} 
     
