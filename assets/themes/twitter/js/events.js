@@ -22,7 +22,7 @@ function doDisplayEvent(currCount,totalCount)
 	if(currCount==totalCount)
 		{
 		
-		alert('IN!!!');
+		alert('IN - Run!');
 		
 		var aTemp = [];
 		for (var i=0;i<allEvents.length;i++){
