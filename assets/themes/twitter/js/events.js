@@ -59,7 +59,7 @@ function getEvent(url,city)
                 $('#EventDetail').html(html);
                 pHTML = document.getElementById('about').innerHTML; 
                 alert(pHTML);
-                document.getElementById('about').innerHTML = pHTML;              
+                document.getElementById('about').innerHTML = 'hello';   
             }
           });                            
         });
