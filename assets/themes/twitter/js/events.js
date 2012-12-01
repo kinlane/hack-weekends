@@ -66,9 +66,13 @@ function showEventsByCity()
     }       
      
      
-function getEvent(file,id)
+function getEvent(file,city)
     {
-    $.getJSON('data/events/'+file, function(data) {
+	filename = city.replace(" ","-");
+	filename = filename.toLowerCase();
+	filename = 'data/events/'+ filename + ".json";    	
+    	
+    $.getJSON(filename, function(data) {
         $.each(data['events'], function(key, val) {
             if(url==val['url']){
                 var template = $('#eventDetailTemplate').html();
