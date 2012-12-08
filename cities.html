@@ -4,6 +4,13 @@ title: Hack Weekends
 description: Join the hackathon movement.
 ---
 
+<style>                     
+    .citycolumn { width: 150px; border: 1px solid #000; display: inline; }
+    .cloudUS { margin: 0; padding-top: 10px;}
+    .cloudUS li { color:000;  list-style: none;  margin:5px;}
+    .cloudUS li a { color:#000; }
+</style>
+
 {% literal %}
 <script id="cityListingItemTemplate" type="text/template">
      <li><a href="{{city}}">{{city}}, {{state}}</a></li>                                                                                                 
@@ -16,13 +23,7 @@ description: Join the hackathon movement.
     <div class="entry">   
           
         <h5 class="title">Cities in the United States</h5>
-            
-        <style>                     
-            .citycolumn { width: 150px; border: 1px solid #000; display: inline; }
-            .cloudUS { margin: 0; padding-top: 10px;}
-            .cloudUS li { color:000;  list-style: none;  margin:5px;}
-            .cloudUS li a { color:#000; }
-        </style>
+        <br stye="clear: both" />
         
         <div class="citycolumn">
             <ul class="cloudUS" id="tier1"></ul>
