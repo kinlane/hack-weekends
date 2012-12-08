@@ -40,3 +40,24 @@ function showCities()
  
 	}
 	
+function getCityEvents(city)
+    {
+	filename = city.replace(" ","-");
+	filename = filename.toLowerCase();
+	filename = 'data/events/'+ filename + ".json";    	
+    	
+    $.getJSON(filename, function(data) {
+        $.each(data['events'], function(key, val) {
+        	startDate = new Date(val['start_date']);
+        	endDate = new Date();
+
+        	if(startDate > endDate)
+        		{
+                var template = $('#eventListingItemTemplate').html();
+                var html = Mustache.to_html(template, val);
+                $('#eventList').html(html);
+                pHTML = document.getElementById('about').innerHTML;  
+            }
+          });                            
+        });
+    }  

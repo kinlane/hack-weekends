@@ -5,7 +5,6 @@ description: Join the hackathon movement.
 ---
 
 <style>                     
-    .citycolumn { width: 150px; border: 1px solid #000; display: inline; }
     .cloudUS { margin: 0; padding-top: 10px;}
     .cloudUS li { color:000;  list-style: none;  margin:5px;}
     .cloudUS li a { color:#000; }
@@ -13,27 +12,24 @@ description: Join the hackathon movement.
 
 {% literal %}
 <script id="cityListingItemTemplate" type="text/template">
-     <li><a href="{{city}}">{{city}}, {{state}} ({{eventcount}})</a></li>                                                                                                 
+     <li><a href="city-detail.html?city={{city}}">{{city}}, {{state}} ({{eventcount}})</a></li>                                                                                                 
 </script>
 {% endliteral %}
-
-<h2>Hackathons by City</h2>
 
 <div>
     <div class="entry">   
           
         <h5 class="title">Cities in the United States</h5>
-        <br stye="clear: both" />
         
        <table cellpadding="5" width="100%">
            <tr>
-               <td width="25%" valign="top">
+               <td width="33%" valign="top">
                     <ul class="cloudUS" id="tier1"></ul>
                </td>
-               <td width="25%" valign="top">
+               <td width="33%" valign="top">
                     <ul class="cloudUS" id="tier2"></ul>
                </td>
-               <td width="25%" valign="top">
+               <td width="33%" valign="top">
                     <ul class="cloudUS" id="tier3"></ul>
                </td>
            </tr>   
