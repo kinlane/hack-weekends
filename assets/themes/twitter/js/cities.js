@@ -50,7 +50,7 @@ function getCityEvents(city)
         $.each(data['events'], function(key, val) {
         	startDate = new Date(val['start_date']);
         	endDate = new Date();
-alert(val['name']+ ' ' + startDate + ' ' + endDate);
+			alert(val['name']+ ' ' + startDate + ' ' + endDate);
         	if(startDate > endDate)
         		{
                 var template = $('#eventListingItemTemplate').html();
