@@ -48,7 +48,7 @@ function getCityEvents(city)
 	filename = 'data/events/'+ filename + ".json";    	
    	eventcount = 0;
    	
-   	alert(githubJSONFile);
+   	//alert(githubJSONFile);
 	$("#jsonlink").attr("href", githubJSONFile)
 
    	$('#eventListTitle').html('Hackathons for ' + city);
