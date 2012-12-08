@@ -27,11 +27,11 @@ function showCities()
         
         
 	var listItems = $("#cloudUS li");
-	alert(listItems);
+	alert(dodump(listItems));
 	listItems.each(function(idx, li) {
 	    //var product = $(li);
 		//alert(product);
-		alert("in");
+		alert(li);
 	    // and the rest of your code
 	});     
 	}
