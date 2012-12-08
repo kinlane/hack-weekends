@@ -26,11 +26,7 @@ function showCities()
         }); 
         
         
-	var	listItems = $("#cloudUS").find("li").each(function(){
-		   var product = $(this);
-		   alert("product: "+product);
-		   // rest of code.
-		});   
+    $usCities = $('cloudUS').html();
+	alert($usCities);
 	}
-     
      
