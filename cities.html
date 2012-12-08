@@ -4,5 +4,30 @@ title: Hack Weekends
 description: Join the hackathon movement.
 ---
 
-<h1>Hack Weekends Cities</h1>
-<p>What we doing here?</p>
+
+{% literal %}
+<script id="cityListingItemTemplate" type="text/template">
+     <li style="border:0px; padding:8px; margin: 8px;"><a href="{{city}}"><strong style="font-size: 1em;">{{city}}, {{state}}</strong></a></li>                                                                                                 
+</script>
+{% endliteral %}
+
+<h2>Hackathons by City</h2>
+
+<div>
+    <div class="entry">     
+        <h5 class="title">Cities in the United States</h2>
+        <style>                     
+
+            #cloudUS { margin: 0; padding-top: 10px; width: 500px; text-align: center;}
+            #cloudUS li { display: inline; color:000;  list-style: square;  margin:5px;}
+            #cloudUS li a { color:#000;}
+             
+        </style>
+        <ul id="cloudUS"></ul>   
+            
+    </div>
+</div>  
+
+<script type="text/javascript">
+showCities();
+</script>
