@@ -6,16 +6,15 @@ title: Hack Weekends Blog
 {% for post in site.posts limit:25 %}
 <div class="post">
     
-    <h1 class="title">
-      <a href="/hack-weekends/{{ post.url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a>
-    </h1>
-
-     <i><span class="small">Posted on {{ post.date | date:"%Y-%m-%d" }}</span></i><br />
-
-    {{ post.content | strip_html | truncatewords: 100 }}
-
-    <hr />
-    
+    <a href="/hack-weekends/{{ post.url }}" rel="bookmark" title="{{ post.title }}" target="_blank" style="color:#000;"><h4><strong>{{ post.title }}</strong></h4></a>
+    <p>
+    <i>          
+        <span class="small">on</span> <span class="post-date">{{ post.date | date:"%Y-%m-%d" }}</span>
+    </i>
+    </p>
+    <p>{{ post.content | strip_html | truncatewords: 100 }}...<a href="/hack-weekends/{{ post.url }}" rel="bookmark" title="{{ post.title }}" target="_blank" style="color:#000;">read more</a>.</p>
+    <hr />     
+   
 </div>
 {% endfor %}
 
