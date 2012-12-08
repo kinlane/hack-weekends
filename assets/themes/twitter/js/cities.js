@@ -65,7 +65,7 @@ function getCityEvents(city)
           
          if(eventcount==0){
          	html = '<tr><td colspan="3" align="center"><br /><br /></td></tr><tr><td colspan="3" align="center"><strong>No events for ' + city + ' currently!</strong></td></tr>';
-         	alert(html);
+         	//alert(html);
          	$('#eventList').append(html);		
          }
                                      
