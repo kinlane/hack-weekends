@@ -24,9 +24,13 @@ function showCities()
           });           
             
         }); 
-        
-        
-    usCities = $('#cloudUS').html();
-	alert(usCities);
+ 
+	}
+	
+	
+function updateCityTag()
+	{
+	usCities = $('#cloudUS').html();
+	alert(usCities);	
 	}
      
