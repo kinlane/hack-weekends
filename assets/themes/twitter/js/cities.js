@@ -60,7 +60,10 @@ function getCityEvents(city)
             }
           }); 
           
-          alert(eventcount);
+         if(eventcount==0){
+         	html = '<tr><td colspan="3" align="center"><strong>No events for ' + city + ' currently!</strong></td></tr>';
+         	$('#eventList').append(html);		
+         }
                                      
         });
     }  
@@ -82,3 +85,4 @@ function getEvent(url,city)
           });                            
         });
     }  
+{}
