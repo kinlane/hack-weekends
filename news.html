@@ -7,13 +7,14 @@ description: Join the hackathon movement.
 {% literal %}
 <script id="newsListingTemplate" type="text/template">
     
-    <p><a href="{{url}}" rel="bookmark" title="{{title}}" target="_blank"><strong>{{title}}</strong></a></p>
+    <h2><a href="{{url}}" rel="bookmark" title="{{title}}" target="_blank"><strong>{{title}}</strong></a></h2>
+    <p>
     <i>
         <a href="http://{{source}}" rel="source">{{source}}</a>            
         <span class="small">on</span> <span class="post-date">{{display_item_date}}</span>
     </i>
-    <br /><br />
-    <strong>Excerpt:</strong>{{details}}</a><br /><br />
+    </p>
+    <p><strong>Excerpt:</strong>{{details}}</a></p>
     <hr />    
     
 </script>
