@@ -12,7 +12,7 @@ title: Hack Weekends Blog
     <a href="/hack-weekends/{{ post.url }}" rel="bookmark" title="{{ post.title }}" target="_blank" style="color:#000;"><h4><strong>{{ post.title }}</strong></h4></a>
     <p>
     <i>          
-        <span class="small">on</span> <span class="post-date">{{ post.date | date:"%Y-%m-%d" }}</span>
+        <span class="small"><strong>Posted on</span> <span class="post-date">{{ post.date | date:"%Y-%m-%d" }}</strong></span>
     </i>
     </p>
     <p>{{ post.content | strip_html | truncatewords: 100 }}...<a href="/hack-weekends/{{ post.url }}" rel="bookmark" title="{{ post.title }}" target="_blank" style="color:#000;">read more</a>.</p>
