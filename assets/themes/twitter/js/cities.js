@@ -16,7 +16,7 @@ function showCities()
         	if(val['eventcount']>1)
 	        	{
 		        var template = $('#cityListingItemTemplate').html();
-		        var html = Mustache.to_html(template, val2);
+		        var html = Mustache.to_html(template, val);
 		        $('#cityList').append(html);     
 		        citycount++;		        	
 	        	}	        	       	
