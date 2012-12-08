@@ -45,7 +45,7 @@ function getCityEvents(city)
 	filename = city.replace(" ","-");
 	filename = filename.toLowerCase();
 	filename = 'data/events/'+ filename + ".json";    	
-    	
+   	eventcount = 0;
     $.getJSON(filename, function(data) {
         $.each(data['events'], function(key, val) {
         	startDate = new Date(val['start_date']);
@@ -56,8 +56,12 @@ function getCityEvents(city)
                 var template = $('#eventListingItemTemplate').html();
                 var html = Mustache.to_html(template, val);
                 $('#eventList').append(html);
+                eventcount++;
             }
-          });                            
+          }); 
+          
+          alert(eventcount);
+                                     
         });
     }  
     
