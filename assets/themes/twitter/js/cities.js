@@ -44,7 +44,7 @@ function getCityEvents(city)
     {
 	filename = city.replace(" ","-");
 	filename = filename.toLowerCase();
-	githubJSONFile = 'https://raw.github.com/kinlane/hack-weekends/gh-pages/data/events/' + filename + ''.json'';   
+	githubJSONFile = 'https://raw.github.com/kinlane/hack-weekends/gh-pages/data/events/' + filename + '.json';   
 	filename = 'data/events/'+ filename + ".json";    	
    	eventcount = 0;
    	
