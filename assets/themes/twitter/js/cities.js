@@ -31,6 +31,6 @@ function showCities()
 function updateCityTag()
 	{
 	usCities = $('#cloudUS').html();
-	alert(usCities);	
+	alert('done');	
 	}
      
