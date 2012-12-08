@@ -46,6 +46,9 @@ function getCityEvents(city)
 	filename = filename.toLowerCase();
 	filename = 'data/events/'+ filename + ".json";    	
    	eventcount = 0;
+
+   	$('#eventListTitle').html('Hackathons for ' + city);
+   	
     $.getJSON(filename, function(data) {
         $.each(data['events'], function(key, val) {
         	startDate = new Date(val['start_date']);
