@@ -17,8 +17,8 @@ function showCities()
 	        	{
 		        var template = $('#cityListingItemTemplate').html();
 		        var html = Mustache.to_html(template, val);
-		        alert(html);
-		        $('#cityList').append(html);     
+		        //alert(html);
+		        $('#cloudUS').append(html);     
 		        citycount++;		        	
 	        	}	        	       	
           });           
