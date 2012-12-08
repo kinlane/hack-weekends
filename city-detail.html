@@ -7,7 +7,7 @@ description: Join the hackathon movement.
 {% literal %}
 <script id="eventListingItemTemplate" type="text/template">
     <tr>
-        <td align="center" width="100" style="color:#000; size: 9px;">
+        <td align="center" style="color:#000; size: 9px;">
             <strong>{{display_start_date}}</strong>
         </td>              
         <td>
@@ -15,7 +15,7 @@ description: Join the hackathon movement.
                 {{name}}
             </a>
         </td>    
-        <td style="color:#000; size: 9px;" width="35%">
+        <td style="color:#000; size: 9px;">
                {{city}},  {{country}}
         </td>   
     </tr>                                                                                                   
@@ -23,12 +23,12 @@ description: Join the hackathon movement.
 {% endliteral %}
 
 <div>
-    <table class="tablesorter">
+    <table class="tablesorter" width="100%">
         <thead> 
         <tr> 
-            <th>Date</th> 
+            <thwidth="18%">Date</th> 
             <th>Title</th> 
-            <th>Location</th> 
+            <th width="35%">Location</th> 
         </tr> 
         </thead> 
         <tbody id="eventList"> 
