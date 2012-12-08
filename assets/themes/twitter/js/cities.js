@@ -56,7 +56,6 @@ function getCityEvents(city)
                 var template = $('#eventListingItemTemplate').html();
                 var html = Mustache.to_html(template, val);
                 $('#eventList').html(html);
-                pHTML = document.getElementById('about').innerHTML;  
             }
           });                            
         });
