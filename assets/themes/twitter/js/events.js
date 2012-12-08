@@ -26,7 +26,7 @@
 			        	  
 			        	startDate = new Date(val2['start_date']);
 			        	endDate = new Date();
-
+alert(endDate);
 			        	if(startDate > endDate)
 			        		{
 					        var template = $('#eventListingItemTemplate').html();
