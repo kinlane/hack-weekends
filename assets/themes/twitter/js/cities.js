@@ -17,7 +17,6 @@ function showCities()
 	        	{
 		        var template = $('#cityListingItemTemplate').html();
 		        var html = Mustache.to_html(template, val);
-		        //alert(html);
 		        $('#cloudUS').append(html);     
 		        citycount++;		        	
 	        	}	        	       	
@@ -27,10 +26,3 @@ function showCities()
  
 	}
 	
-	
-function updateCityTag()
-	{
-	usCities = $('#cloudUS').html();
-	alert('done');	
-	}
-     
