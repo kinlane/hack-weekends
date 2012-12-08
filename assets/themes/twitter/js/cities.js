@@ -13,13 +13,27 @@ function showCities()
         	
         	city = val['city'];
         	     	
-        	if(val['eventcount']>1)
+        	if(val['eventcount']>25)
 	        	{
 		        var template = $('#cityListingItemTemplate').html();
 		        var html = Mustache.to_html(template, val);
-		        $('#cloudUS').append(html);     
+		        $('#tier1').append(html);     
 		        citycount++;		        	
-	        	}	        	       	
+	        	}	
+        	if(val['eventcount']>10&&val['eventcount']<25)
+	        	{
+		        var template = $('#cityListingItemTemplate').html();
+		        var html = Mustache.to_html(template, val);
+		        $('#tier2').append(html);     
+		        citycount++;		        	
+	        	}
+        	if(val['eventcount']<10)
+	        	{
+		        var template = $('#cityListingItemTemplate').html();
+		        var html = Mustache.to_html(template, val);
+		        $('#tier3').append(html);     
+		        citycount++;		        	
+	        	}	        		        	        	       	
           });           
             
         }); 
