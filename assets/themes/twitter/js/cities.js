@@ -44,8 +44,11 @@ function getCityEvents(city)
     {
 	filename = city.replace(" ","-");
 	filename = filename.toLowerCase();
+	githubJSONFile = 'https://raw.github.com/kinlane/hack-weekends/gh-pages/data/events/' + filename + ''.json'';   
 	filename = 'data/events/'+ filename + ".json";    	
    	eventcount = 0;
+   	
+	$("jsonlink").attr("href", githubJSONFile)
 
    	$('#eventListTitle').html('Hackathons for ' + city);
    	
