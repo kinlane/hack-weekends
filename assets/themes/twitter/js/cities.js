@@ -28,8 +28,9 @@ function showCities()
         
 	var listItems = $("#cloudUS li");
 	listItems.each(function(idx, li) {
-	    var product = $(li);
-		alert(product);
+	    //var product = $(li);
+		//alert(product);
+		alert("in");
 	    // and the rest of your code
 	});     
 	}
