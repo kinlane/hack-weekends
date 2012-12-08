@@ -32,5 +32,6 @@ function showCities()
 		alert(product);
 	    // and the rest of your code
 	});     
+	}
      
      
