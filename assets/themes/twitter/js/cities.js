@@ -26,14 +26,11 @@ function showCities()
         }); 
         
         
-	var listItems = $("#cloudUS li");
-	alert(dodump(listItems));
-	listItems.each(function(idx, li) {
-	    //var product = $(li);
-		//alert(product);
-		alert(li);
-	    // and the rest of your code
-	});     
+	var	listItems = $("#cloudUS").find("li").each(function(){
+		   var product = $(this);
+		   alert("product: "+product);
+		   // rest of code.
+		});   
 	}
      
      
