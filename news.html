@@ -5,4 +5,21 @@ description: Join the hackathon movement.
 ---
 
 <h1>Hack Weekends News</h1>
-<p>What we doing here?</p>
+
+{% literal %}
+<script id="newsListingTemplate" type="text/template">
+    <ul>
+    {{#news}}
+    <li><a href="{{url}} ">{{title}}</a></li>
+    {{/news}}
+    </ul>
+</script>
+{% endliteral %}
+
+<h1>News</h1>
+
+<div id="newsList"></div>  
+
+<script type="text/javascript">
+listNews();
+</script>
