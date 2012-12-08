@@ -26,7 +26,7 @@ function showCities()
         }); 
         
         
-    usCities = $('cloudUS').html();
+    usCities = $('#cloudUS').html();
 	alert(usCities);
 	}
      
