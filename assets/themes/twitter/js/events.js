@@ -31,4 +31,20 @@ function getEvent(url,city)
             }
           });                            
         });
+    }       
+     
+function getEvent2(url)
+    {
+	filename = 'data/events/data.json";    	
+    	
+    $.getJSON(filename, function(data) {
+        $.each(data['events'], function(key, val) {
+            if(url==val['url']){
+                var template = $('#eventyDetailTemplate').html();
+                var html = Mustache.to_html(template, val);
+                $('#EventDetail').html(html);
+                pHTML = document.getElementById('about').innerHTML;  
+            }
+          });                            
+        });
     }  
