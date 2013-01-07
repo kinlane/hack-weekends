@@ -2,9 +2,8 @@
 layout: page
 title: Hack Weekends News
 ---
-
+{% raw  %}
 <script id="newsListingTemplate" type="text/template">
-    
     <a href="{{url}}" rel="bookmark" title="{{title}}" target="_blank" style="color:#000;"><h4><strong>{{title}}</strong></h4></a>
     <p>
     <i>
@@ -13,9 +12,9 @@ title: Hack Weekends News
     </i>
     </p>
     <p><strong>Excerpt:</strong>{{details}}</a>...<a href="{{url}}" rel="bookmark" title="{{title}}" target="_blank" style="color:#000;">read more</a>.<</p>
-    <hr />    
-    
+    <hr />        
 </script>
+{% endraw %}
 
 <p><a href="https://raw.github.com/kinlane/hack-weekends/gh-pages/data/news/news.json" target="_blank"><img src="images/json-data-store.jpg" align="right" width="40" style="padding-top: 10px;" /></a></p>
 <h1>Hack Weekends News</h1>
