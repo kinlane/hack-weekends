@@ -1,4 +1,4 @@
-
+//Show all events
 function showEventsByCity(datasource)
     {
 	        	

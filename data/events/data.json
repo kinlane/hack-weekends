@@ -30,7 +30,7 @@
         },
         {
             "name": "Sprout - Hackathon 5",
-            "about": "<P><IMG SRC=http://app.sproutecon.com/flyer.png ALT=bloomington il hackathon WIDTH=605 HEIGHT=783></P>",
+            "about": "<p><IMG SRC=http://app.sproutecon.com/flyer.png ALT=bloomington il hackathon WIDTH=605 HEIGHT=783></p>",
             "start_date": "Jan 12 2013 02:00:00",
             "display_start_date": "01-11-2013",
             "end_date": "Jan 12 2013 11:00:00",
