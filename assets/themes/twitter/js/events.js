@@ -4,10 +4,10 @@ function showEventsByCity(datasource)
 	        	
     $.getJSON(datasource, function(eventdata) {
     	
-        $.each(eventdata['events'], function(key2, val2) {
+        $.each(eventdata['events'], function(key, val) {
         	  
 	        var template = $('#eventListingItemTemplate').html();
-	        var html = Mustache.to_html(template, val2);
+	        var html = Mustache.to_html(template, val);
 	        $('#eventList').append(html);  
 	        
           }); 
