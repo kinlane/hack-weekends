@@ -9,6 +9,9 @@ title: Cities
     .cloudUS li a { color:#000; }
 </style>
 
+<script id="cityListingItemTemplate" type="text/template">
+     <li><a href="city-detail.html?city={{city}}">{{city}}, {{state}}</a></li>                                                                                                 
+</script>
 
 <h1>Cities</h1>
 <div>
@@ -30,3 +33,7 @@ title: Cities
         
     </div>
 </div>  
+
+<script type="text/javascript">
+showCities();
+</script>
