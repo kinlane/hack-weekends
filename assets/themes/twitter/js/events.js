@@ -15,7 +15,8 @@ function showEventsByCity(datasource)
         });
  
     }       
-     
+   
+// get detail by City  
 function getEvent(url,city)
     {
 	filename = city.replace(" ","-");
