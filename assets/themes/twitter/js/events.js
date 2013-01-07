@@ -37,7 +37,7 @@ function getEvent(url,city)
      
 function getEvent2(url)
     {
-	filename = 'data/events/data.json";    	
+	filename = 'data/events/data.json';    	
     	
     $.getJSON(filename, function(data) {
         $.each(data['events'], function(key, val) {
