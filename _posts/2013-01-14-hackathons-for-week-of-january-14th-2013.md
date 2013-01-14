@@ -1,7 +1,6 @@
 ---
 layout: post
-title: DocuSign API Hackathon
-url: http://apievangelist.com
+title: Hackathons for Week of January 14th, 2013
 ---
 {% include JB/setup %}
 These are the hackathons we tracking on at <a title="Singly" href="http://singly.com">Singly</a>. It looks like about 42 different events in the United States.
