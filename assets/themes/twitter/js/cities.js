@@ -10,7 +10,7 @@ function showCities()
     	totalcities = allcities.length;
     	
     	tiercount = totalcities / 3;
-    	tiercount = tiercount.round();
+    	tiercount = Math.round(tiercount);
     	tier = 1;
     	
         $.each(data['cities'], function(key, val) {
