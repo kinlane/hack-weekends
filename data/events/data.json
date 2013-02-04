@@ -1,20 +1,6 @@
 {
     "events": [
         {
-            "name": "Web Startup Group Inaugural Winter Meeting",
-            "about": "<p><strong>Start your own Web Startup </strong></p>\n<p>Join us for our first monthly hackathon for technology students (any major, any skill level) at 6pm on January 17<sup>th</sup>in 1170 of the Talmage Building. </p>\n<p>The Web Startup Group will be conducting monthly meetings for technology students that are interested in the startup world.  WSG members will be creating technology oriented products in order to gain experience in cultivating a startup idea, building a product with a minimum feature set, and gaining an initial user base. The WSG is open to <span style=text-decoration: underline;>all majors and skill levels</span>.</p>\n<p>Web Startup Group</p>\n<p>Build. Measure. Learn.</p>\n<p class=MsoNormal style=margin-left: -40.5pt; text-align: center;> </p>",
-            "start_date": "Jan 18 2013 02:00:00",
-            "display_start_date": "01-17-2013",
-            "end_date": "Feb 18 2013 04:00:00",
-            "display_end_date": "02-17-2013",
-            "url": "http://www.eventbrite.com/event/5184771792/SRCH",
-            "address": "Room 1170 Array",
-            "city": "Provo",
-            "state": "UT",
-            "zip": "84606",
-            "country": "United States"
-        },
-        {
             "name": "Starter Hackathon",
             "about": "<p><a href=http://starterhackathon.eventbrite.com/><strong><span>Make your mom proud, help starters on TV!</span></strong></a></p>\n<p><strong><a href=http://www.rtbf.be/tv/top/starter>Starter RTBF</a></strong>, <strong><a href=http://betagroup.be>Betagroup</a></strong>, and <strong><a href=http://westartup.eu>westartup.eu</a></strong> have partnered to create a special hackathon to help the finalists of the Starter TV program.</p>\n<p>It is like any startup hackathon you may have already participated in (Startup Weekend, Lean Startup Machine, etc.) but the projects are already chosen. You will not know who are the finalists until the hackathon and then you will form teams to help them out.</p>\n<p><strong>The challenge</strong>: to help starters in very different kinds of companies, that may or not be technology related.</p>\n<p><strong>What the starters get</strong>: motivated and experienced professionals to help them kickstart their business.</p>\n<p><strong>What you get</strong>: you get to participate in another hackathon with all the thrills and satisfaction that it brings, and <strong>you will be on TV ! </strong>There will be cameras going around to interview the participants and to film the progress of the hackathon. Your mom will still not understand what you are doing, but she will be proud!</p>\n<p><strong>How it will work</strong>: meetup on Monday afternoon for pitching and choosing teams. Get to work. Go home to sleep. Back on Tuesday for a full day of startup hacking. Food and drinks will be provided so that you can focus all your energy on the startups.</p>\n<p><strong>Language</strong>: mostly French.</p>\n<p><strong>Time</strong>:</p>\n<ul>\n<li>Monday February 4 from 13h to 18h.</li>\n<li>Tuesday February 5 from 9h to 18h.</li>\n</ul>\n<p><strong>Place</strong>: the Lavoisier building of the SDRB (weve visited the building and it is great). Rue de Koninck 80, 1080 Molenbeek-Saint-Jean, Belgium.</p>\n<p><strong>Parking</strong>: YES!</p>\n<p>And remember, there will be a <a href=http://betagroup38.eventbrite.com/>Betagroup Pitch Slam on the 5th</a> right after the end of the hackathon: dont miss it!</p>\n<p><strong>With the support of</strong>:</p>\n<p><a href=http://betagroup.be><img src=http://i32.tinypic.com/2yubomv.jpg alt=betagroup logo width=202 height=57 /></a><a href=http://westartup.eu><img src=http://www.westartup.eu/wp-content/themes/westartup/img/eu/logo.png alt=westartup.eu logo width=202 height=52 /></a></p>\n<p><a href=http://coworking.betagroup.be><img src=http://ebmedia.eventbrite.com/s3-build/images/669842/102005072/1/logo.png alt=Betacowork logo Betagroup Coworking width=202 height=64 /></a></p>\n<p><a href=http://betainvest.be><img src=http://www.betainvest.be/uploads/5/5/4/2/5542907/7564656.gif alt=betainvest logo width=202 height=51 /></a></p>",
             "start_date": "Feb 04 2013 21:00:00",
@@ -939,6 +925,6 @@
             "country": "United States"
         }
     ],
-    "eventcount": 67,
+    "eventcount": 66,
     "published": "02/04/2013"
 }
